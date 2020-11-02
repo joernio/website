@@ -3,5 +3,33 @@ id: extensions
 title: Extending Joern
 ---
 
-# Creating Joern Extensions
+Joern provides a runtime extension mechanism that allows you to
+develop custom analyzers on top of the platform. Extensions are
+programs for the JVM that can be written in Java, Scala or
+Kotlin. They can access the Code Property Praph via a query language
+and create new nodes, edges and properties via the DiffGraph
+API. Moreover, they can interface with Java libraries to accomplish
+different tasks, like accessing the network or writing to the file
+system. Finally, even new node and edge types can be added to the
+schema, and the definition of existing node and edge types can be
+modified.
+
+## Starting off with the sample extension
+
+We provide a sample extension that you can use as a template. First,
+make sure that dependencies are installed correctly:
+
+*  Joern is installed in `~/bin/joern` (see
+[Installation](/installation))
+* The Scala Build Tool (SBT) in any version (via your package manager)
+
+
+Next, issue the following commands to install the sample extension.
+
+```
+git clone https://github.com/joernio/sample-extension
+cd sample-extension
+./install.sh
+```
+
 
