@@ -11,6 +11,7 @@ module.exports = {
     'code-property-graph',
     'traversal-basics',
     'c-syntaxtree',
+    'extensions',
     'glossary',
       {
         type: 'category',
