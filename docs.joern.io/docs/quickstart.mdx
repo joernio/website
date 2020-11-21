@@ -167,13 +167,14 @@ STDERR, is it conditional on a value passed in as argument to the
 
 Joern makes answering both questions easy. To answer the first one,
 whether the program writes anything to STDERR, we can search for nodes
-of type `CALL` in the graph, and use the `filter` directive to only
-select those calls which have connections to nodes of type `ARGUMENT`
-that have the string `stderr` as the value of their `CODE`
+of type `CALL` in the graph, then use the `argument` step to only
+select those calls which have connections to nodes of type `ARGUMENT`,
+followed by the `code("stderr")` property filter step which selects only
+those nodes that have the string `stderr` as the value of their `CODE`
 property. We find exactly one:
 
 ```java
-joern> cpg.call.filter(_.argument.code("stderr")).l
+joern> cpg.call.argument.code("stderr").toList
 res4: List[Call] = List(
   Call(
     id -> 24L,
@@ -201,7 +202,7 @@ With this query we have proven the first part of our problem statement correct, 
 Using the query from the previous step, we can use the `astParent` construct to find out more about the surroundings around the `fprintf` call by moving up in the hierarchy of the abstract syntax tree that is part of the Code Property Graph. Moving up one level in the AST hierarchy gives us a block; not very helpful:
 
 ```java
-joern> cpg.call.filter(_.argument.code("stderr")).astParent.l
+joern> cpg.call.argument.code("stderr").astParent.toList
 res5: List[AstNode] = List(
   Block(
     id -> 23L,
@@ -218,10 +219,10 @@ res5: List[AstNode] = List(
 )
 ```
 
-Another layer up gives us an if statement, much better:
+Another two layers up gives us an if statement, much better:
 
 ```java
-joern> cpg.call.filter(_.argument.code("stderr")).astParent.astParent.l
+joern> cpg.call.argument.code("stderr").astParent.astParent.astParent.l
 res6: List[AstNode] = List(
   ControlStructure(
     id -> 11L,
