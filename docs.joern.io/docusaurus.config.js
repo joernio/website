@@ -3,7 +3,9 @@ const path = require('path');
 module.exports = {
   title: 'Joern Documentation',
   tagline: 'The Joern Code Analyzer',
-  url: 'https://docs.joern.io',
+  url: 'https://joernio.github.io',
+  projectName : "joernio.github.io",
+  organizationName : "joernio",
   baseUrl: '/',
   favicon: 'img/website-icon.png',
   themeConfig: {
