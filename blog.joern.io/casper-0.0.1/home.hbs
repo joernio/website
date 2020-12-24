@@ -16,19 +16,19 @@ into the {body} of the default.hbs template --}}
                 </h1>
                 <h2 class="site-description">{{@site.description}}</h2>
                 <div style="padding-top: 1em;">
-                    <a class="mdc-button mdc-button--outlined"  href="https://github.com/ShiftLeftSecurity/joern" style="z-index: 100;padding: 15px;">
+                    <a class="mdc-button header-button mdc-button--outlined"  href="https://github.com/ShiftLeftSecurity/joern" style="z-index: 100;padding: 15px;">
                         <div class="mdc-button__ripple"></div>
                         <i class="material-icons mdc-button__icon" aria-hidden="true">code</i
                         >
                         <span class="mdc-button__label">Source</span>
                     </a>
-                    <a class="mdc-button mdc-button--outlined"  href="https://docs.joern.io" style="z-index: 100;padding: 15px;">
+                    <a class="mdc-button header-button mdc-button--outlined"  href="https://docs.joern.io" style="z-index: 100;padding: 15px;">
                         <div class="mdc-button__ripple"></div>
                         <i class="material-icons mdc-button__icon" aria-hidden="true">description</i
                         >
                         <span class="mdc-button__label">Documentation</span>
                     </a>
-                    <a class="mdc-button mdc-button--raised"  href="https://gitter.im/joern-code-analyzer/community" style="z-index: 100;padding: 15px;">
+                    <a class="mdc-button header-button mdc-button--raised"  href="https://gitter.im/joern-code-analyzer/community" style="z-index: 100;padding: 15px;">
                         <div class="mdc-button__ripple"></div>
                         <i class="material-icons mdc-button__icon" aria-hidden="true">groups</i
                         >
@@ -44,10 +44,10 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="mdc-layout-grid main-page-grid">
         <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--align-middle">
+            <div class="mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--align-middle image-block">
                 <div class="main-card mdc-elevation--z10"><img src="/assets/images/query.png" alt="" width="100%"></div>
             </div>
-            <div class="mdc-layout-grid__cell--span-6">
+            <div class="mdc-layout-grid__cell--span-6 text-block">
                 <h2>Query.</h2>
                 <p>
 		Uncover attack surface, sloppy coding practices, and
@@ -58,7 +58,7 @@ into the {body} of the default.hbs template --}}
             </div>
         </div>
         <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell--span-6">
+            <div class="mdc-layout-grid__cell--span-6 text-block">
                 <h2>Automate.</h2>
                 <p>
 		Wrap your queries into custom code scanners and share
@@ -66,15 +66,15 @@ into the {body} of the default.hbs template --}}
 		scanners in your CI.
                 </p>
             </div>
-            <div class="mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--align-middle">
+            <div class="mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--align-middle image-block">
                 <div class="main-card mdc-elevation--z10"><img src="/assets/images/automate.png" alt="" width="100%"></div>
             </div>
         </div>
         <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--align-middle">
+            <div class="mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--align-middle image-block">
                 <div class="main-card mdc-elevation--z10"><img src="/assets/images/integrate.png" alt="" width="100%"></div>
             </div>
-            <div class="mdc-layout-grid__cell--span-6">
+            <div class="mdc-layout-grid__cell--span-6 text-block">
                 <h2>Integrate.</h2>
                 <p>
 		Use Joern as a library to power your own code analysis
