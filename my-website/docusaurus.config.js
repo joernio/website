@@ -9,6 +9,10 @@ module.exports = {
   organizationName: 'joernio',
   projectName: 'joernio.github.io',
   themeConfig: {
+    colorMode : {
+      defaultMode : 'light',
+      disableSwitch: true
+    },
     navbar: {
       title: 'Joern Documentation',
       logo: {

@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     color: '#ffffff',
   },
   cell: {
-    color: 'white'
+    color: 'black'
   }
 });
 
