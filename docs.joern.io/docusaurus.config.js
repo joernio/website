@@ -43,7 +43,7 @@ module.exports = {
 	  routeBasePath: '/',
           // Please change this to your repo.
           editUrl:
-            'https://github.com/joernio/website/docs.joern.io/edit/master/website/',
+            'https://github.com/joernio/website/edit/master/docs.joern.io/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
