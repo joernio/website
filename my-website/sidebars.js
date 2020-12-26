@@ -1,6 +1,34 @@
 module.exports = {
-  someSidebar: {
-    Docusaurus: ['doc1', 'doc2', 'doc3'],
-    Features: ['mdx'],
-  },
+  docs: [
+    'home',
+    'installation',
+    'quickstart',
+    'shell',
+    'interpreter',
+    'exporting',
+    'server',
+    'organizing-projects',
+    'code-property-graph',
+    'traversal-basics',
+    'c-syntaxtree',
+    'extensions',
+    'glossary',
+      {
+        type: 'category',
+        label: 'CPGQL Reference',
+        items: [
+          'cpgql/reference-card',
+          'cpgql/node-type-steps',
+          'cpgql/filter-steps',
+          'cpgql/core-steps',
+          'cpgql/repeat-steps',
+          'cpgql/complex-steps',
+          'cpgql/execution-directives',
+          'cpgql/augmentation-directives',
+          'cpgql/help-directive',
+          'cpgql/calls',
+        ]
+      },
+    'upgrade-guides',
+  ],
 };
