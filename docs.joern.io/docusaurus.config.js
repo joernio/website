@@ -11,7 +11,8 @@ module.exports = {
   themeConfig: {
     colorMode : {
       defaultMode : 'light',
-      disableSwitch: true
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'Joern Documentation',
