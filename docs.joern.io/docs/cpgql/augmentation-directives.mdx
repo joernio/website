@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 
 ### newTagNode
 
-`newTagNode` is an _Augmentation Directive_ that adds tags with user-defined keys to the nodes that are part of the traversal they're suffixing. It works together with the `store` CPGQL Component which creates the actual nodes representing the tags, and the `run.commit` [Top-Level Command](/joern/top-level-commands) which merges those nodes in the active _Code Property Graph_.
+`newTagNode` is an _Augmentation Directive_ that adds tags with user-defined keys to the nodes that are part of the traversal they're suffixing. It works together with the `store` CPGQL Component which creates the actual nodes representing the tags, and the `run.commit` which merges those nodes in the active _Code Property Graph_.
 
 Say for example that you'd like to add tags to all the nodes of `X42`'s Code Property Graph that represent calls to `exit`. That is, these two:
 

@@ -29,7 +29,7 @@ OK. You now know what the Workspace is, and where it is located, let us move on 
 
 An Joern Project is a collection of files related to a single analysis. Just like the Joern Workspace, Joern Projects are represented by directories on your filesystem. Each project directory contains the project metadata (like its name, or the absolute path of the program under analysis), a binary representation of the Code Property Graph for the program under analysis, and, optionally, binary representations of the Code Property Graph Overlays that have been generated. Other files may be part of project directories, but we will leave their description for later.
 
-For now, let us create two Joern Projects using the `importCode` [top-level command](/joern/top-level-commands) of the Joern Shell. `importCode` does four things: 1) it creates a new Joern Project for a program found at a path, 2) it generates a Code Property Graph for that program, 3) it loads the generated Code Property Graph into memory, and 4) it generates Code Property Graph Overlays for that Code Property Graph. For the purposes of this demonstration, you will create the two Joern Projects from a sample program named `X42`. Clone the following git repository which contains its implementation in a few different programming languages:
+For now, let us create two Joern Projects using the `importCode` top-level command of the Joern Shell. `importCode` does four things: 1) it creates a new Joern Project for a program found at a path, 2) it generates a Code Property Graph for that program, 3) it loads the generated Code Property Graph into memory, and 4) it generates Code Property Graph Overlays for that Code Property Graph. For the purposes of this demonstration, you will create the two Joern Projects from a sample program named `X42`. Clone the following git repository which contains its implementation in a few different programming languages:
 
 ```bash
 $ git clone git@github.com:ShiftLeftSecurity/x42.git
@@ -131,7 +131,7 @@ res7: List[MetaData] = List(
 )
 ```
 
-Other top-level commands that refer to the currently active project are [`run`](/joern/top-level-commands#run), [`open`](/joern/top-level-commands#open), [`close`](/joern/top-level-commands#close), [`delete`](/joern/top-level-commands#delete) and [`undo`](/joern/top-level-commands#undo).
+Other top-level commands that refer to the currently active project are [`run`](/joern/top-level-commands#run), `open`, close, `delete` and `undo`.
 
 
 That concludes this gentle introducton into the commands the Joern Shell provides you with for organizing your Joern Projects. Have fun with your analysis!
