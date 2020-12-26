@@ -1,40 +1,37 @@
-const path = require('path');
-
 module.exports = {
   title: 'Joern Documentation',
-  tagline: 'The Joern Code Analyzer',
+  tagline: 'The Bug Hunter\'s Workbench',
   url: 'https://docs.joern.io',
-  projectName : "joernio.github.io",
-  organizationName : "joernio",
   baseUrl: '/',
-  favicon: 'img/website-icon.png',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+  favicon: 'img/favicon.ico',
+  organizationName: 'joernio',
+  projectName: 'joernio.github.io',
   themeConfig: {
-	    disableDarkMode:  false,
-	    defaultDarkMode:  true,
+    colorMode : {
+      defaultMode : 'light',
+      disableSwitch: true
+    },
     navbar: {
-      title: '',
+      title: 'Joern Documentation',
       logo: {
         alt: 'Joern Logo',
         src: 'img/website-icon.png',
-        href: '/home',
+	href: '/home',
         target: '_self'
       },
-      links: [        
+      items: [
       ],
     },
     footer: {
-      links: [],      
+      links: [
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} The Joern Project. Built with Docusaurus.`,
     },
-    prism: {
-      theme: require('prism-react-renderer/themes/github'),
-      additionalLanguages: ['powershell']
-    }
   },
-  stylesheets: [
-    'react-image-lightbox/style.css'
-  ],
   plugins: [
-    path.resolve(__dirname, './node_modules/docusaurus-lunr-search/')
+    require.resolve('docusaurus-lunr-search')
   ],
   presets: [
     [
@@ -42,8 +39,10 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          routeBasePath: '',
-          editUrl: '',
+	  routeBasePath: '/',
+          // Please change this to your repo.
+          editUrl:
+            'https://github.com/joernio/website/docs.joern.io/edit/master/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -52,4 +51,3 @@ module.exports = {
     ],
   ],
 };
-

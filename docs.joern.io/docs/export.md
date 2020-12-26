@@ -43,7 +43,7 @@ For a complete overview of options, run `joern-export --help`.
 ## Plotting and Exporting on the Joern Console
 
 If you would like to explore graph representations interactively, you
-can do so on the [Joern shell](/joern/shell). To this end, we define
+can do so on the [Joern shell](/shell). To this end, we define
 the following steps on `method` nodes to dump representations in dot
 format.
 

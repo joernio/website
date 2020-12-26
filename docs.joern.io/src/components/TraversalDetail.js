@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     minWidth: 550,
   },
   cell: {
-    color: 'white'
+    color: 'black'
   }
 });
 
