@@ -29,38 +29,20 @@ You can test your installation as follows:
 
 ```bash
 cd ~/bin/joern/joern-cli
-./joern --help
-Usage: (joern|ocular) [options]
+./joern
+Compiling (synthetic)/ammonite/predef/interpBridge.sc
+Compiling (synthetic)/ammonite/predef/replBridge.sc
+Compiling (synthetic)/ammonite/predef/DefaultPredef.sc
+Compiling /home/tmp/shiftleft/joern/(console)
 
-Script execution
-  --script <value>         path to script file: will execute and exit
-  -p, --params k1=v1,k2=v2
-                           key values for script
-  --import script1.sc,script2.sc,...
-                           import additional additional script(s): will execute and keep console open
-  --command <value>        select one of multiple @main methods
-Bundle execution
-  --bundles                List available bundles
-  --run <value>            Run bundle. Get a list via --bundles
-  --src <value>            Source code directory to run bundle on
-  --language <value>       Language to use in CPG creation
-  --overwrite              Overwrite CPG if it already exists
-REST server mode
-  --server                 run as HTTP server
-  --server-host <value>    Hostname on which to expose the CPGQL server
-  --server-port <value>    Port on which to expose the CPGQL server
-  --server-auth-username <value>
-                           Basic auth username for the CPGQL server
-  --server-auth-password <value>
-                           Basic auth password for the CPGQL server
-Plugin management
-  --plugins                List plugins
-  --add-plugin <value>     Plugin zip file to add to the installation
-  --remove-plugin <value>  Name of plugin to remove from the installation
-Misc
-  --nocolors               turn off colors
-  --help                   Print this help text
+     ██╗ ██████╗ ███████╗██████╗ ███╗   ██╗
+     ██║██╔═══██╗██╔════╝██╔══██╗████╗  ██║
+     ██║██║   ██║█████╗  ██████╔╝██╔██╗ ██║
+██   ██║██║   ██║██╔══╝  ██╔══██╗██║╚██╗██║
+╚█████╔╝╚██████╔╝███████╗██║  ██║██║ ╚████║
+ ╚════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝
 
+joern>
 ```
 
 ## Building from Source Code
