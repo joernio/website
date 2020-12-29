@@ -70,7 +70,26 @@ one attribute that indicates its type.
 This section describes all node types of the base specification in
 detail.
 
-### `AstNode(order : Int)`
+### MetaData
+
+Signature:
+
+`MetaData(language : String, version: String,
+overlays: List[String], [hash : String])`
+
+Each CPG has exactly one MetaData node. The node holds the following
+information about the CPG generation:
+
+* `language`: the CPG language frontend that generated this CPG.
+* `version`: The version of the CPG spec
+* `overlays`: The list of overlays that have been applied to create this graph
+* `hash`: The artifact that this graph was generated from.
+
+No incoming or outgoing edges are permitted for the meta data node.
+
+### `AstNode`
+
+Signature: `AstNode(order : Int)`
 
 `AstNode` is the base node type for all nodes that are part of syntax trees 
 stored in the graph. In a syntax tree, sibling nodes (nodes who share a 
@@ -80,7 +99,9 @@ by storing the position of each node relative to its siblings in the `order`
 field. In the left most sibling, `order` is set to `0`, while in the 
 right-most sibling, it is set to `n-1` where `n` is the number of siblings.
 
-### `File(name: String, [hash: String])` is an `AstNode`
+### `File`
+
+Signature: `File(name: String, [hash: String])` is an `AstNode`
 
 Code property graphs are created from sets of files. Information about these 
 files is stored in the graph to enable queries to map nodes of the graph 
