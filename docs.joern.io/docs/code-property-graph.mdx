@@ -60,7 +60,7 @@ composed of the following building blocks:
   least a name and a signature while a local declaration has at
   least the name and the type of the declared variable.
 
-In summary, Code Property Graphs are directed, edge-labeled,
+In summary, code property graphs are directed, edge-labeled,
 attributed multigraphs, and we insist that each node carries at least
 one attribute that indicates its type.
 
@@ -84,6 +84,11 @@ information about the CPG generation:
 * `version`: The version of the CPG spec
 * `overlays`: The list of overlays that have been applied to create this graph
 * `hash`: The artifact that this graph was generated from.
+
+The `overlays` field does not have to be set by the language frontend. Upon
+first loading the CPG, Joern/Ocular will add the semantic CPG layer, and
+hence, when the user first sees this field, it should start with the entry
+`semanticcpg`.
 
 No incoming or outgoing edges are permitted for the meta data node.
 
