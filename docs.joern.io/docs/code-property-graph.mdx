@@ -140,7 +140,9 @@ language frontend is assumed to fill out the `FILENAME` field wherever
 possible, allowing `File` nodes to be created automatically when the 
 semantic CPG layer is created.
 
-[Associated Tests](https://github.com/ShiftLeftSecurity/codepropertygraph/blob/master/fuzzyc2cpg-tests/src/test/scala/io/shiftleft/fuzzyc2cpg/querying/FileNodeTests.scala) 
+Associated Tests
+
+[C](https://github.com/ShiftLeftSecurity/codepropertygraph/blob/master/fuzzyc2cpg-tests/src/test/scala/io/shiftleft/fuzzyc2cpg/querying/FileNodeTests.scala) 
 
 Related passes: [FileCreationPass](https://github.com/ShiftLeftSecurity/codepropertygraph/blob/master/semanticcpg/src/main/scala/io/shiftleft/semanticcpg/passes/FileCreationPass.scala)
 
@@ -166,9 +168,8 @@ Fields:
 * fullName: The full name, e.g., for `Foo::Bar`, `Foo::Bar` is the full name
 * filename: The file name this block is declared in
 
-As AST nodes, namespace blocks also have an `order` field.
-
-
+As AST nodes, namespace blocks also have an `order` field that encodes the 
+position of the node in the AST relative to its siblings and starting at 0.
 
 ... (More node types to follow)
 
