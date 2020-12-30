@@ -4,7 +4,7 @@ title: Code Property Graph
 joern_shared: true
 ---
 
-The Code Property Graph is a data structure designed to mine large
+The code property graph is a data structure designed to mine large
 codebases for instances of programming patterns. These patterns are
 formulated in a domain-specific language (DSL) based on
 [Scala](https://www.scala-lang.org/). It serves as a single
@@ -29,8 +29,8 @@ specification.
 
 ## Building Blocks of Code Property Graphs
 
-Code Property Graphs are [graphs as studied in discrete
-mathematics](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)),
+Code property graphs are
+[graphs](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)),
 and more specifically [property
 graphs](https://arxiv.org/pdf/1004.1001.pdf). A property graph is
 composed of the following building blocks:
@@ -60,10 +60,92 @@ composed of the following building blocks:
   least a name and a signature while a local declaration has at
   least the name and the type of the declared variable.
 
-In summary, Code Property Graphs are directed, edge-labeled,
+In summary, code property graphs are directed, edge-labeled,
 attributed multigraphs, and we insist that each node carries at least
 one attribute that indicates its type.
 
+
+## Node Types of the Base Specification
+
+This section describes all node types of the base specification in
+detail.
+
+### MetaData
+
+Signature:
+
+`MetaData(language : String, version: String,
+overlays: List[String], [hash : String])`
+
+Layer: Base
+
+Each CPG has exactly one MetaData node. The node holds the following
+information about the CPG generation:
+
+* `language`: the CPG language frontend that generated this CPG.
+* `version`: The version of the CPG spec
+* `overlays`: The list of overlays that have been applied to create this graph
+* `hash`: The artifact that this graph was generated from.
+
+The `overlays` field does not have to be set by the language frontend. Upon
+first loading the CPG, Joern/Ocular will add the semantic CPG layer, and
+hence, when the user first sees this field, it should start with the entry
+`semanticcpg`. Note that the base layer is not considered an overlay and 
+therefore it is not added to the `overlays` list.
+
+No incoming or outgoing edges are permitted for the meta data node.
+
+### `AstNode`
+
+Signature: `AstNode(order : Int)`
+
+`AstNode` is the base node type for all nodes that are part of syntax trees 
+stored in the graph. In a syntax tree, sibling nodes (nodes who share a 
+parent node) are ordered. As some graph databases do not guarantee the order 
+in which siblings are returned to be stable, we make the ordering explicit 
+by storing the position of each node relative to its siblings in the `order` 
+field. In the left most sibling, `order` is set to `0`, while in the 
+right-most sibling, it is set to `n-1` where `n` is the number of siblings.
+
+### `File`
+
+Signature: `File(name: String, [hash: String])` is an `AstNode`
+Layer: Semanticcpg
+Planned changes: File nodes shall no longer inherit from `AstNode` and shall 
+only allow incoming `SOURCE_FILE` edges.
+
+Code property graphs are created from sets of files. Information about these 
+files is stored in the graph to enable queries to map nodes of the graph 
+back to the files that contain the code they represent.
+
+For each file, the graph must contain exactly one `File` node with the 
+following fields:
+
+* `name`: the absolute path of the file at CPG construction time in Unix style.
+  No two file nodes of the CPG may have the same `name` field.
+* `hash` (optional): A hash value calculated over the file contents.
+
+As file nodes are root nodes of abstract syntax tress, they are `AstNodes` 
+and their `order` field is set to `0`.
+
+Each code property graph must contain a special file node with 
+`name` set to `"<unknown>"`. This node is a placeholder used in cases 
+where a file cannot be determined at compile time. As an example, consider 
+the case where an external type is introduced only at link time.
+
+Conceptually file nodes serve as indices, e.g., they map all filenames to the 
+list of methods they contain.
+
+`File` nodes MUST NOT be created by the language frontend. Instead, the 
+language frontend is assumed to fill out the `FILENAME` field wherever 
+possible, allowing `File` nodes to be created automatically when the 
+semantic CPG layer is created.
+
+[Associated Tests](https://github.com/ShiftLeftSecurity/codepropertygraph/blob/master/fuzzyc2cpg-tests/src/test/scala/io/shiftleft/fuzzyc2cpg/querying/FileNodeTests.scala) 
+
+Related passes: [FileCreationPass](https://github.com/ShiftLeftSecurity/codepropertygraph/blob/master/semanticcpg/src/main/scala/io/shiftleft/semanticcpg/passes/FileCreationPass.scala)
+
+... (More node types to follow)
 
 :::note
 A Look into the Rear-View Mirror
