@@ -111,15 +111,14 @@ right-most sibling, it is set to `n-1` where `n` is the number of siblings.
 
 Signature: `File(name: String, [hash: String])` is an `AstNode`
 Layer: Semanticcpg
-Planned changes: File nodes shall no longer inherit from `AstNode` and shall 
-only allow incoming `SOURCE_FILE` edges.
 
 Code property graphs are created from sets of files. Information about these 
 files is stored in the graph to enable queries to map nodes of the graph 
 back to the files that contain the code they represent.
 
-For each file, the graph must contain exactly one `File` node with the 
-following fields:
+For each file, the graph must contain exactly one `File`.
+
+Fields:
 
 * `name`: the absolute path of the file at CPG construction time in Unix style.
   No two file nodes of the CPG may have the same `name` field.
@@ -144,6 +143,32 @@ semantic CPG layer is created.
 [Associated Tests](https://github.com/ShiftLeftSecurity/codepropertygraph/blob/master/fuzzyc2cpg-tests/src/test/scala/io/shiftleft/fuzzyc2cpg/querying/FileNodeTests.scala) 
 
 Related passes: [FileCreationPass](https://github.com/ShiftLeftSecurity/codepropertygraph/blob/master/semanticcpg/src/main/scala/io/shiftleft/semanticcpg/passes/FileCreationPass.scala)
+
+## `NamespaceBlock`
+
+Signature:
+
+`NamespaceBlock(name : String,
+  fullName : String,
+  order: Int, 
+  filename: String)` is an `AstNode`
+
+Layer: Base
+
+We borrow the concept of a "namespace block" from C++, that is, a namespace 
+block is a block of code that has been placed in the same namespace by a 
+programmer. This block may be introduced via a `package` statement in Java 
+or a `namespace{ }` statement in C++.
+
+Fields:
+
+* name: The namespace name, e.g., for `Foo::Bar`, `Bar` is the name
+* fullName: The full name, e.g., for `Foo::Bar`, `Foo::Bar` is the full name
+* filename: The file name this block is declared in
+
+As AST nodes, namespace blocks also have an `order` field.
+
+
 
 ... (More node types to follow)
 
