@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   title: 'Joern Documentation',
   tagline: 'The Bug Hunter\'s Workbench',
@@ -32,7 +34,8 @@ module.exports = {
     },
   },
   plugins: [
-    require.resolve('docusaurus-lunr-search')
+    require.resolve('docusaurus-lunr-search'),
+    path.resolve(__dirname, 'plugins/staticcode')
   ],
   presets: [
     [

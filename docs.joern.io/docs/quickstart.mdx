@@ -3,6 +3,8 @@ id: quickstart
 title: Quickstart
 ---
 
+import PrismCode from '@site/src/components/PrismCode';
+
 Joern is a command-line tools for static code analysis. Joern can
 help you find and correct security vulnerabilities in programs with
 hundreds of thousands of lines of code, including flaws that are
@@ -28,21 +30,7 @@ Let us start with a problem statement. Show - without running the
 program - that an input exists for which `X42` writes a string to
 standard error (STDERR).
 
-```c
-// X42.c
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int main(int argc, char *argv[]) {
-  if (argc > 1 && strcmp(argv[1], "42") == 0) {
-    fprintf(stderr, "It depends!\n");
-    exit(42);
-  }
-  printf("What is the meaning of life?\n");
-  exit(0);
-}
-```
+<PrismCode codeId="x42-c" language="c" />
 
 ## Starting Joern's Interactive Shell
 
@@ -144,21 +132,8 @@ problem we want to solve using Joern.
 To reiterate, the problem statement is _Show that an input exists for
 which the X42 program always writes a string to STDERR_. And this is
 the `X42` program:
-```c
-// X42.c
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-int main(int argc, char *argv[]) {
-  if (argc > 1 && strcmp(argv[1], "42") == 0) {
-    fprintf(stderr, "It depends!\n");
-    exit(42);
-  }
-  printf("What is the meaning of life?\n");
-  exit(0);
-}
-```
+<PrismCode codeId="x42-c" language="c" />
 
 There are two parts in the problem statement: 1. _does the program
 write anything to STDERR?_, and 2. _if there is a call writing to
