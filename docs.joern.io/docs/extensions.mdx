@@ -3,20 +3,19 @@ id: extensions
 title: Developing Plugins
 ---
 
-Joern can be enhanced via plugins. Plugins can
+Joern can be enhanced via plugins. Plugins can...
 
-
-* access the Code Property Praph using the query language
+* ... access the Code Property Praph using the query language
 and create new nodes, edges and properties via the DiffGraph
 API.
-* interface with arbitrary Java libraries to
+* ... interface with arbitrary Java libraries to
 e.g., access the filesystem or network, or data analysis capabilities.
-* add new node and edge types can be added to the
+* ... add new node and edge types can be added to the
 schema, and the definition of existing node and edge types can be
 modified.
 
-In the simplest case, plugins add queries to Joern, as for example the
- `query-database` plugin does.
+In the simplest case, plugins add queries to Joern, as for example the 
+`query-database` plugin does.
 
 ## Managing plugins
 
@@ -48,37 +47,53 @@ https://github.com/joernio/query-database/releases/latest/download/querydb.zip
 
 ## Developing your own plugin
 
-We provide a sample plugin that you can use as a template. First,
-make sure that dependencies are installed correctly:
+We provide a sample plugin that you can use as a template. Please make sure 
+the following dependencies are installed:
 
-*  Joern is installed in `~/bin/joern` (see
-[Installation](/installation))
-* The Scala Build Tool (SBT) in any version (via your package manager)
+* OpenJDK 8 or higher
+* The scala built tool (any version)
 
-
-Next, issue the following commands to install the sample extension.
+You can then install and test the sample plugin by running
 
 ```
-git clone https://github.com/joernio/sample-extension
-cd sample-extension
+git clone https://github.com/joernio/sample-plugin.git
+cd sample-plugin
 ./install.sh
-cd ~/bin/joern/joern-cli
-./joern
 ```
 
-On the joern shell, type `run`. You should see the extension in the
-overview:
+This will install `joern` in the sub directory `joern-inst` and create 
+symbolic links in the working directory. Finally, it will add the sample 
+plugin to the aforementioned joern installation via `joern --add-plugin`.
+
+Now start joern:
+
+``
+./joern
+``
+and on the `joern` shell, type
+
+```
+run
+```
+
+You should see the sample plugin named `gitextension` in the overview
 
 ![Run output](/img/run.png)
 
-To run the extension, type `run.gitextension`. You can also
-inspect/modify options passed to the plugin by typing
-`opts.gitextension.<TAB>`.
+
+You can inspect and modify the options of the example plugin via
+
+```
+opts.gitextension.<TAB>
+```
+
+To run the extension on the shell, type `run.gitextension`. This should 
+throw an exception, indicating that no projects are loaded.
 
 ## Importing into the IntelliJ IDE and running tests
 
-Joern Extensions can be developed in an IDE and the process of
-importing an extension may differ slightly from IDE to IDE. The
+Joern plugins can be developed in an IDE and the process of
+importing a plugin may differ slightly from IDE to IDE. The
 following instructions are for IntelliJ 2020.1.1.
 
 Choose "Open or Import" to import the project.
@@ -100,6 +115,15 @@ individual tests to run them.
 ![Right click](/img/runtests.png)
 
 
+## Building a shippable plugin
+
+You can create a plugin ready for installation via `./joern --add-plugin` by 
+running:
+
+```
+sbt createDistribution
+```
+
 ## Adding dependencies
 
 You can add dependencies by modifying the variable
@@ -120,22 +144,6 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.1.1" % Test
 )
 
-...
-```
-
-If the dependency is not shipped with joern, please also make sure to
-copy it to joern's `lib` directory on installation by editing
-`install.sh`. (We may have already automated this step at the time of
-reading):
-
-```
-// install.sh
-...
-echo "Installing jars into: ${JAR_INSTALL_DIR}"
-cp target/universal/stage/lib/io.joern.joern-sample-extension-*.jar ${JAR_INSTALL_DIR}
-cp target/universal/stage/lib/org.eclipse.jgit.org.eclipse.jgit* ${JAR_INSTALL_DIR}
-// Copy any jars you need to be installed for the plugin into $JAR_INSTALL_DIR
-cp target/universal/stage/lib/... ${JAR_INSTALL_DIR}
 ...
 ```
 
