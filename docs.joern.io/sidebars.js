@@ -24,6 +24,7 @@ module.exports = {
           'cpgql/repeat-steps',
           'cpgql/complex-steps',
           'cpgql/control-flow-steps',
+          'cpgql/data-flow-steps',
           'cpgql/execution-directives',
           'cpgql/augmentation-directives',
           'cpgql/help-directive',
