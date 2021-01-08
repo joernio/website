@@ -85,6 +85,22 @@ into the {body} of the default.hbs template --}}
     </div>
 </main>
 
+<div style="background: black; margin-top: 2em;">
+    <div class="mdc-layout-grid" style="max-width: 1024px;">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell">
+                <h2>Built with <i class="material-icons mdc-button__icon" aria-hidden="true">flash_on</i> at </h2>
+            </div>
+            <div class="mdc-layout-grid__cell" style="padding: 2em; text-align: center; padding-top: 3em;">
+                <img src="/assets/images/sl-dark.svg" alt="" height="60%">
+            </div>
+            <div class="mdc-layout-grid__cell" style="padding: 2em; text-align: center;">
+                <img src="/assets/images/tub.svg" alt="" height="100%">
+            </div>
+        </div>
+    </div>
+</div>
+
 {{> site-header}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
