@@ -9,7 +9,7 @@ Repeat Steps are CPGQL Steps which repeat another traversal multiple times.
 
 ```java
 joern> cpg.method.name("main").repeat(_.astChildren)(_.times(4)).l
-res123: List[AstNode] = List(
+res0: List[AstNode] = List(
   Call(
     id -> 13L,
     code -> "argc > 1",
@@ -41,7 +41,7 @@ res123: List[AstNode] = List(
 
 ```java
 joern> cpg.method.name("main").repeat(_.astChildren)(_.until(_.isCall)).l
-res124: List[AstNode] = List(
+res0: List[AstNode] = List(
   Call(
     id -> 29L,
     code -> "printf(\"What is the meaning of life?\\n\")",
@@ -77,7 +77,7 @@ res124: List[AstNode] = List(
 
 ```java
 joern> cpg.method.name("main").repeat(_.astChildren)(_.until(_.isCall.name("exit"))).l 
-res125: List[AstNode] = List(
+res0: List[AstNode] = List(
   Call(
     id -> 31L,
     code -> "exit(0)",
@@ -98,7 +98,7 @@ res125: List[AstNode] = List(
 
 ```java
 joern> cpg.method.name("main").repeat(_.astChildren)(_.emit(_.isControlStructure).times(4)).l
-res130: List[AstNode] = List(
+res0: List[AstNode] = List(
   ControlStructure(
     id -> 11L,
     code -> "if (argc > 1 && strcmp(argv[1], \"42\") == 0)",
