@@ -15,6 +15,14 @@ module.exports = {
     'glossary',
       {
         type: 'category',
+        label: 'LLVM Support',
+        items: [
+          'llvm2cpg/hello-llvm',
+          'llvm2cpg/getting-bitcode'
+        ]
+      },
+      {
+        type: 'category',
         label: 'CPGQL Reference',
         items: [
           'cpgql/reference-card',
