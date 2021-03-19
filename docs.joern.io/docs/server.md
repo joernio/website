@@ -23,7 +23,7 @@ joern --server --server-auth-username username --server-auth-password password
 
 A sample client is available for Python at:
 
-https://github.com/ShiftLeftSecurity/cpgqls-client-python#example-usage
+https://github.com/joernio/cpgqls-client-python#example-usage
 
 
 ## For Developers
