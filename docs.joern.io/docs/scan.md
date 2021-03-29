@@ -55,26 +55,27 @@ a score, a description, and a traversal. This is an example of how a query is de
 
 ```java
   def getsUsed(): Query =
-    queryInit(
-      "call-to-gets",
-      Crew.suchakra,
-      "Dangerous function gets() used",
-      """
+    Query.make(
+      name = "call-to-gets",
+      author = Crew.suchakra,
+      title = "Dangerous function gets() used",
+      description =
+        """
         | Avoid `gets` function as it can lead to reads beyond buffer
         | boundary and cause
         | buffer overflows. Some secure alternatives are `fgets` and `gets_s`.
         |""".stripMargin,
-      8, { cpg =>
+      score = 8,
+      withStrRep({ cpg =>
         cpg.method("gets").callIn
-      },
-      List(QueryTags.badfn)
+      }),
+      tags = List(QueryTags.badfn)
     )
 ```
 
-_call-to-gets_ is the name, _Crew.suchakra_ defines the author,
-_Dangerous function gets() used_ the title, _Avoid gets..._ the description,
-_8_ the score, _cpg.method("gets").callIn_ the traversal,
-and _List(QueryTags.badn)_ are the tags.
+_cpg.method("gets").callIn_ is the graph traversal of the _Query_. It is wrapped
+in the `withStrRep` function for functional purposes, namely to generate a
+string representation of it for display.
 
 _Joern Scan_ ships with a default set of queries, the _Joern Query Database_.
 This set of queries is constantly updated, and contributions are highly encouraged
