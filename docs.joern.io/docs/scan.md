@@ -86,21 +86,21 @@ You can fetch the latest version of the _Joern Query Database_ using the _--upda
 
 ```bash
 $ joern-scan --updatedb
-Downloading default query bundle from: https://github.com/joernio/query-database/releases/download/v0.0.68/querydb.zip
+Downloading default query bundle from: https://github.com/joernio/query-database/releases/download/v0.0.80/querydb.zip
 Wrote: 10785252 bytes to /tmp/joern-scan4746805711015614603/querydb.zip
 Removing current version of query database
-Schema directory at /home/claudiu/code/joern/schema-extender/schemas does not exist
+Schema directory at /home/user/joern/schema-extender/schemas does not exist
 Adding updated version of query database
-Schema directory at /home/claudiu/code/joern/schema-extender/schemas does not exist
+Schema directory at /home/user/joern/schema-extender/schemas does not exist
 ```
 
-All queries will be tested against a program under analysis, but you can
-also selectively choose which ones to run.
+All queries which contain the _default_ tag will be tested against a program under analysis,
+but you can also selectively choose which ones to run.
 
 You can specify a set of tags, for example:
 
 ```bash
-$ joern-scan simple.c --only-tags badfn
+$ joern-scan simple.c --tags badfn
 Detailed logs at: /tmp/joern-scan-log.txt
 Result: 8.0 : Dangerous function gets() used: /home/user/code/simple.c:6:main
 ```
@@ -108,7 +108,7 @@ Result: 8.0 : Dangerous function gets() used: /home/user/code/simple.c:6:main
 Or a set of query names:
 
 ```bash
-$ joern-scan simple.c --only-names call-to-gets,multiple-returns
+$ joern-scan simple.c --names call-to-gets,multiple-returns
 Detailed logs at: /tmp/joern-scan-log.txt
 Result: 8.0 : Dangerous function gets() used: /home/user/code/simple.c:6:main
 ```
