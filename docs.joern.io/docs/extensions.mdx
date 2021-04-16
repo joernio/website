@@ -40,14 +40,16 @@ and removed:
 ```
 joern --rm-plugin <name>
 ```
+
 You can download an example plugin here for testing:
 
 https://github.com/joernio/query-database/releases/latest/download/querydb.zip
 
 ## Developing your own plugin
 
-We provide a sample plugin that you can use as a template. Please make sure 
-the following dependencies are installed:
+We provide a sample plugin written in Scala that you can use as a template.
+In order to build it yourself, make sure you have the following dependencies
+installed:
 
 * OpenJDK 8 or higher
 * The scala built tool (any version)
@@ -148,14 +150,18 @@ libraryDependencies ++= Seq(
 
 ## Extending the CPG schema
 
-You can make additions to the CPG schema specification by placing
-`.json` files in `schema/src/main/resources/schema/`. A sample schema
-extension is provided that adds an edge of type "FOO" that is valid
-from `FILE` nodes to `METHOD` nodes.
+In order to extend the Code Property Graph schema specification in your
+plugin, use the `codepropertygraph-schema` and `overflowdb-traversal` packages
+in your build files, together with a JSON file which defines what will be
+extended. The `sample-plugin` contains a working example of the usage of the
+aforementioned packages in `schema/build.sbt`, and an example of the
+JSON file at `schema/src/main/resources/schema/ext.json`.
 
+The example schema extension JSON file adds an edge of type `FOO` that is
+valid from `FILE` nodes to `METHOD` nodes:
 
 ```
-schema/src/main/resources/schema/ext.json
+# schema/src/main/resources/schema/ext.json
 
 {
   "edgeTypes" : [
@@ -166,5 +172,4 @@ schema/src/main/resources/schema/ext.json
       { "name" : "FILE", "outEdges" : [{"edgeName": "FOO", "inNodes": [{"name": "METHOD"}]}] }
   ]
 }
-
 ```
