@@ -102,15 +102,25 @@ You can specify a set of tags, for example:
 ```bash
 $ joern-scan simple.c --tags badfn
 Detailed logs at: /tmp/joern-scan-log.txt
-Result: 8.0 : Dangerous function gets() used: /home/user/code/simple.c:6:main
+Result: 8.0 : Dangerous function gets() used: /home/user/code/simple.c:17:main
 ```
 
-Or a set of query names:
+Or use the tag placeholder `all` to choose all queries:
+
+```
+$ joern-scan simple.c --tags all
+Detailed logs at: /tmp/joern-scan-log.txt
+Result: 1.0 : Multiple returns: /home/user/code/simple.c:3:add2
+Result: 8.0 : Dangerous function gets() used: /home/user/code/simple.c:17:main
+```
+
+Alternatively, you can choose queries using their names:
 
 ```bash
 $ joern-scan simple.c --names call-to-gets,multiple-returns
 Detailed logs at: /tmp/joern-scan-log.txt
-Result: 8.0 : Dangerous function gets() used: /home/user/code/simple.c:6:main
+Result: 1.0 : Multiple returns: /home/user/code/simple.c:3:add2
+Result: 8.0 : Dangerous function gets() used: /home/user/code/simple.c:17:main
 ```
 
 One other CLI argument you will find useful is _--overwrite_. _--overwrite_
