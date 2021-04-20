@@ -151,25 +151,52 @@ libraryDependencies ++= Seq(
 ## Extending the CPG schema
 
 In order to extend the Code Property Graph schema specification in your
-plugin, use the `codepropertygraph-schema` and `overflowdb-traversal` packages
-in your build files, together with a JSON file which defines what will be
-extended. The `sample-plugin` contains a working example of the usage of the
-aforementioned packages in `schema/build.sbt`, and an example of the
-JSON file at `schema/src/main/resources/schema/ext.json`.
+plugin, use the `codepropertygraph-schema` and `overflowdb-codegen` packages
+in your build files, together with an extension of the original schema which
+defines what will be extended. The `sample-plugin` contains a working example
+of the usage of the aforementioned packages in `schema/build.sbt`, and an example
+of the schema definition at `schema/src/main/scala/schema/io/shiftleft/codepropertygraph/CpgExtSchema.scala`.
 
-The example schema extension JSON file adds an edge of type `FOO` that is
-valid from `FILE` nodes to `METHOD` nodes:
+The example schema extension adds a new node base type `OTHER_INSTRUCTION`, along with an abstract base type `INSTRUCTION`
+and a new property type. Then it allows to connect `FILE` nodes (from the base cpg schema) via `AST` edges with the new nodes. 
 
+```scala
+// schema/src/main/scala/schema/io/shiftleft/codepropertygraph/CpgExtSchema.scala
+
+val instruction = builder.addNodeBaseType(name = "INSTRUCTION")
+  .extendz(expression)
+  .addProperties(name)
+
+val platform = builder.addProperty(
+  name = "PLATFORM", valueType = ValueTypes.STRING, cardinality = Cardinality.One)
+  .protoId(2220)
+
+val otherInstruction = builder.addNodeType(name = "OTHER_INSTRUCTION")
+  .extendz(instruction)
+  .addOutEdge(ast, inNode = expression)
+  .protoId(2221)
+
+val run = builder.addNodeType(name = "RUN")
+  .extendz(instruction)
+  .addOutEdge(ast, inNode = expression)
+  .protoId(2222)
+
+val from = builder.addNodeType(name = "FROM")
+  .extendz(instruction)
+  .addProperty(platform)
+  .addOutEdge(ast, inNode = expression)
+  .protoId(2223)
+
+val copy = builder.addNodeType(name = "COPY")
+  .extendz(instruction)
+  .addProperty(platform)
+  .addOutEdge(ast, inNode = expression)
+  .protoId(2224)
+
+file.addOutEdge(ast, inNode = otherInstruction)
+file.addOutEdge(ast, inNode = run)
+file.addOutEdge(ast, inNode = from)
+file.addOutEdge(ast, inNode = copy)
 ```
-# schema/src/main/resources/schema/ext.json
 
-{
-  "edgeTypes" : [
-    {"id" : 9000, "name": "FOO", "comment" : "Foo edge", "keys": []}
-  ],
-
-  "nodeTypes" : [
-      { "name" : "FILE", "outEdges" : [{"edgeName": "FOO", "inNodes": [{"name": "METHOD"}]}] }
-  ]
-}
-```
+Note that you can open `sample-plugin` in your favorite IDE (we recommend Intellij Idea) to get autocompletion etc. for creating your schema extension. To generate the domain classes and install the schema extension in your joern distribution (in `~/bin/joern`) run `./install.sh` in the sample-plugin. 
