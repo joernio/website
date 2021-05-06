@@ -11,7 +11,7 @@ API.
 * ... interface with arbitrary Java libraries to
 e.g., access the filesystem or network, or data analysis capabilities.
 * ... add new node and edge types to the
-schema, or modify definitions of existing node and edge types.
+schema, or extend definitions of existing node and edge types
 
 In the simplest case, plugins add queries to Joern, as for example the 
 `query-database` plugin does.
@@ -151,25 +151,31 @@ libraryDependencies ++= Seq(
 ## Extending the CPG schema
 
 In order to extend the Code Property Graph schema specification in your
-plugin, use the `codepropertygraph-schema` and `overflowdb-traversal` packages
-in your build files, together with a JSON file which defines what will be
-extended. The `sample-plugin` contains a working example of the usage of the
-aforementioned packages in `schema/build.sbt`, and an example of the
-JSON file at `schema/src/main/resources/schema/ext.json`.
+plugin, use the `codepropertygraph-schema` and `overflowdb-codegen` packages
+in your build files, together with an extension of the original schema which
+defines what will be extended. The `sample-plugin` contains a working example
+of the usage of the aforementioned packages in `schema/build.sbt`, and an example
+of the schema definition at `schema/src/main/scala/CpgExtSchema.scala`.
 
-The example schema extension JSON file adds an edge of type `FOO` that is
-valid from `FILE` nodes to `METHOD` nodes:
+The example schema extension only adds a new node type `EXAMPLE_NODE` and a new property `EXAMPLE_PROPERTY`. The new property is added to both the new node type as well as an existing node type from the base schema. 
 
+```scala
+// schema/src/main/scala/CpgExtSchema.scala
+
+val exampleProperty = builder.addProperty(
+  name = "EXAMPLE_PROPERTY",
+  valueType = ValueTypes.STRING,
+  cardinality = Cardinality.ZeroOrOne,
+  comment = "an example property")
+
+val exampleNode = builder.addNodeType(
+  name = "EXAMPLE_NODE",
+  comment = "an example node"
+).addProperties(exampleProperty)
+
+cpgSchema.base.file.addProperties(exampleProperty)
 ```
-# schema/src/main/resources/schema/ext.json
 
-{
-  "edgeTypes" : [
-    {"id" : 9000, "name": "FOO", "comment" : "Foo edge", "keys": []}
-  ],
+The schema is defined in overflowdb-schema, which is a Scala DSL. I.e. you can open `sample-plugin` in your favorite IDE (we recommend Intellij Idea) and get autocompletion, compiler feedback etc., which should help with creating your schema extension. For more inspiration you could explore the base cpg schema definition which is split across multiple files for modularity: https://github.com/ShiftLeftSecurity/codepropertygraph/tree/master/schema/src/main/scala/io/shiftleft/codepropertygraph/schema
 
-  "nodeTypes" : [
-      { "name" : "FILE", "outEdges" : [{"edgeName": "FOO", "inNodes": [{"name": "METHOD"}]}] }
-  ]
-}
-```
+To generate the domain classes and install the schema extension in your joern distribution (must be installed first), simply run `./install.sh` in the sample-plugin. 
