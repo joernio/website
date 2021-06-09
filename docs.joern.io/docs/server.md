@@ -46,7 +46,7 @@ functionality:
 | Route  | Description  | Method | POST Body         | Response Body     |
 | ------ | ------------ | ------ | ------------      | -------------     |
 | /query | Submit query | POST   | {"query": $query} | {"uuid": "$uuid"} |
-| /result?uuid=$uuid | Retrieve response | GET    |  -     | {"success": "{true, false}", "stdout": "$stdout", "stderr" : "$stderr"} |
+| /result/$uuid | Retrieve response | GET    |  -     | {"success": "{true, false}", "stdout": "$stdout", "stderr" : "$stderr"} |
 
 
 where `$query` is the query to be executed, `$uuid` is an id assigned
