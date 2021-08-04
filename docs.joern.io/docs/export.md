@@ -47,7 +47,7 @@ can do so on the [Joern shell](/shell). To this end, we define
 the following steps on `method` nodes to dump representations in dot
 format.
 
-```
+```java
 cpg.method($name).dotAst.l // output AST in dot format
 cpg.method($name).dotCfg.l // output CFG in dot format
 ...
@@ -57,7 +57,7 @@ cpg.method($name).dotCpg14.l // output CPG'14 in dot format
 You can also plot and view representations using the following
 queries:
 
-```
+```java
 cpg.method($name).plotDotAst // plot AST
 cpg.method($name).ploDotCfg // plot CFG
 ...
@@ -73,7 +73,7 @@ Generate the CPG along with the data flow layer for a sample function
 named `myfunc`.
 
 
-```
+```java
 joern> importCode.c.fromString( """
            int myfunc(int b) {
              int a = 42;
@@ -90,13 +90,13 @@ joern> run.ossdataflow
 
 You can now plot the AST as follows:
 
-```
+```java
 joern> cpg.method("myfunc").plotDotAst 
 ```
 
 You can obtain the dot representation of the AST as well:
 
-```
+```java
 joern> cpg.method("myfunc").dotAst.l
 res4: List[String] = List(
   """digraph myfunc {  
@@ -138,7 +138,7 @@ res4: List[String] = List(
 
 You can also dump all representations into the directory `out` using
 
-```
+```java
 run.dumpast
 run.dumpcfg
 ...
