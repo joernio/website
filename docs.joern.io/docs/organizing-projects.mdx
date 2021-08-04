@@ -89,15 +89,14 @@ res4: io.shiftleft.repl.JoernProject = Project(
 The active project is the project which contains the Code Property Graph you want to focus your analysis on at a given time. Some important Joern Shell commands always refer to the _current active project_. For example, if you run `cpg.metaData.l`, the return value will be the _META_DATA_ node of the Code Property Graph of the _currently active project_, which in this case, is `x42-c`:
 
 ```java
-joern> cpg.metaData.l 
+joern> cpg.metaData.l
 res5: List[MetaData] = List(
   MetaData(
-    id -> 2L,
+    id -> 1L,
+    hash -> None,
     language -> "C",
-    version -> null,
-    overlays -> List("semanticcpg", "dataflow", "tagging"),
-    policyDirectories -> List(),
-    spid -> None
+    overlays -> List("semanticcpg"),
+    version -> "0.1"
   )
 )
 ```

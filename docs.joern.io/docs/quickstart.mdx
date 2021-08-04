@@ -93,16 +93,14 @@ learn a helpful Joern trick: `TAB`-completion. In the Joern prompt,
 type `cpg.`, do not press `ENTER`, but instead press `TAB`. You will
 see a list of available functions `cpg` supports:
 ```java
-joern> cpg. 
-all                            comment                        finding                        local                          newArgumentDescriptorSource    newReturnSource                runScript                      types
-annotation                     configfile                     flow                           member                         newArgumentSink                newTagForMethodsWithFullName   scalaGraph                     write
-argument                       cpg                            graph                          metaData                       newArgumentSource              newTagForParameter             sensitiveType
-arithmetic                     dependency                     help                           method                         newExposedParameterSink        newTagForParameterWithIndex    sensitiveVariable
-assignment                     dom                            id                             methodRef                      newExposedParameterSource      newTagForParameterWithIndexes  sink
-blacklist                      exposedMethod                  identifier                     methodReturn                   newLiteralSource               packagePrefix                  source
-call                           exposedOutputParameter         ioFlow                         namespace                      newMethodSummary               parameter                      tag
-callChain                      exposedParameter               jsp                            namespaceBlock                 newReturnDescriptorSource      read                           transform
-close                          file                           literal                        newArgumentDescriptorSink      newReturnSink                  returns                        typeDecl
+joern> cpg.
+all                comment            goto               literal            namespace          tryBlock
+argument           continue           graph              local              namespaceBlock     typ
+arithmetic         controlStructure   help               member             parameter          typeDecl
+assignment         doBlock            id                 metaData           ret                typeRef
+break              elseBlock          identifier         method             runScript          whileBlock
+call               file               ifBlock            methodRef          switchBlock
+close              forBlock           jumpTarget         methodReturn       tag
 ```
 
 TAB-completion is available for all query language directives, and for
@@ -150,65 +148,76 @@ property. We find exactly one:
 
 ```java
 joern> cpg.call.argument.code("stderr").toList
-res4: List[Call] = List(
+res3: List[Expression] = List(
+  Identifier(
+    id -> 1000118L,
+    argumentIndex -> 1,
+    argumentName -> None,
+    code -> "stderr",
+    columnNumber -> Some(value = 12),
+    lineNumber -> Some(value = 7),
+    name -> "stderr",
+    order -> 1,
+    typeFullName -> "ANY"
+  )
+)
+```
+This query shows that `stderr` is used somewhere in the program, but doesn't give us any more information. Using the query from the previous step, we can use the `astParent` construct to find out more about the surroundings of the `stderr` usage by moving up the hierarchy of the abstract syntax tree that is part of the Code Property Graph. Moving up one level in the AST hierarchy gives us an `fprintf` call:
+
+```java
+res4: List[AstNode] = List(
   Call(
-    id -> 24L,
+    id -> 1000117L,
+    argumentIndex -> 1,
+    argumentName -> None,
     code -> "fprintf(stderr, \"It depends!\\n\")",
+    columnNumber -> Some(value = 4),
+    dispatchType -> "STATIC_DISPATCH",
+    lineNumber -> Some(value = 7),
+    methodFullName -> "fprintf",
     name -> "fprintf",
     order -> 1,
-    methodInstFullName -> None,
-    methodFullName -> "fprintf",
-    argumentIndex -> 1,
-    dispatchType -> "STATIC_DISPATCH",
-    signature -> "TODO assignment signature",
-    typeFullName -> "ANY",
-    dynamicTypeHintFullName -> List(),
-    lineNumber -> Some(7),
-    columnNumber -> Some(4),
-    resolved -> None,
-    depthFirstOrder -> Some(-8),
-    internalFlags -> Some(4)
+    signature -> "TODO",
+    typeFullName -> "<empty>"
   )
 )
 ```
 
 With this query we have proven the first part of our problem statement correct, there is a place in the `X42` program that writes to STDERR. Let us move to the second part, the check whether the call that writes something to STDERR is conditional on a value passed as input to the `X42` program. Since we are analyzing a program written in `C`, we will search the Code Property Graph for the conventional `argc` or `argv` parameters of the `main` function as the input that potentially triggers the call which writes to STDERR.
 
-Using the query from the previous step, we can use the `astParent` construct to find out more about the surroundings around the `fprintf` call by moving up in the hierarchy of the abstract syntax tree that is part of the Code Property Graph. Moving up one level in the AST hierarchy gives us a block; not very helpful:
+As before, we can use the `astParent` to move up the AST. Moving up another level in the AST hierarchy gives us a block; not very helpful:
 
 ```java
-joern> cpg.call.argument.code("stderr").astParent.toList
+joern> cpg.call.argument.code("stderr").astParent.astParent.toList
 res5: List[AstNode] = List(
   Block(
-    id -> 23L,
-    code -> "",
-    order -> 2,
+    id -> 1000116L,
     argumentIndex -> 2,
-    typeFullName -> "void",
-    dynamicTypeHintFullName -> List(),
-    lineNumber -> Some(6),
-    columnNumber -> Some(46),
-    depthFirstOrder -> Some(-24),
-    internalFlags -> Some(0)
+    argumentName -> None,
+    code -> "",
+    columnNumber -> Some(value = 46),
+    lineNumber -> Some(value = 6),
+    order -> 2,
+    typeFullName -> "void"
   )
 )
 ```
 
-Another two layers up gives us an if statement, much better:
+Another layer up gives us an if statement, much better:
 
 ```java
-joern> cpg.call.argument.code("stderr").astParent.astParent.astParent.l
+joern> cpg.call.argument.code("stderr").astParent.astParent.astParent.toList
 res6: List[AstNode] = List(
   ControlStructure(
-    id -> 11L,
-    code -> "if (argc > 1 && strcmp(argv[1], \"42\") == 0)",
-    columnNumber -> Some(2),
-    lineNumber -> Some(6),
-    order -> 1,
-    parserTypeName -> "IfStatement",
+    id -> 1000104L,
     argumentIndex -> 1,
-    depthFirstOrder -> None,
-    internalFlags -> None
+    argumentName -> None,
+    code -> "if (argc > 1 && strcmp(argv[1], \"42\") == 0)",
+    columnNumber -> Some(value = 2),
+    controlStructureType -> "IF",
+    lineNumber -> Some(value = 6),
+    order -> 1,
+    parserTypeName -> "IfStatement"
   )
 )
 ```

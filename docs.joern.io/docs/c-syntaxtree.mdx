@@ -27,7 +27,7 @@ Throughout this article, we are using variations of the following
 small sample code snippet taken (taken from [this
 paper](https://fabs.codeminers.org/papers/2014-ieeesp.pdf)):
 
-```bash
+```java
 val code = """
 void foo () {
   int x = source();
@@ -49,14 +49,14 @@ function `sink` on line 5.
 We can import this code snippet directly on the Joern shell.
 
 
-```bash
+```java
 importCode.c.fromString(code)
 ```
 
 Once imported, we can plot the abstract syntax tree of `foo` to get a
 first idea of what an abstract syntax tree is.
 
-```bash
+```java
 cpg.method.name("foo").plotDotAst
 ```
 
@@ -92,7 +92,7 @@ The most basic [traversal](traversal-basics) that you can
 execute on any AST node is `ast`, which traverses to all nodes of the
 AST rooted in the node. For example,
 
-```bash
+```java
 cpg.method("foo").ast.l
 ```
 
@@ -101,13 +101,13 @@ node is also the root of a subtree, you can also think of this
 operation as an enumeration of all subtrees. These can be filtered by
 type. For example,
 
-```
+```java
 cpg.method("foo").ast.isCall.code.l
 ```
 
 gives you all outgoing calls from `foo` while
 
-```
+```java
 cpg.method("foo").ast.isControlStructure.code.l
 ```
 
@@ -115,11 +115,11 @@ gives you all control structures. For method nodes, we also offer
 shorthands for the most common node types. Using these shorthands, the
 two queries can be written as
 
-```
+```java
 cpg.method("foo").call.code.l
 ```
 and
-```
+```java
 cpg.method("foo).controlStructure.code.l
 ```
 respectively.
@@ -130,7 +130,7 @@ running example, consider for example the situation where it is known
 that calls to `source` return values that an attacker can
 influence.
 
-```bash
+```java
 cpg.call.name("source").inAstMinusLeaf.isCall.name(".*assignment.*").argument(1).l
 ```
 
@@ -148,7 +148,7 @@ on them via AST-queries is common, we have created a decorator
 language to simplify these queries. In practice, we would write the
 following query that is equivalent to the former query.
 
-```bash
+```java
 cpg.call("source").inAssignment.target.l
 ```
 
@@ -167,27 +167,25 @@ tree. The tree consists of two sub trees, one that holds the condition
 `x < MAX` and another that holds the statements in the
 `if`-block. Conditions can be selected as follows:
 
-```bash
+```java
 cpg.method("foo").controlStructure.condition.code.l
 => List("x < MAX")
 ```
 
 The body of the if-statement can be selected using `whenTrue`:
 
-```bash
+```java
 cpg.method("foo").controlStructure.whenTrue.l
-res16: List[AstNode] = List(
+res41: List[AstNode] = List(
   Block(
-	id -> 17L,
-	code -> "",
-	order -> 2,
-	argumentIndex -> 2,
-	typeFullName -> "void",
-	dynamicTypeHintFullName -> List(),
-	lineNumber -> Some(5),
-	columnNumber -> Some(4),
-	depthFirstOrder -> None,
-	internalFlags -> None
+    id -> 1000110L,
+    argumentIndex -> 2,
+    argumentName -> None,
+    code -> "",
+    columnNumber -> Some(value = 4),
+    lineNumber -> Some(value = 5),
+    order -> 2,
+    typeFullName -> "void"
   )
 )
 ```
@@ -196,7 +194,7 @@ For `if-else` constructs, `whenFalse` returns the else block, however,
 since no `else` block exists in our example, an empty list is
 returned:
 
-```
+```java
 cpg.method("foo").controlStructure.whenFalse.l
 => List[AstNode] = List()
 ```
@@ -205,7 +203,7 @@ As each of the nodes returned by `.ast` are also roots of syntax
 trees, we can identify nested structures by chaining basic
 operations.
 
-```
+```java
 cpg.method("foo").controlStructure.whenTrue.ast.isCall.code.l
 => List[String] = List("y = 2*x", "sink(y)", "2*x")
 ```
@@ -223,9 +221,9 @@ to identify functions that call `source` but they do not include a
 check against `MAX`. The following query achieves this:
 
 
-```bash
-cpg.method.filterNot(_.controlStructure(".*MAX.*"))
-		  .filter(_.callee.name(".*source.*")).l
+```java
+cpg.method.filter(_.controlStructure(".*MAX.*").isEmpty)
+          .filter(_.callee.name(".*source.*").nonEmpty).l
 => List()
 ```
 
@@ -275,27 +273,27 @@ nested in a `while` block, we could use the following query:
 
 ```bash
 cpg.call("sink")
-	.inAst.filter(_.isControlStructure.code("if.*"))
-	.inAst.filter(_.isControlStructure.code("while.*")).l
+	.inAst.isControlStructure.code("if.*")
+	.inAst.isControlStructure.code("while.*").l
 
-=> List[AstNode] = List(
+=> List[ControlStructure] = List(
   ControlStructure(
-	id -> 19L,
-	code -> "while(x++ < MAX)",
-	columnNumber -> Some(2),
-	lineNumber -> Some(9),
-	order -> 3,
-	parserTypeName -> "WhileStatement",
-	argumentIndex -> 3,
-	depthFirstOrder -> None,
-	internalFlags -> None
+    id -> 1000112L,
+    argumentIndex -> 4,
+    argumentName -> None,
+    code -> "while(x++ < MAX)",
+    columnNumber -> Some(value = 2),
+    controlStructureType -> "WHILE",
+    lineNumber -> Some(value = 9),
+    order -> 4,
+    parserTypeName -> "WhileStatement"
   )
 )
 ```
 
 Alternatively, we can walk the tree from its top to achieve the same:
 
-```
+```java
  cpg.method
 	.controlStructure("while.*")
 	.ast.isControlStructure.code("if.*")
@@ -303,22 +301,18 @@ Alternatively, we can walk the tree from its top to achieve the same:
 
 => List[Call] = List(
   Call(
-	id -> 36L,
-	code -> "sink(y)",
-	name -> "sink",
-	order -> 2,
-	methodInstFullName -> None,
-	methodFullName -> "sink",
-	argumentIndex -> 2,
-	dispatchType -> "STATIC_DISPATCH",
-	signature -> "TODO assignment signature",
-	typeFullName -> "ANY",
-	dynamicTypeHintFullName -> List(),
-	lineNumber -> Some(12),
-	columnNumber -> Some(0),
-	resolved -> None,
-	depthFirstOrder -> None,
-	internalFlags -> None
+    id -> 1000129L,
+    argumentIndex -> 3,
+    argumentName -> None,
+    code -> "sink(y)",
+    columnNumber -> Some(value = 8),
+    dispatchType -> "STATIC_DISPATCH",
+    lineNumber -> Some(value = 12),
+    methodFullName -> "sink",
+    name -> "sink",
+    order -> 3,
+    signature -> "TODO",
+    typeFullName -> "<empty>"
   )
 )
 ```
