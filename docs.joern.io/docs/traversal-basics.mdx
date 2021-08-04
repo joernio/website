@@ -79,11 +79,10 @@ joern> cpg.metaData.toList
 res3: List[MetaData] = List(
   MetaData(
     id -> 1L,
+    hash -> None,
     language -> "C",
-    version -> "0.1",
     overlays -> List("semanticcpg"),
-    policyDirectories -> List(),
-    spid -> None
+    version -> "0.1"
   )
 )
 ```
@@ -91,7 +90,7 @@ res3: List[MetaData] = List(
 In the result of this query, we already see the `LANGUAGE` field and that it is `C`. For the sake of completeness and to illustrate property directives, let us add the property directive `language` to the query. Property directives provide access to individual node properties. Each node-type step can be combined with different property directives, and they usually match the properties defined on the node type represented by the node-type step:
 ```java
 joern> cpg.metaData.language.toList 
-res4: List[AnyRef] = "C"
+res4: List[String] = List("C")
 ```
 
 With this last query, we have achieved our goal of executing a traversal which returns the `LANGUAGE` property of the `METADATA` node of the `X42` program.
@@ -119,17 +118,17 @@ int main(int argc, char *argv[]) {
 A commonly used node-type step is `method`, which represents a traversal to all nodes of type `METHOD`. `METHOD` nodes represent declarations of methods, functions or procedures in programs, and one of their properties is `NAME`. All names of all method nodes can thus be determined as follows:
 
 ```java
-joern > cpg.method.name.l 
+joern > cpg.method.name.l
 res4: List[String] = List(
-  "<operator>.logicalAnd",
-  "strcmp",
-  "<operator>.equals",
-  "printf",
+  "main",
   "fprintf",
   "exit",
+  "<operator>.logicalAnd",
+  "<operator>.equals",
   "<operator>.greaterThan",
-  "main",
-  "<operator>.indirectIndexAccess"
+  "strcmp",
+  "<operator>.indirectIndexAccess",
+  "printf"
 )
 ```
 
@@ -184,16 +183,16 @@ _Map Steps_ are traversals that map a set of nodes into a different form given a
 
 ```java
 joern> cpg.method.map(node => (node.isExternal, node.name)).toList
-res6: List[(java.lang.Boolean, String)] = List(
-  (true, "<operator>.logicalAnd"),
-  (true, "strcmp"),
-  (true, "<operator>.equals"),
-  (true, "printf"),
+res6: List[(Boolean, String)] = List(
+  (false, "main"),
   (true, "fprintf"),
   (true, "exit"),
+  (true, "<operator>.logicalAnd"),
+  (true, "<operator>.equals"),
   (true, "<operator>.greaterThan"),
-  (false, "main"),
-  (true, "<operator>.indirectIndexAccess")
+  (true, "strcmp"),
+  (true, "<operator>.indirectIndexAccess"),
+  (true, "printf")
 )
 ```
 
@@ -226,18 +225,18 @@ joern> cpg.method.isExternal(false).name.l
 res103: List[String] = List("main")
 ```
 
-Two useful _Complex Steps_ are `astParent` and `astChildren`, which allow you to steer your traversals through the abstract syntax tree of the program under analysis. Say you'd like to have a query that returns the `CODE` property for all nodes of type `LITERAL` which are AST child nodes of `CALL` nodes that have `println` in their `NAME` property:
+Two useful _Complex Steps_ are `astParent` and `astChildren`, which allow you to steer your traversals through the abstract syntax tree of the program under analysis. Say you'd like to have a query that returns the `CODE` property for all nodes of type `LITERAL` which are AST child nodes of `CALL` nodes that have `printf` in their `NAME` property:
 
 ```java
-joern> cpg.call.name("println").astChildren.isLiteral.code.l 
-res87: List[String] = List("\"What is the meaning of life?\"", "\"It depends!\"")
+joern> cpg.call.name("printf").astChildren.isLiteral.code.l
+res30: List[String] = List("\"What is the meaning of life?\\n\"")
 ```
 
 Or taken the other way around, a query which returns the property of all `CALL` nodes which have AST parent nodes of type `LITERAL` that have their `CODE` property set to `\"What is the meaning of life?\"`:
 
 ```java
 joern> cpg.literal.filter(_.code == "\"What is the meaning of life?\\n\"").astParent.isCall.name.toList
-res100: List[String] = List("println")
+res100: List[String] = List("printf")
 ```
 
 Describing queries in human language tends to sound peculiar. But so would descriptions of bash one-liners, or basic regular expressions if you'd try out that exercise. As long as you understand the individual components of a query, it won't be hard to construct them correctly and understand clearly what they do.
@@ -250,19 +249,17 @@ There are cases in which queries have repetitions in them and become too long. I
 For example, say you'd like to find nodes of type `LITERAL` in `X42`'s Code Property Graph that are directly reachable from the node which represents the `main` method. One way of doing that is by using five `astChildren` _Complex Steps_ in combination with `isLiteral`, which is another _Complex Step_ that filters for AST nodes of type `LITERAL` and maps them to actual `LITERAL` nodes,  plus the `code("42")` _Property Filter Step_:
 
 ```java
-joern> cpg.method.name("main").astChildren.astChildren.astChildren.astChildren.astChildren.isLiteral.code("42").toList 
-res137: List[Literal] = List(
+joern> cpg.method.name("main").astChildren.astChildren.astChildren.astChildren.astChildren.isLiteral.code("42").toList
+res32: List[Literal] = List(
   Literal(
-    id -> 1000000050L,
-    code -> "42",
-    order -> 1,
+    id -> 1000121L,
     argumentIndex -> 1,
-    typeFullName -> "int",
-    dynamicTypeHintFullName -> List(),
-    lineNumber -> Some(5),
-    columnNumber -> None,
-    depthFirstOrder -> None,
-    internalFlags -> None
+    argumentName -> None,
+    code -> "42",
+    columnNumber -> Some(value = 9),
+    lineNumber -> Some(value = 8),
+    order -> 1,
+    typeFullName -> "int"
   )
 )
 ```
@@ -270,19 +267,17 @@ res137: List[Literal] = List(
 The query might do the job, but it is hard to read and change. `repeat-times` makes the query clearer:
 
 ```java
-joern> cpg.method.name("main").repeat(_.astChildren)(_.times(5)).isLiteral.code("42").l 
-res138: List[Literal] = List(
+joern> cpg.method.name("main").repeat(_.astChildren)(_.times(5)).isLiteral.code("42").l
+res33: List[Literal] = List(
   Literal(
-    id -> 1000000050L,
-    code -> "42",
-    order -> 1,
+    id -> 1000121L,
     argumentIndex -> 1,
-    typeFullName -> "int",
-    dynamicTypeHintFullName -> List(),
-    lineNumber -> Some(5),
-    columnNumber -> None,
-    depthFirstOrder -> None,
-    internalFlags -> None
+    argumentName -> None,
+    code -> "42",
+    columnNumber -> Some(value = 9),
+    lineNumber -> Some(value = 8),
+    order -> 1,
+    typeFullName -> "int"
   )
 )
 ```
@@ -290,19 +285,17 @@ res138: List[Literal] = List(
 And even better is another variant of `repeat`, namely `repeat-until`:
 
 ```java
-joern> cpg.method.name("main").repeat(_.astChildren)(_.until(_.isLiteral.code("42"))).l 
-res139: List[AstNode] = List(
+joern> cpg.method.name("main").repeat(_.astChildren)(_.until(_.isLiteral.code("42"))).l
+res34: List[AstNode] = List(
   Literal(
-    id -> 1000000050L,
-    code -> "42",
-    order -> 1,
+    id -> 1000121L,
     argumentIndex -> 1,
-    typeFullName -> "int",
-    dynamicTypeHintFullName -> List(),
-    lineNumber -> Some(5),
-    columnNumber -> None,
-    depthFirstOrder -> None,
-    internalFlags -> None
+    argumentName -> None,
+    code -> "42",
+    columnNumber -> Some(value = 9),
+    lineNumber -> Some(value = 8),
+    order -> 1,
+    typeFullName -> "int"
   )
 )
 ```

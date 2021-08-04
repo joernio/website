@@ -45,7 +45,7 @@ queries in order to convert results into the JSON format. This feature can
 be combined with the shell's pipe operators to write results out to
 the file system. For example,
 
-```
+```java
 cpg.method.toJson |> "/tmp/foo.json"
 ```
 
@@ -58,7 +58,7 @@ For an increasing number of languages, the Joern shell allows you to
 read code associated with query results directly on the shell. For
 example, to review all calls to `memcpy`, you can issue:
 
-```bash
+```java
 joern> cpg.method.name("memcpy").callIn.code.l
 
 res5: List[String] = List(
@@ -73,7 +73,7 @@ res5: List[String] = List(
 
 You can also pipe the result list into a pager as follows:
 
-```bash
+```java
 joern> browse(cpg.method.name("memcpy").callIn.code.l)
 ```
 
@@ -124,7 +124,7 @@ You can dynamically load additional scripts at any time.
 
 As an example, let's assume there's a file called `MyScript.sc` that contains only `val elite = 31337`. You can import the script as follows:
 
-```scala
+```java
 import $file.MyScript
 MyScript.elite
 res1: Int = 31337
@@ -136,7 +136,7 @@ To go up one directory, use `^`.
 
 ### Adding Dependencies to the JVM `classpath` Dynamically
 
-```scala
+```java
 // java dependency
 import $ivy.`com.michaelpollmeier:versionsort:1.0.1`
 versionsort.VersionHelper.compare("2.1.0", "2.0.10")
@@ -150,13 +150,13 @@ colordiff.ColorDiff(List("a", "b"), List("a", "bb"))
 
 If the dependencies are not on Maven Central, you can add a resolver:
 
-```scala
+```java
 interp.repositories() ++= Seq(coursierapi.MavenRepository.of("https://shiftleft.jfrog.io/shiftleft/libs-snapshot-local"))
 ```
 
 ### Measuring the Time While Running a Computation
 
-```scala
+```java
 time { 
   println("long running computation")
   Thread.sleep(1000)
