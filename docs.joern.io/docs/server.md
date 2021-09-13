@@ -21,6 +21,12 @@ Or, with HTTP endpoints protected by basic authentication:
 joern --server --server-auth-username username --server-auth-password password
 ```
 
+The hostname and port can also be specified:
+
+```
+joern --server --server-host localhost --server-port 8081
+```
+
 A sample client is available for Python at:
 
 https://github.com/joernio/cpgqls-client-python#example-usage
