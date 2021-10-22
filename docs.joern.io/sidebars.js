@@ -13,6 +13,7 @@ module.exports = {
     'traversal-basics',
     'c-syntaxtree',
     'extensions',
+    'common-issues',
     'glossary',
       {
         type: 'category',
