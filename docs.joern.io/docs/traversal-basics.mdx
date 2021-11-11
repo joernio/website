@@ -8,7 +8,7 @@ traversals on the [Code Property
 Graph](code-property-graph). A traversal is formulated
 as an _Joern Query_, or _query_ for short. In this article, you will learn about the different components that make up queries.
 
-### The Anatomy of an Joern Query
+### The Anatomy of a Joern Query
 
 A query consists of the following components:
 
@@ -68,7 +68,7 @@ joern> cpg.metaData
 res2: Traversal[MetaData] = Traversal
 ```
 
-Note that the result is not the content of the `METADATA` node, but a traversal that visits the `METADATA` node. In other words, Traversals are lazyly evaluated - you can compose them and at some later point execute them, as we will see. 
+Note that the result is not the content of the `METADATA` node, but a traversal that visits the `METADATA` node. In other words, Traversals are lazily evaluated - you can compose them and at some later point execute them, as we will see.
 
 This behaviour points to the ephemeral nature of queries: each query is separate from the other, and Joern holds distinct in-memory representations for them. The only object shared between queries is the root object (`cpg`).
 
@@ -80,7 +80,7 @@ res3: List[MetaData] = List(
   MetaData(
     id -> 1L,
     hash -> None,
-    language -> "C",
+    language -> "NEWC",
     overlays -> List("semanticcpg"),
     version -> "0.1"
   )
@@ -90,7 +90,7 @@ res3: List[MetaData] = List(
 In the result of this query, we already see the `LANGUAGE` field and that it is `C`. For the sake of completeness and to illustrate property directives, let us add the property directive `language` to the query. Property directives provide access to individual node properties. Each node-type step can be combined with different property directives, and they usually match the properties defined on the node type represented by the node-type step:
 ```java
 joern> cpg.metaData.language.toList 
-res4: List[String] = List("C")
+res4: List[String] = List("NEWC")
 ```
 
 With this last query, we have achieved our goal of executing a traversal which returns the `LANGUAGE` property of the `METADATA` node of the `X42` program.
@@ -146,7 +146,14 @@ joern> cpg.method.filter(_.isExternal == false).name.toList
 res11: List[String] = List("main")
 ```
 
-Disecting this query, we have `cpg` as the root object, a node-type step `method` which returns all nodes of type `METHOD`, a filter step `where(_.isExternal == false)` which continues the traversal only for nodes which have their `IS_EXTERNAL` property set to `false` (with `_` referencing the individual nodes, and `isExternal` a property directive which accesses their `IS_EXTERNAL` property), followed by  a property directive `name` which returns the values of the `NAME` property of the nodes that passed the _Filter Step_, and finally an _Execution Directive_ `toList` which executes the traversal and returns the results in a list.
+:::note
+A note on Scala lambda functions:
+In the example above, we used the lambda function `_.isExternal == false` as the predicate for the filter.
+The `_` is simply syntactic sugar referring to the parameter of the function, so this could be rewritten
+as `method => method.isExternal == false`.
+:::
+
+Dissecting this query, we have `cpg` as the root object, a node-type step `method` which returns all nodes of type `METHOD`, a filter step `where(_.isExternal == false)` which continues the traversal only for nodes which have their `IS_EXTERNAL` property set to `false` (with `_` referencing the individual nodes, and `isExternal` a property directive which accesses their `IS_EXTERNAL` property), followed by  a property directive `name` which returns the values of the `NAME` property of the nodes that passed the _Filter Step_, and finally an _Execution Directive_ `toList` which executes the traversal and returns the results in a list.
 
 A shorter version of a query which returns the same results as the one above can be written using a _Property-Filter Step_. Property-filter steps are _Filter Steps_ which continue the traversal only for nodes which have a specific value in the property the _Property Filter Step_ refers to:
 
@@ -155,7 +162,7 @@ joern> cpg.method.isExternal(false).name.toList
 res11: List[String] = List("main")
 ```
 
-Disecting the query again, `cpg` is the root object, `method` is a node-type step, `isExternal(false)` is a property-filter step that filters for nodes which have `false` as the value of their `IS_EXTERNAL` property, `name` is a property directive, and `toList` is the execution directive you are already familiar with.
+Dissecting the query again, `cpg` is the root object, `method` is a node-type step, `isExternal(false)` is a property-filter step that filters for nodes which have `false` as the value of their `IS_EXTERNAL` property, `name` is a property directive, and `toList` is the execution directive you are already familiar with.
 
 :::note
 Be careful not to mix up property directives with property-filter steps, they look awfully similar.
@@ -299,5 +306,11 @@ res34: List[AstNode] = List(
   )
 )
 ```
+
+:::info
+Joern traversals implement Scala's `IterableOps` trait. It is therefore possible to use all of the
+methods listed in the [IterableOps documentation](https://www.scala-lang.org/api/2.13.3/scala/collection/IterableOps.html)
+on Traversals.
+:::
 
 We won't go any further in this article. If you've read so far, you already have a good overview of the most important _Joern Query Components_. And while the examples you've seen focused on the simple `X42` program, rest assured, queries that find serious vulnerabilities in programs with millions of lines of code are not much different. Master these basics and you will already have found a strong tool in your code analysis arsenal. As soon as you feel ready, explore the more advanced walkthroughs for a level-up. Have fun!

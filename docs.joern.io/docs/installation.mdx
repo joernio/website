@@ -17,9 +17,10 @@ https://github.com/ShiftLeftSecurity/joern/releases/
 To install the latest release, simply execute the following
 
 ```bash
-git clone https://github.com/ShiftLeftSecurity/joern
-cd joern
-sudo ./joern-install.sh
+mkdir joern && cd joern # optional
+curl -L "https://github.com/joernio/joern/releases/latest/download/joern-install.sh" -o joern-install.sh
+chmod u+x joern-install.sh
+./joern-install.sh --interactive
 ```
 
 and follow the installer instructions.
@@ -28,7 +29,7 @@ By default, joern will be installed at `~/bin/joern`.
 You can test your installation as follows:
 
 ```bash
-cd ~/bin/joern/joern-cli
+cd <path_to_joern>/joern/joern-cli
 ./joern
 Compiling (synthetic)/ammonite/predef/interpBridge.sc
 Compiling (synthetic)/ammonite/predef/replBridge.sc
@@ -63,7 +64,7 @@ brew install coreutils
 Once the dependencies are installed, run
 
 ```bash
-git clone https://github.com/ShiftLeftSecurity/joern.git
+git clone https://github.com/joernio/joern.git
 cd joern
 sbt stage
 ```
