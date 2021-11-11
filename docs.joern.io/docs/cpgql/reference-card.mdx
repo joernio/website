@@ -9,8 +9,10 @@ title: Reference Card
 | ------------- | ------------- |
 | `all`      | All nodes |
 | `argument`      | All arguments (actual parameters) |
+| `assignment` | All assignments |
 | `call`      | All call sites |
 | `comment`      | All comments (only source-based CPGs) |
+| `controlStructure` | All control structures (also `break`, `continue`, `ifBlock` etc. for specific structures) |
 | `file`      | All source files |
 | `identifier`      | All identifiers, e.g.  occurrences of local variables or class members in method bodies |
 | `literal`      | All literals, e.g. numbers or strings  |
@@ -19,15 +21,14 @@ title: Reference Card
 | `metaData`      | The meta data node |
 | `method`      | All methods |
 | `methodRef`      | All method references |
-| `typeRef`      | All type references |
 | `methodReturn`      | All formal return paramters |
 | `namespace`      | All namespaces |
 | `namespaceBlock`      | All namespace blocks |
 | `parameter`      | All parameters  |
 | `returns`      | All actual return parameters |
-| `typeDecl`      | All declarations of types |
 | `tag`      | All tags |
-| `types`      | All used types |
+| `typeDecl`      | All declarations of types |
+| `typeRef`      | All type references |
 
 ### Core Steps
 
@@ -74,6 +75,7 @@ title: Reference Card
 | `passesNot`      | Returns only those dataflows that DO NOT pass through a given function/condition as defined in predicate |
 | `passes`      | Returns only those dataflows that pass through a given function/condition as defined in predicate |
 | `reachableBy`      | Find if a given source node is reachable by a sink via a dataflow |
+| `reachableByFlows` | Find paths for flows of data from sinks to sources |
 | `sink`      | List of all nodes identified as potential sensitive sinks the natured of methods, literals, types etc. associated with them |
 | `source`      | List of all nodes identified as sensitive/attacker-controlled due to the natured of methods, literals, types etc. associated with them |
 | `tagList`      | Execute the traversal and return TAG nodes connected to each of the nodes |

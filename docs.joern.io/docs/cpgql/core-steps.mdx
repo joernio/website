@@ -44,7 +44,8 @@ res223: List[List[String]] = List(
 
 ### sideEffect
 
-`sideEffect` is a step that executes a function on each node of the traversal it suffixes.
+`sideEffect` is a step that executes a function on each node of the traversal it suffixes, without modifying
+the original traversal.
 
 ```java
 joern> cpg.literal.sideEffect(node => println("Called once for ID " + node.id.toString())).code.l 

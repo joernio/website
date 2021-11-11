@@ -273,8 +273,8 @@ nested in a `while` block, we could use the following query:
 
 ```bash
 cpg.call("sink")
-	.inAst.isControlStructure.code("if.*")
-	.inAst.isControlStructure.code("while.*").l
+	.inAst.isControlStructure.controlStructureType("IF")
+	.inAst.isControlStructure.controlStructureType("WHILE").l
 
 => List[ControlStructure] = List(
   ControlStructure(
@@ -296,7 +296,7 @@ Alternatively, we can walk the tree from its top to achieve the same:
 ```java
  cpg.method
 	.controlStructure("while.*")
-	.ast.isControlStructure.code("if.*")
+	.ast.isControlStructure.controlStructureType("IF")
 	.ast.isCallTo("sink").l
 
 => List[Call] = List(

@@ -102,7 +102,12 @@ res1: List[String] = List("exit(0)", "exit(42)")
 
 ### where
 
-Just like `filter`, the `where` _Step_ is a _Filter Step_ (`ಠ~ಠ`) which continues a traversal for all nodes which pass its criterion. The expression representing the criterion takes in one argument, a variable that represents the traversal of the previous step, and returns another traversal. Say you'd like to query the Code Property Graph of the `X42` program again for all CALL nodes which have `exit` as the value of their NAME property, and return the value of their CODE property in a list:
+Just like `filter`, the `where` _Step_ is a _Filter Step_ (`ಠ~ಠ`) which continues a traversal for all
+nodes which pass its criterion. The expression representing the criterion takes in one argument: a
+variable that represents the traversal of the previous step. It returns another traversal that includes
+all nodes from the previous traversal for which the criterion returns a non-empty traversal. Say you'd
+like to query the Code Property Graph of the `X42` program again for all CALL nodes which have `exit`
+as the value of their NAME property, and return the value of their CODE property in a list:
 
 ```java
 joern> cpg.call.where(node => node.name("exit")).code.l 
@@ -120,7 +125,7 @@ joern> cpg.call.where(_.name("exit").argument.code("42")).code.l
 res0: List[String] = List("exit(42)")
 ```
 
-And just like `where`, it supports chaining:
+And just like `filter`, it supports chaining:
 
 ```java
 // equivalent to the previous query
