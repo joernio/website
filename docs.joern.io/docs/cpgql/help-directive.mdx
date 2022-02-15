@@ -44,4 +44,31 @@ disk.
 Returns list of affected projects"""
 ```
 
+If executed as part of a traversal, it prints available steps and their description at this point. Note that this list may not be complete - use <tab> completion for the full list. 
+```java
+joern> cpg.help
+Available starter steps:
+______________________________________________________________________________________________________________________
+ step              | description                                                                                     |
+=====================================================================================================================|
+ .all              | All nodes of the graph                                                                          |
+ .argument         | All arguments (actual parameters)                                                               |
+ .arithmetic       | All arithmetic operations, including shorthand assignments that perform arithmetic (e.g., '+=') |
+ .arrayAccess      | All array accesses                                                                              |
+ .assignment       | All assignments, including shorthand assignments that perform arithmetic (e.g., '+=')           |
+...
+
+
+joern> cpg.method.help
+Available steps for Method:
+___________________________________________________________________________
+ step                 | description                                       |
+==========================================================================|
+ .address             | Address of the code (for binary code)             |
+ .ast                 | All nodes of the abstract syntax tree             |
+ .body                | Alias for `block`                                 |
+ .break               | All breaks (`ControlStructure` nodes)             |
+ .cfgLast             | Last control flow graph node                      |
+...
+```
 
