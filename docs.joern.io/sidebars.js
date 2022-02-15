@@ -39,6 +39,7 @@ module.exports = {
           'cpgql/augmentation-directives',
           'cpgql/help-directive',
           'cpgql/calls',
+          'cpgql/custom-defined-steps',
         ]
       },
     'upgrade-guides',
