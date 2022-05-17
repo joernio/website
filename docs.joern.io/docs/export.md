@@ -20,7 +20,7 @@ C/C++ code:
 * Program Dependence graphs (PDG)
 * Code Property Graphs
   ([CPG14](https://www.sec.cs.tu-bs.de/pubs/2014-ieeesp.pdf))
-
+* Entire graph, i.e. convert to a different graph format (ALL)
 
 ## The command line tool `joern-export`
 
@@ -37,8 +37,12 @@ joern-parse /src/directory
 joern-export --repr pdg --out outdir
 ```
 
-For a complete overview of options, run `joern-export --help`.
+You can also export the entire graph into a neo4j csv format, along with instructions on how to import it into a running neo4j instance:
+```
+./joern-export --repr=all --format=neo4jcsv
+```
 
+For a complete overview of options, run `joern-export --help`.
 
 ## Plotting and Exporting on the Joern Console
 
