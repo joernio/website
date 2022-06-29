@@ -79,14 +79,14 @@ string representation of it for display.
 
 _Joern Scan_ ships with a default set of queries, the _Joern Query Database_.
 This set of queries is constantly updated, and contributions are highly encouraged
-https://github.com/joernio/query-database.
+https://github.com/joernio/joern/tree/master/querydb.
 
 
 You can fetch the latest version of the _Joern Query Database_ using the _--updatedb_ flag:
 
 ```bash
 $ joern-scan --updatedb
-Downloading default query bundle from: https://github.com/joernio/query-database/releases/download/v0.0.80/querydb.zip
+Downloading default query bundle from: https://github.com/joernio/joern/releases/download/v1.1.919/querydb.zip
 Wrote: 10785252 bytes to /tmp/joern-scan4746805711015614603/querydb.zip
 Removing current version of query database
 Schema directory at /home/user/joern/schema-extender/schemas does not exist
