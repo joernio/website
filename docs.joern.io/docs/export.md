@@ -37,10 +37,11 @@ joern-parse /src/directory
 joern-export --repr pdg --out outdir
 ```
 
-You can also export the entire graph into a neo4j csv format (along with instructions on how to import it into a running neo4j instance), graphml or graphviz dot:
+You can also export the entire graph into a [neo4j csv format](https://neo4j.com/docs/operations-manual/current/tools/neo4j-admin/neo4j-admin-import/) (along with instructions on how to import it into a running neo4j instance), [graphml](http://graphml.graphdrawing.org/primer/graphml-primer.html), [graphson](https://tinkerpop.apache.org/docs/3.4.1/dev/io/#graphson-3d0) or [graphviz dot](https://www.graphviz.org/doc/info/lang.html):
 ```
 ./joern-export --repr=all --format=neo4jcsv
 ./joern-export --repr=all --format=graphml
+./joern-export --repr=all --format=graphson
 ./joern-export --repr=all --format=dot
 ```
 
