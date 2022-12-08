@@ -222,8 +222,9 @@ check against `MAX`. The following query achieves this:
 
 
 ```java
-cpg.method.filter(_.controlStructure(".*MAX.*").isEmpty)
-          .filter(_.callee.name(".*source.*").nonEmpty).l
+cpg.method.where(_.callee.name(".*source.*"))
+          .whereNot(_.controlStructure.code(".*MAX.*"))
+          .l
 => List()
 ```
 
