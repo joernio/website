@@ -115,7 +115,7 @@ res0: List[String] = List("exit(0)", "exit(42)")
 
 // or using the `_` shorthand:
 joern> cpg.call.where(_.name("exit")).code.l 
-res1: list[string] = list("exit(0)", "exit(42)")
+res1: List[string] = List("exit(0)", "exit(42)")
 ```
 
 `where`'s expression supports traversals of any length:
