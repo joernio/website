@@ -97,6 +97,8 @@ If you are importing a large codebase (and/or running into memory issues), pleas
 1) exit joern
 2) invoke the frontend: /path/to/joern/joern-cli/c2cpg.sh -J-Xmx30688m /path/to/linux-kernel/linux-4.1.16 --output /path/to/joern/workspace/linux-4.1.16/cpg.bin.zip
 3) start joern, import the cpg: `importCpg("path/to/cpg")`
+=======================================================================================================
+// ... output omitted
 ```
 
 For example, you can create a CPG of (an old version of) the linux kernel as follows. Notes that Joern needs more memory than c2cpg (the C frontend which creates the CPG), because it augments the CPG with additional information and prepares it to be queried. Here we give it 100G to be safe and fast, 80G are sufficient though. Tested with Joern 1.1.1362. 
