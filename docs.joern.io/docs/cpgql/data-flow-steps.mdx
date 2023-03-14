@@ -22,20 +22,6 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-:::info
-__NOTE:__ As of Joern v1.1.299, this is no longer required. The OSS dataflow overlay is now created
-automatically during CPG generation.
-
-After importing the program, make sure to run the OSS dataflow overlay creation command in order to run these steps:
-
-```java
-joern> run.ossdataflow 
-The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
-res0: Cpg = io.shiftleft.codepropertygraph.Cpg@221b5be0
-```
-
-:::
-
 ### reachableBy
 
 `reachableBy` is a _Data-Flow Step_ that returns sources for flows of data from sinks to sources.
