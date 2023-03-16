@@ -66,7 +66,7 @@ queries:
 
 ```java
 cpg.method($name).plotDotAst // plot AST
-cpg.method($name).ploDotCfg // plot CFG
+cpg.method($name).plotDotCfg // plot CFG
 ...
 cpg.method($name).plotDotCpg14 // plot CPG'14
 ```
