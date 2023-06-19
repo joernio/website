@@ -125,34 +125,81 @@ You can dynamically load additional scripts at any time.
 As an example, let's assume there's a file called `MyScript.sc` that contains only `val elite = 31337`. You can import the script as follows:
 
 ```java
-import $file.MyScript
-MyScript.elite
-res1: Int = 31337
+//> using file MyScript.sc
+
+> importing /home/mp/Projects/shiftleft/joern/./MyScript.sc (1 lines)
+val elite: Int = 31337
 ```
 
-If the file is in a subfolder (e.g. **scripts**), use dot syntax: `import $file.scripts.MyScript`.
-
-To go up one directory, use `^`.
-
-### Adding Dependencies to the JVM `classpath` Dynamically
-
+You can specify the filename with relative or absolute paths:
 ```java
-// java dependency
-import $ivy.`com.michaelpollmeier:versionsort:1.0.1`
-versionsort.VersionHelper.compare("2.1.0", "2.0.10")
-// res: Int = 1
+//> using file scripts/MyScript.sc
+//> using file ../MyScript.sc
+//> using file /path/to/MyScript.sc
+```
 
-// scala dependency
-import $ivy.`com.michaelpollmeier::colordiff:0.9`
+### Adding Dependencies to the JVM `classpath` on startup
+Note: this used to also work dynamically (i.e. add dependencies to a running repl), but as of joern 2.0.0 all dependencies must be known at startup. 
+
+Option 1: via `--dep` parameter
+```
+./joern --dep com.michaelpollmeier:versionsort:1.0.7
+joern> versionsort.VersionHelper.compare("1.0", "0.9")
+val res0: Int = 1
+```
+To add multiple dependencies, you can specify this parameter multiple times.
+
+Option 2: use the `//> using dep` directive in an imported script:
+```
+echo '//> using dep com.michaelpollmeier:versionsort:1.0.7' > predef.sc
+./joern --import predef.sc
+
+joern> versionsort.VersionHelper.compare("1.0", "0.9")
+val res0: Int = 1
+```
+
+For Scala dependencies use `::`:
+```java
+./joern --dep com.michaelpollmeier::colordiff:0.36
 colordiff.ColorDiff(List("a", "b"), List("a", "bb"))
 // color coded diff
 ```
 
-If the dependencies are not on Maven Central, you can add a resolver:
+### Additional dependency resolvers and credentials
+If your dependencies are not hosted on maven central, you can specify additional resolvers - including those that require authentication:
 
-```java
-interp.repositories() ++= Seq(coursierapi.MavenRepository.of("https://shiftleft.jfrog.io/shiftleft/libs-snapshot-local"))
+Option 1: via `--repo` parameter on startup:
+```bash
+./joern --repo "https://repo.gradle.org/gradle/libs-releases" --dep org.gradle:gradle-tooling-api:7.6.1
+org.gradle.tooling.GradleConnector.newConnector()
 ```
+To add multiple dependency resolvers, you can specify this parameter multiple times.
+
+Or via `//> using resolver` directive as part of a script:
+
+script-with-resolver.sc
+```scala
+//> using resolver https://repo.gradle.org/gradle/libs-releases
+//> using dep org.gradle:gradle-tooling-api:7.6.1
+println(org.gradle.tooling.GradleConnector.newConnector())
+```
+```scala
+./joern --script script-with-resolver.sc
+```
+
+If one or multiple of your resolvers require authentication, you can configure your username/passwords in a [`credentials.properties` file](https://get-coursier.io/docs/other-credentials#property-file):
+```
+mycorp.realm=Artifactory Realm
+mycorp.host=shiftleft.jfrog.io
+mycorp.username=michael
+mycorp.password=secret
+
+otherone.username=j
+otherone.password=imj
+otherone.host=nexus.other.com
+```
+The prefix is arbitrary and is only used to specify several credentials in a single file. joern uses [coursier](https://get-coursier.io) to resolve dependencies. 
+
 
 ### Measuring the Time While Running a Computation
 
