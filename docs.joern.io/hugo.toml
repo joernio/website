@@ -2,3 +2,6 @@ baseURL = 'https://docs.joern.io/'
 languageCode = 'en-us'
 title = 'Joern Documentation'
 theme = 'hugo-book'
+
+[params]
+  BookSection = '*'
