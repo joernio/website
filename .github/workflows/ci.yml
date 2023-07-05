@@ -44,7 +44,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "https://docs.joern.io/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
