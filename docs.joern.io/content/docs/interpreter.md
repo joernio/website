@@ -22,7 +22,7 @@ For example, let's say you have a file named `test.sc` with the following conten
 
 You can include Scala code in `test.sc` and use the `|>` operator to pipe output into files. The script is then run as follows:
 ```bash
-./joern --script test.sc --params cpgFile=/src.path.zip,outFile=output.log
+./joern --script test.sc --param cpgFile=/src.path.zip --param outFile=output.log
 ```
 
 ## Importing Additional Scripts
@@ -30,5 +30,5 @@ You can include Scala code in `test.sc` and use the `|>` operator to pipe output
 If your script depends on code from one or more additional scripts, you can use the `--import` parameter, which accepts a comma-separated list of input scripts:
 
 ```bash
-./joern --script test.sc --params cpgFile=/src.path.zip,outFile=output.log --import scripts/hello.sc
+./joern --script test.sc --param cpgFile=/src.path.zip --param outFile=output.log --import scripts/hello.sc
 ```
