@@ -143,7 +143,7 @@ You can specify the filename with relative or absolute paths:
 Note: this used to also work dynamically (i.e. add dependencies to a running repl), but as of joern 2.0.0 all dependencies must be known at startup. 
 
 Option 1: via `--dep` parameter
-```
+```shell
 ./joern --dep com.michaelpollmeier:versionsort:1.0.7
 joern> versionsort.VersionHelper.compare("1.0", "0.9")
 val res0: Int = 1
@@ -151,7 +151,7 @@ val res0: Int = 1
 To add multiple dependencies, you can specify this parameter multiple times.
 
 Option 2: use the `//> using dep` directive in an imported script:
-```
+```shell
 echo '//> using dep com.michaelpollmeier:versionsort:1.0.7' > predef.sc
 ./joern --import predef.sc
 
