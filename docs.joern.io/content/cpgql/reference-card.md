@@ -87,6 +87,7 @@ title: Reference Card
 | `toJson`      | Execute the traversal and convert the result to JSON |
 | `toJsonPretty`      | Execute the traversal and convert the result to prettified JSON |
 | `p`      | Execute the traversal and pretty print the results |
+| `browse`      | Execute the traversal and pretty print the results in `less` |
 | `size`      | Execute the traversal and return the size of the array of nodes |
 
 ### Help Directive
