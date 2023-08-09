@@ -6,7 +6,7 @@ weight: 20
 
 ## Prerequisites
 
-* JDK 11 (get here for example: https://openjdk.java.net/install/); newer JDK versions _might_ work, but have not been properly tested
+* JDK 19 (get here for example: https://openjdk.java.net/install/); newer JDK versions _might_ work, but have not been properly tested
 
 ## Installing Pre-Built Binaries
 
@@ -31,10 +31,6 @@ You can test your installation as follows:
 ```bash
 cd <path_to_joern>/joern/joern-cli
 ./joern
-Compiling (synthetic)/ammonite/predef/interpBridge.sc
-Compiling (synthetic)/ammonite/predef/replBridge.sc
-Compiling (synthetic)/ammonite/predef/DefaultPredef.sc
-Compiling /home/tmp/shiftleft/joern/(console)
 
      ██╗ ██████╗ ███████╗██████╗ ███╗   ██╗
      ██║██╔═══██╗██╔════╝██╔══██╗████╗  ██║
@@ -42,6 +38,8 @@ Compiling /home/tmp/shiftleft/joern/(console)
 ██   ██║██║   ██║██╔══╝  ██╔══██╗██║╚██╗██║
 ╚█████╔╝╚██████╔╝███████╗██║  ██║██║ ╚████║
  ╚════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝
+Version: 2.0.42
+Type `help` to begin
 
 joern>
 ```

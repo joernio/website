@@ -52,8 +52,8 @@ We provide a sample plugin written in Scala that you can use as a template.
 In order to build it yourself, make sure you have the following dependencies
 installed:
 
-* OpenJDK 8 or higher
-* The scala built tool (any version)
+* OpenJDK 19 or higher
+* sbt (any version)
 
 You can then install and test the sample plugin by running
 
