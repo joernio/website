@@ -16,11 +16,11 @@ For example, let's say you have a file named `test.sc` with the following conten
 ```java
 @main def exec(cpgFile: String, outFile: String) = {
    loadCpg(cpgFile)
-   cpg.method.name.l |> outFile
+   cpg.method.name #> outFile
 }
 ```
 
-You can include Scala code in `test.sc` and use the `|>` operator to pipe output into files. The script is then run as follows:
+You can include Scala code in `test.sc` and use the `|#` operator to pipe output into files. The script is then run as follows:
 ```bash
 ./joern --script test.sc --param cpgFile=/src.path.zip --param outFile=output.log
 ```

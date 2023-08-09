@@ -93,10 +93,10 @@ $ cat my-query-result.txt
 9
 ```
 
-Writing the results of a query to a file can also be done in a more concise way using the `|>` operator provided by the Joern Interpreter:
+Writing the results of a query to a file can also be done in a more concise way using the `#>` operator provided by the Joern Interpreter:
 
 ```java
-joern> cpg.call.size.toString() |> "my-query-result.txt"
+joern> cpg.call.size.toString() #> "my-query-result.txt"
 ```
 
 ### p

@@ -5,16 +5,15 @@ weight: 70
 ---
 
 Joern provides an interactive shell for code analysis, much like an
-operating system shell. We base this shell on the popular Scala shell
-[Ammonite](https://ammonite.io/#Features). In summary, the shell offers
-the following major features:
+operating system shell. We base this shell on [scala-repl-pp](https://github.com/mpollmeier/scala-repl-pp/) which is an extension of the stock Scala repl. In summary, the shell offers the following major features:
 
 * Tab-completion
 * GNU readline support for line editing
-* JSON output
-* Pipe operators
-* Inline code browsing with a pager
-* Dynamic library import
+* Pipe operators (`#>`, `#>>`, `#|` etc)
+* Results browsing with a pager
+* Add dependencies with maven coordinates
+* Server mode
+* Structured output rendering including product labels and type information
 
 
 ## Launching the Interactive Shell
@@ -40,17 +39,23 @@ The Joern underlying shell is essentially an interactive Scala shell that suppor
 
 ## Exporting Results with Pipe Operators and `toJson`
 
-The execution directive (see [Traversal
-Basics](/traversal-basics)) `toJson` can be used at the end of
-queries in order to convert results into the JSON format. This feature can
-be combined with the shell's pipe operators to write results out to
-the file system. For example,
+Inspired by unix shell redirection and pipe operators (`>`, `>>` and `|`) you can redirect output into files with `#>` (overrides existing file) and `#>>` (create or append to file), and use `#|` to pipe the output to an external command:
 
 ```java
-cpg.method.toJson |> "/tmp/foo.json"
-```
+// write results to file (first overrides, seconds appends)
+cpg.method.name #> "/tmp/foo.txt"
+cpg.method.name #>> "/tmp/foo.txt"
 
-writes all methods nodes into the file `/tmp/foo.json`.
+// render methods as json, then export to file
+cpg.method.toJson #> "/tmp/foo.json"
+
+// pipe results to external command
+cpg.method.name #| "cat" 
+
+// same as above, but make that command inherit stdin/stdout
+// this is what happens internally if you run `cpg.method.name.browse`
+cpg.method.name #|^ "less"
+```
 
 
 ## Inline Code Browsing
@@ -72,10 +77,10 @@ res5: List[String] = List(
 )
 ```
 
-You can also pipe the result list into a pager as follows:
+You can also pipe the result list into a pager (`less`) as follows:
 
 ```java
-joern> browse(cpg.method.name("memcpy").callIn.code.l)
+joern> cpg.method.name("memcpy").callIn.code.browse
 ```
 
 
@@ -107,7 +112,7 @@ pager. Finally, if you want to read the code in your editor of choice,
 just dump it to a file:
 
 ```bash
-cpg.method.name("memcpy").callIn.dumpRaw |> "/tmp/foo.c"
+cpg.method.name("memcpy").callIn.dumpRaw #> "/tmp/foo.c"
 ```
 
 We use `dumpRaw` here to skip syntax highlighting, as your editor will

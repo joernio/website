@@ -271,11 +271,7 @@ res7: Option[io.shiftleft.console.workspacehandling.Project] = Some(
 As a final step, exit Joern:
 
 ```java
-joern> exit
-Bye!
-Would you like to save changes? (y/N)
-y
-saving.
+joern> :exit
 ```
 
 Congratulations, you have succesfully queried your first  Code
