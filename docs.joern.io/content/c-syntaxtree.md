@@ -57,7 +57,7 @@ first idea of what an abstract syntax tree is.
 cpg.method.name("foo").plotDotAst
 ```
 
-![Fig.1: Abstract Syntax Tree for function foo](/images/tree.png)
+![Fig.1: Abstract Syntax Tree for function foo](/images/ast1.png)
 
 _Fig.1: Abstract Syntax Tree for function foo_
 
@@ -157,11 +157,11 @@ Abstract syntax trees include control structures such as `if`-,
 `while` or `for`-statements. Our example program contains only a
 single control structure, namely, the `if`-statement on line 3.
 
-![Image of control structure in abstract syntax tree](/images/ast3.png)
+![Image of control structure in abstract syntax tree](/images/cfg.png)
 
-_Fig.3: Control structure in the abstract syntax tree. The subtree on the left represents the condition, the subtree on the right is the compound statement._
+_Fig.2: Control structure in the abstract syntax tree. The subtree on the left represents the condition, the subtree on the right is the compound statement._
 
-Figure 3 shows how `if`-statements are represented in the syntax
+Figure 2 shows how `if`-statements are represented in the syntax
 tree. The tree consists of two sub trees, one that holds the condition
 `x < MAX` and another that holds the statements in the
 `if`-block. Conditions can be selected as follows:
@@ -262,11 +262,10 @@ void foo () {
 
 Importing and plotting yields the following:
 
-<ImageWithDialog alt="Fig. 4: Abstract syntax tree containing
-structured and unstructured control structures"
-src={useBaseUrl('img/ast4.png')} showAltTextInCaption="true" />
+![Fig.3: Abstract syntax tree containing structured and unstructured control structures](/images/ast2.png)
+_Fig.3: Abstract syntax tree containing structured and unstructured control structures._
 
-As we can see in Figure 4, the language formulated so far can be used
+As we can see in Figure 3, the language formulated so far can be used
 easily to describe nested constructs. For example, if we would like to
 identify all calls to `sink` nested in an `if`-block that is itself
 nested in a `while` block, we could use the following query:
