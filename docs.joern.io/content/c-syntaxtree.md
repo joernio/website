@@ -15,7 +15,7 @@ discuss the limitations of syntax-tree queries at length.
 {{< hint info >}}
 If you find that the terminology used in this article is foreign to
 you, we hope that our [article on Code Property
-Graphs](code-property-graph) can help you out.
+Graphs](/code-property-graph/) can help you out.
 {{< /hint >}}
 
 ## What are Abstract Syntax Trees?

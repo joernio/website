@@ -80,7 +80,7 @@ run
 
 You should see the sample plugin named `gitextension` in the overview
 
-![Run output](/img/run.png)
+![Run output](/images/run.png)
 
 
 You can inspect and modify the options of the example plugin via
@@ -100,21 +100,21 @@ following instructions are for IntelliJ 2020.1.1.
 
 Choose "Open or Import" to import the project.
 
-![IntelliJ start screen](/img/startscreen.png)
+![IntelliJ start screen](/images/startscreen.png)
 
 
 Next, select the directory from the file selector. Assuming that your
 IntelliJ installation has support for `sbt` installed, the import is
 fully automated.
 
-![Just select the project](/img/select.png)
+![Just select the project](/images/select.png)
 
 
 Finally, navigate to `src/test/scala/io/shiftleft/gitextension` and
 click on `GitextentionTests`. You can right-click on the class or the
 individual tests to run them.
 
-![Right click](/img/runtests.png)
+![Right click](/images/runtests.png)
 
 
 ## Building a shippable plugin
