@@ -1,3 +1,6 @@
 [submodule "docsv2/themes/hugo-book"]
 	path = docs.joern.io/themes/hugo-book
 	url = https://github.com/alex-shpak/hugo-book
+[submodule "main/themes/blist-hugo-theme"]
+	path = main/themes/blist
+	url = https://github.com/apvarun/blist-hugo-theme.git

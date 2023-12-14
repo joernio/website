@@ -1,0 +1,38 @@
+# Main Title
+main:
+  header:
+    title : "" # Title Text
+    description : "" # Title Desc
+    
+
+    
+    
+
+# About
+about:
+  title: "Buttons"
+  desc: "Buttons redirecting to specific pages"
+  button:
+    enable: true
+    text: "Button"
+    url: "#"
+    
+    
+
+projects:
+  card1:
+    title: "Query."
+    text: "Uncover attack surface, sloppy coding practices, and variants of known vulnerabilities using an interactive code analysis shell. Joern supports C, C++, LLVM bitcode, x86 binaries (via Ghidra), JVM bytecode (via Soot), and Javascript. Python, Java source code, Kotlin, and PHP support coming soon"
+    img: "/img/query.png"
+  card2:
+    title: "Automate."
+    text: "Wrap your queries into custom code scanners and share them with the community or run existing Joern-based scanners in your CI."
+    img: "/img/automate.png"
+  card3:
+    title: "Integrate."
+    text: "Use Joern as a library to power your own code analysis tools or as a component via the REST API."
+    img: "/img/integrate.png"
+
+    
+
+    
