@@ -1,0 +1,5 @@
+/node_modules/
+*.lock
+themes
+public
+resources/_gen
