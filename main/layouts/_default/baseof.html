@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}" itemscope itemtype="http://schema.org/WebPage">
+{{- partial "head.html" . -}}
+
+{{ $CurrentURL := (.RelPermalink) }}
+{{ $AtHome := eq $CurrentURL "/" }}
+
+<body class="{{ if $AtHome }}home-template{{else}}post-template{{ end }}">
+    <div class="site-wrapper">
+        {{- partial "header.html" . -}}
+        <main id="site-main" class="site-main outer">
+            {{- block "main" . }}{{- end }}
+        </main>
+        {{- partial "footer.html" . -}}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</body>
+
+</html>

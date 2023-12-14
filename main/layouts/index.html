@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+{{- partial "head.html" . -}}
+
+<body id="page-top">
+    <!-- Masthead-->
+
+    <div class="home-template">
+        <div class="site-wrapper">
+            {{- partial "header.html" . -}}
+            <!-- Projects-->
+            {{ with site.Data.homepage.projects }}
+            <main id="site-main" class="site-main outer">
+                <!-- Featured Project Row-->
+                <div class="mdc-layout-grid main-page-grid">
+                    <div class="mdc-layout-grid__inner">
+                        <div class="mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--align-middle image-block">
+                            <div class="main-card mdc-elevation--z10">
+                                <img src="{{ .card1.img }}" alt="..." width="100%">
+                            </div>
+                        </div>
+
+                        <div class="mdc-layout-grid__cell--span-6 text-block">
+                            <h2>
+                                <a href="/query">{{ .card1.title }}</a>
+                            </h2>
+                            <p>
+                                {{ .card1.text }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Project One Row-->
+                    <div class="mdc-layout-grid__inner">
+                        <div class="mdc-layout-grid__cell--span-6 text-block">
+                            <h2>
+                                <a href="/automate">{{ .card2.title }}</a>
+                            </h2>
+                            <p>
+                                {{ .card2.text }}
+                            </p>
+                        </div>
+                        <div class="mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--align-middle image-block">
+                            <div class="main-card mdc-elevation--z10">
+                                <img src="{{ .card2.img }}" alt="..." width="100%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Two Row-->
+                    <div class="mdc-layout-grid__inner">
+                        <div class="mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--align-middle image-block">
+                            <div class="main-card mdc-elevation--z10">
+                                <img src="{{ .card3.img }}" alt="..." width="100%">
+                            </div>
+                        </div>
+
+                        <div class="mdc-layout-grid__cell--span-6 text-block">
+                            <h2>
+                                <a href="/integrate">{{ .card3.title }}</a>
+                            </h2>
+                            <p>
+                                {{ .card3.text }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- Sponsors -->
+            <div style="background: black; margin-top: 2em">
+                <div class="mdc-layout-grid" style="max-width: 1024px;">
+                    <div class="row row align-items-center">
+                        <div class="col-sm-12 col-md-4 text-center sponsor-logo">
+                            <h2>
+                                Built with
+                                <i class="material-icons mdc-button__icon" aria-hidden="true">flash_on</i>
+                                at
+                            </h2>
+                        </div>
+                        <div class="col-sm-12 col-md-4 sponsor-logo text-center">
+                            <img src="/img/sponsor/WhirlyLabs.png" alt="">
+                        </div>
+                        <div class="col-sm-12 col-md-4 sponsor-logo text-center">
+                            <img src="/img/sponsor/QwietAI.png" alt="">
+                        </div>
+                        <div class="col-sm-12 col-md-4 sponsor-logo text-center">
+                            <img src="/img/sponsor/Privado.png" alt="">
+                        </div>
+                        <div class="col-sm-12 col-md-4 sponsor-logo text-center">
+                            <img src="/img/sponsor/tub.svg" alt="">
+                        </div>
+                        <div class="col-sm-12 col-md-4 sponsor-logo text-center">
+                            <img src="/img/sponsor/Stellenbosch.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {{ end }}
+
+        {{- partial "footer.html" . -}}
+    </div>
+</body>
+
+</html>

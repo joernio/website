@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<div class="inner posts">
+  {{ $paginator := .Paginate .Pages.ByDate.Reverse 6 }}
+
+  <div class="post-feed">
+    {{ range $paginator.Pages }}
+    {{- partial "blog-card.html" . -}}
+    {{ end }}
+  </div>
+
+  {{ template "_internal/pagination.html" . }}
+  
+</div>
+
+{{- partial "social.html" . -}}
+{{ end }}
