@@ -30,4 +30,4 @@ jobs:
         password: ${{ secrets.ftps_password }}
         protocol: ftps
         server-dir: public_html/
-        local-dir: public/
+        local-dir: main/public/
