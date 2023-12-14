@@ -18,7 +18,7 @@ We are proud to announce the new primary maintainer of Joern!
 
 ![Whirly Labs Logo](/img/sponsor/WhirlyLabs.png "Whirly Labs Logo")
 
-Fabian Yamaguchi and his partner, Kate, founded [Whirly Labs](https://whirlylabs.com), an IT security
+Fabian Yamaguchi and his partner, Kate Yamaguchi, founded [Whirly Labs](https://whirlylabs.com), an IT security
 and software analysis development company, based in Cape Town, South Africa. Whirly Labs is now the
 primary maintainer of Joern, and Fabian and I have worked hard to bring in and facilitate the rapid
 development of Joern these past years, both as a research tool as well as an industry-level static
@@ -43,7 +43,7 @@ and program analysis features.
 We've noted continuous research interest and projects using Joern by both [Stellenbosch
 University](http://www.sun.ac.za/english) and [Technische Universität
 Braunschweig](https://www.tu-braunschweig.de/en/), and welcome new research partners from
-[Universität Berlin](https://www.tu.berlin), [Universität Bremen](https://www.uni-bremen.de/en/),
+[Technische Universität Berlin](https://www.tu.berlin), [Universität Bremen](https://www.uni-bremen.de/en/),
 and [Columbia University](https://www.columbia.edu).
 
 If I've missed your name, or you are interested in collaborating on developing Joern, please reach
