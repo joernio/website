@@ -29,7 +29,7 @@ rewritten to be based on [Hugo](https://gohugo.io), by [Davey Lupes](https://twi
 of Whirly Labs. It is near-identical to the original website, with minor visual improvements
 here-and-there, but the main value is that it is largely easier to update and maintain.
 
-## Secondary Maintainers & Supporting Organizations
+## Organizations Supporting Joern
 
 We are extremely fortunate to have received such a large interest from the international community,
 both in industry and academia. Notably, [QwietAI](https://qwiet.ai) (formerly ShiftLeft) and
