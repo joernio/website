@@ -38,7 +38,7 @@ resources into the project. The result is that the project now supports a number
 and program analysis features.
 
 {{< figure src="/img/sponsor/QwietAI.png" class="px-5 mx-5" caption="QwietAI's developers have maintained the database, schema, querying, and C/C++/Ghidra/Kotlin/Python/JavaScript/Java/PHP/Ruby/Swift support. They are also the majority of who help newcomers on the Discord channel and handle incoming issues on GitHub.">}}
-{{< figure src="/img/sponsor/Privado.png" class="px-5 mx-5" caption="Privado has fueled the development of extra features in Java/Python/JavaScript and the data-flow engine. They have also funded the type propagation initiative, and initiated the development of the Ruby & C# frontends. Their core analysis framework is also open-source.">}}
+{{< figure src="/img/sponsor/Privado.png" class="px-5 mx-5" caption="Privado has fueled the development of extra features in Java/Python/JavaScript and the data-flow engine. They have also funded the type propagation initiative, and initiated the development of the Go, Ruby, & C# frontends. Their core analysis framework is also open-source.">}}
 
 We've noted continuous research interest and projects using Joern by both [Stellenbosch
 University](http://www.sun.ac.za/english) and [Technische Universität
