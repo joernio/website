@@ -15,7 +15,7 @@ For example, let's say you have a file named `test.sc` with the following conten
 
 ```java
 @main def exec(cpgFile: String, outFile: String) = {
-   loadCpg(cpgFile)
+   importCpg(cpgFile)
    cpg.method.name #> outFile
 }
 ```
