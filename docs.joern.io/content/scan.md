@@ -12,7 +12,7 @@ _use-after-free_, or are trying to find methods with a high number of
 conditionals for a closer inspection, this tool is for you.
 
 Let's start by looking at a simple example. To follow along, install _Joern_ by
-[following these instructions](installation), it comes pre-packaged with _Joern Scan_.
+[following these instructions](/installation), it comes pre-packaged with _Joern Scan_.
 
 Given the following simple program written in C:
 
