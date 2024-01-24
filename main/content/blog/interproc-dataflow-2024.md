@@ -28,13 +28,13 @@ dynamic languages, potentially involve a type-recovery step which is expensive.
 ### Call Resolvers
 
 This default behaviour is enabled with the implicit
-[`NoResolve`](https://github.com/joernio/joern/blob/18017fd0b057fd19edc690ca9d29b5be3b8d01c3/semanticcpg/src/main/scala/io/shiftleft/semanticcpg/language/ICallResolver.scala#L72)
+[NoResolve](https://github.com/joernio/joern/blob/18017fd0b057fd19edc690ca9d29b5be3b8d01c3/semanticcpg/src/main/scala/io/shiftleft/semanticcpg/language/ICallResolver.scala#L72)
 class which simply follows the pre-defined `CALL` edges if present. These schema edges take the form
 of `CALL -(CALL)-> METHOD`.
 
 If you would like to build something more on-the-fly, like a points-to analysis to resolve types and
 calls, you would simply need to implement
-[`ICallResolver`](https://github.com/joernio/joern/blob/master/semanticcpg/src/main/scala/io/shiftleft/semanticcpg/language/ICallResolver.scala).
+[ICallResolver](https://github.com/joernio/joern/blob/master/semanticcpg/src/main/scala/io/shiftleft/semanticcpg/language/ICallResolver.scala).
 This may be beneficial in dynamic languages, where pre-computing types may not always be feasible.
 
 ### External Calls
@@ -72,7 +72,7 @@ from simply overapproximating which gives both a boost to precision and performa
 
 ## Examples
 
-The follows provides some query and testing tips around interprocedural data-flow tracking.
+The following provides some query and testing tips around interprocedural data-flow tracking.
 
 ### Performant Source-Sink Matching
 
