@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 ```java
 
 joern> def source = cpg.method.name("main").parameter
-joern> def sink = cpg.call.name("strcmp").parameter
+joern> def sink = cpg.call.name("strcmp").argument
 joern> sink.reachableBy(source).l
 val res4: List[io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn] = List(
   MethodParameterIn(
@@ -55,17 +55,15 @@ val res4: List[io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn]
 `reachableByFlows` is a _Data-Flow Step_ that returns paths for flows of data from sinks to sources. 
 
 ```java
-joern> def source = cpg.method.name("main").parameter
-joern> def sink = cpg.call.name("strcmp").parameter    
+joern> def source = cpg.method.name("main").parameter                                                                                                                                   
+joern> def sink = cpg.call.name("strcmp").argument
 joern> sink.reachableByFlows(source).p
 val res1: List[String] = List(
-  """_______________________________________________________________________________________________
-| nodeType          | tracked                      | lineNumber| method            | file      |
-|==============================================================================================|
-| MethodParameterIn | main(int argc, char *argv[]) | 6         | main              | tmp.c     |
-| Call              | strcmp(argv[1], "42")        | 7         | main              | tmp.c     |
-| Call              | strcmp(argv[1], "42")        | 7         | main              | tmp.c     |
-| MethodParameterIn | <operator>.equals(p1, p2)    | N/A       | <operator>.equals | <unknown> |
+  """_______________________________________________________________________________
+| nodeType          | tracked                      | lineNumber| method| file  |
+|==============================================================================|
+| MethodParameterIn | main(int argc, char *argv[]) | 6         | main  | tmp.c |
+| Call              | strcmp(argv[1], "42")        | 7         | main  | tmp.c |
 """
 )
 ```
