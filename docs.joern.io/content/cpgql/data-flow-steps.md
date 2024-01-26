@@ -27,62 +27,46 @@ int main(int argc, char *argv[]) {
 `reachableBy` is a _Data-Flow Step_ that returns sources for flows of data from sinks to sources.
 
 ```java
-joern> cpg.call.name("strcmp").reachableBy(cpg.method.parameter).l
-res0: List[MethodParameterIn] = List(
+
+joern> def source = cpg.method.name("main").parameter
+joern> def sink = cpg.call.name("strcmp").parameter
+joern> sink.reachableBy(source).l
+val res4: List[io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn] = List(
   MethodParameterIn(
-    id -> 1000104L,
-    code -> "char *argv[]",
-    order -> 2,
-    name -> "argv",
-    evaluationStrategy -> "BY_VALUE",
-    typeFullName -> "char * [ ]",
-    dynamicTypeHintFullName -> List(),
-    lineNumber -> Some(5),
-    columnNumber -> Some(19)
+    id = 15L,
+    closureBindingId = None,
+    code = "char *argv[]",
+    columnNumber = Some(value = 20),
+    dynamicTypeHintFullName = ArraySeq(),
+    evaluationStrategy = "BY_VALUE",
+    index = 2,
+    isVariadic = false,
+    lineNumber = Some(value = 6),
+    name = "argv",
+    order = 2,
+    possibleTypes = ArraySeq(),
+    typeFullName = "char[]*"
   )
 )
 ```
 
 ### reachableByFlows
 
-`reachableByFlows` is a _Data-Flow Step_ that returns paths for flows of data from sinks to sources.
+`reachableByFlows` is a _Data-Flow Step_ that returns paths for flows of data from sinks to sources. 
 
 ```java
-joern> sink.reachableByFlows(source).l
-res0: List[Path] = List(
-  Path(
-    List(
-      MethodParameterIn(
-        id -> 1000104L,
-        code -> "char *argv[]",
-        order -> 2,
-        name -> "argv",
-        evaluationStrategy -> "BY_VALUE",
-        typeFullName -> "char * [ ]",
-        dynamicTypeHintFullName -> List(),
-        lineNumber -> Some(5),
-        columnNumber -> Some(19)
-      ),
-      Call(
-        id -> 1000112L,
-        code -> "strcmp(argv[1], \"42\")",
-        name -> "strcmp",
-        order -> 1,
-        methodInstFullName -> None,
-        methodFullName -> "strcmp",
-        argumentIndex -> 1,
-        dispatchType -> "STATIC_DISPATCH",
-        signature -> "TODO assignment signature",
-        typeFullName -> "ANY",
-        dynamicTypeHintFullName -> List(),
-        lineNumber -> Some(6),
-        columnNumber -> Some(18),
-        resolved -> None,
-        depthFirstOrder -> None,
-        internalFlags -> None
-      )
-    )
-  )
+joern> def source = cpg.method.name("main").parameter
+joern> def sink = cpg.call.name("strcmp").parameter    
+joern> sink.reachableByFlows(source).p
+val res1: List[String] = List(
+  """_______________________________________________________________________________________________
+| nodeType          | tracked                      | lineNumber| method            | file      |
+|==============================================================================================|
+| MethodParameterIn | main(int argc, char *argv[]) | 6         | main              | tmp.c     |
+| Call              | strcmp(argv[1], "42")        | 7         | main              | tmp.c     |
+| Call              | strcmp(argv[1], "42")        | 7         | main              | tmp.c     |
+| MethodParameterIn | <operator>.equals(p1, p2)    | N/A       | <operator>.equals | <unknown> |
+"""
 )
 ```
 
