@@ -18,20 +18,20 @@ for vulnerability discovery and research in static program analysis.
 
 ## Supported languages
 
-| Name         | Built with   | Maturity |
-|--------------|--------------|----------|
-| C/C++        | Eclipse CDT  | High     |
-| Java         | JavaParser   | High     |
-| JavaScript   | GraalVM      | High     |
-| Python       | JavaCC       | High     |
-| x86/x64      | Ghidra       | Medium   |
-| JVM Bytecode | Soot         | Medium   |
-| Kotlin       | IntelliJ PSI | Medium   |
-| PHP          | PHP-Parser   | Medium   |
-| Go           | go.parser    | Low      |
-| Ruby         | ANTLR        | Low      |
-| Swift        | SwiftSyntax  | Low      |
-| C#           | Roslyn       | Low      |
+| Name         | Built with   | Maturity   |
+| ------------ | ------------ | ---------- |
+| C/C++        | Eclipse CDT  | Very High  |
+| Java         | JavaParser   | Very High  |
+| JavaScript   | GraalVM      | High       |
+| Python       | JavaCC       | High       |
+| x86/x64      | Ghidra       | High       |
+| JVM Bytecode | Soot         | Medium     |
+| Kotlin       | IntelliJ PSI | Medium     |
+| PHP          | PHP-Parser   | Medium     |
+| Go           | go.parser    | Medium     |
+| Ruby         | ANTLR        | Medium-Low |
+| Swift        | SwiftSyntax  | Medium     |
+| C#           | Roslyn       | Medium-Low |
 
 
 ## Core features
