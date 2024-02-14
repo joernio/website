@@ -63,11 +63,12 @@ If you did everything right, the output of `workspace` will look something like 
 ```java
 joern> workspace 
 res3: io.shiftleft.console.workspacehandling.WorkspaceManager[io.shiftleft.repl.JoernProject] = 
-____________________________________________________________________________
-| name    | overlays                    | inputPath                  | open|
-|==========================================================================|
-| x42-java| semanticcpg,dataflow,tagging| /home/user/x42/java/X42.jar| true|
-| x42-c   | semanticcpg,dataflow,tagging| /home/user/x42/c           | true|
+┌───────────────────────────────────────────────────────┬───────────────────────────────┬─────┐
+│name    │overlays                                      │inputPath                      │open │
+├───────────────────────────────────────────────────────┼───────────────────────────────┼─────┤
+│x42-java│callgraph,base,typerel,dataflowOss,controlflow│/tmp/console4337910945839239307│false│
+│x42-c   │callgraph,base,typerel,dataflowOss,controlflow│/tmp/console4337910945839239307│false│
+└────────┴──────────────────────────────────────────────┴───────────────────────────────┴─────┘
 ```
 
 The output is fairly self-explanatory. The Joern Workspace contains two Joern Projects, one named `x42-c` and one named `x42-java`. The second column, _overlays_, lists the Code Property Graph Overlays that have been created for each project.  Values in the _inputPath_ column refer to the absolute filesystem paths of the programs these projects represent. And finally, _open_ specifies whether the Code Property Graphs are currently loaded in memory.

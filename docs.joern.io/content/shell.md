@@ -43,11 +43,11 @@ Inspired by unix shell redirection and pipe operators (`>`, `>>` and `|`) you ca
 
 ```java
 // write results to file (first overrides, seconds appends)
-cpg.method.name #> "/tmp/foo.txt"
-cpg.method.name #>> "/tmp/foo.txt"
+cpg.method.name #> "/tmp/methods.txt"
+cpg.method.name #>> "/tmp/methods.txt"
 
 // render methods as json, then export to file
-cpg.method.toJson #> "/tmp/foo.json"
+cpg.method.toJsonPretty #> "/tmp/methods.json"
 
 // pipe results to external command
 cpg.method.name #| "cat" 
