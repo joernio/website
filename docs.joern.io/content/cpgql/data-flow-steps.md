@@ -55,16 +55,17 @@ val res4: List[io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn]
 `reachableByFlows` is a _Data-Flow Step_ that returns paths for flows of data from sinks to sources. 
 
 ```java
-joern> def source = cpg.method.name("main").parameter                                                                                                                                   
+joern> def source = cpg.method.name("main").parameter
 joern> def sink = cpg.call.name("strcmp").argument
 joern> sink.reachableByFlows(source).p
-val res1: List[String] = List(
-  """_______________________________________________________________________________
-| nodeType          | tracked                      | lineNumber| method| file  |
-|==============================================================================|
-| MethodParameterIn | main(int argc, char *argv[]) | 6         | main  | tmp.c |
-| Call              | strcmp(argv[1], "42")        | 7         | main  | tmp.c |
-"""
-)
+val res0: List[String] = List(
+  """
+┌─────────────────┬────────────────────────────┬──────────┬──────┬─────┐
+│nodeType         │tracked                     │lineNumber│method│file │
+├─────────────────┼────────────────────────────┼──────────┼──────┼─────┤
+│MethodParameterIn│main(int argc, char *argv[])│5         │main  │X42.c│
+│Call             │strcmp(argv[1], "42")       │6         │main  │X42.c│
+└─────────────────┴────────────────────────────┴──────────┴──────┴─────┘
+  """)
 ```
 
