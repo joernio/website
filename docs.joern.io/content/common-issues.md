@@ -34,7 +34,7 @@ definitely isn't supported by Joern. If it does appear, then it may only be supp
 Ocular.
 
 ### Automatic language detection failed
-You can specify the lanugage to use by running 
+You can specify the language to use by running
 ```shell
 joern-scan --language <language> # and other opts
 ```

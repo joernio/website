@@ -227,7 +227,7 @@ cpg.method.where(_.callee.name(".*source.*"))
 => List()
 ```
 
-Note, however, that the query does not specify the oder in which these
+Note, however, that the query does not specify the order in which these
 statements must occur, e.g., the check may happen too late. Control
 flow graphs and dominator trees are the right tools to reason about
 statement order. These structures are available in the code property

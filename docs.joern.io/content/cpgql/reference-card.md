@@ -21,7 +21,7 @@ title: Reference Card
 | `metaData`      | The meta data node |
 | `method`      | All methods |
 | `methodRef`      | All method references |
-| `methodReturn`      | All formal return paramters |
+| `methodReturn`      | All formal return parameters |
 | `namespace`      | All namespaces |
 | `namespaceBlock`      | All namespace blocks |
 | `parameter`      | All parameters  |
@@ -35,7 +35,7 @@ title: Reference Card
 | Step  | Description   |
 | ------------- | ------------- |
 | `clone` | Create a deep copy of the traversal |
-| `dedup`      |  Deduplicate results in a traveral |
+| `dedup`      |  Deduplicate results in a traversal |
 | `map`      | Transform the traversal by a given function |
 | `sideEffect`      | Extend the traversal with a side-effect step by applying a function |
 

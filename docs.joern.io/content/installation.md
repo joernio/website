@@ -84,7 +84,7 @@ where $N is the amount of memory in gigabytes (G). For example, to allow the JVM
 ./joern -J-Xmx30G"
 ```
 
-Note that when you run `importCode` to create a new CPG, Joern spawns a separate jvm with the same max memory value, i.e. the new process will consume additional memory. If you are importing a large codebase (and/or running into memory issues), you should exit joern and invoke the CPG frontend yourself. When running `importCode` you'll get some guidance on how to do that.
+Note that when you run `importCode` to create a new CPG, Joern spawns a separate JVM with the same max memory value, i.e. the new process will consume additional memory. If you are importing a large codebase (and/or running into memory issues), you should exit joern and invoke the CPG frontend yourself. When running `importCode` you'll get some guidance on how to do that.
 
 ```java
 joern> importCode("/path/to/linux-kernel/linux-4.1.16")
