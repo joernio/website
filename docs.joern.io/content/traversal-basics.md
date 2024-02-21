@@ -140,7 +140,7 @@ We will look into the details of node-type steps in a different article. For now
 
 ### Filter Steps
 
-_Filter Steps_ are atomic traversals that filter nodes according to given criteria. The most common filter step is aptly-named `filter`,  which continues the traversal in the step it suffixes for all nodes which pass its criterion. Its criterion is represented by a lamba function which has access to the node of the previous step and returns a boolean.  Continuing with the previous example, let us execute a query which returns all `METHOD` nodes of the Code Property Graph for `X42`, but only if their `IS_EXTERNAL` property is set to `false`:
+_Filter Steps_ are atomic traversals that filter nodes according to given criteria. The most common filter step is aptly-named `filter`,  which continues the traversal in the step it suffixes for all nodes which pass its criterion. Its criterion is represented by a lambda function which has access to the node of the previous step and returns a boolean.  Continuing with the previous example, let us execute a query which returns all `METHOD` nodes of the Code Property Graph for `X42`, but only if their `IS_EXTERNAL` property is set to `false`:
 
 ```java
 joern> cpg.method.filter(_.isExternal == false).name.toList 
@@ -183,7 +183,7 @@ joern> cpg.method.where(_.isExternal(false)).name.toList
 res24: List[String] = List("main")
 ```
 
-Maybe not particulary useful-seeming given this specific example, but keep it in the back of your head, because `filter` is a handy tool to have in the toolbox. Next up, _Map Steps_.
+Maybe not particularly useful-seeming given this specific example, but keep it in the back of your head, because `filter` is a handy tool to have in the toolbox. Next up, _Map Steps_.
 
 ### Map Steps
 

@@ -21,7 +21,7 @@ title: Reference Card
 | `metaData`      | The meta data node |
 | `method`      | All methods |
 | `methodRef`      | All method references |
-| `methodReturn`      | All formal return paramters |
+| `methodReturn`      | All formal return parameters |
 | `namespace`      | All namespaces |
 | `namespaceBlock`      | All namespace blocks |
 | `parameter`      | All parameters  |
@@ -35,7 +35,7 @@ title: Reference Card
 | Step  | Description   |
 | ------------- | ------------- |
 | `clone` | Create a deep copy of the traversal |
-| `dedup`      |  Deduplicate results in a traveral |
+| `dedup`      |  Deduplicate results in a traversal |
 | `map`      | Transform the traversal by a given function |
 | `sideEffect`      | Extend the traversal with a side-effect step by applying a function |
 
@@ -74,8 +74,8 @@ title: Reference Card
 | `notControlledBy`      | Returns only those flows that are NOT wrapped by a given AST control condition (>, <, =, etc.) |
 | `reachableBy`      | Find if a given source node is reachable by a sink via a dataflow |
 | `reachableByFlows` | Find paths for flows of data from sinks to sources |
-| `sink`      | List of all nodes identified as potential sensitive sinks the natured of methods, literals, types etc. associated with them |
-| `source`      | List of all nodes identified as sensitive/attacker-controlled due to the natured of methods, literals, types etc. associated with them |
+| `sink`      | List of all nodes identified as potential sensitive sinks for the methods, literals, types etc. associated with them |
+| `source`      | List of all nodes identified as sensitive/attacker-controlled for the methods, literals, types etc. associated with them |
 | `tagList`      | Execute the traversal and return TAG nodes connected to each of the nodes |
 
 ### Execution Directives

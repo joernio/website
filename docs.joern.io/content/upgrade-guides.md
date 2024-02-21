@@ -8,7 +8,7 @@ weight: 150
 ## 1.1.1: OverflowDb Traversals
 This release introduces a major rearchitecture of the cpg query language (CPGQL). Most changes happened under the hood, however there are a few changes that are user facing. The migration should be straightforward, and in any case we're here to help.
 
-Background: CPGQL was previously based on the [Gremlin graph traversal language](https://tinkerpop.apache.org/gremlin.html) (accessible via `.raw`), and is now based on [OverflowDb Traversal](https://github.com/ShiftLeftSecurity/overflowdb/blob/master/traversal/src/main/scala/overflowdb/traversal/Traversal.scala). The main drivers behind this change are: better performance, less complexity and fewer dependencies. OverflowDb Traversal is a Scala collection with additional graph steps, which means we now inherit many useful steps from the rich Scala standard collection library, where previously convertions between Traversal and Scala collections were needed.
+Background: CPGQL was previously based on the [Gremlin graph traversal language](https://tinkerpop.apache.org/gremlin.html) (accessible via `.raw`), and is now based on [OverflowDb Traversal](https://github.com/ShiftLeftSecurity/overflowdb/blob/master/traversal/src/main/scala/overflowdb/traversal/Traversal.scala). The main drivers behind this change are: better performance, less complexity and fewer dependencies. OverflowDb Traversal is a Scala collection with additional graph steps, which means we now inherit many useful steps from the rich Scala standard collection library, where previously conversions between Traversal and Scala collections were needed.
 At the same time, Traversal offers largely the same steps and semantics as its TinkerPop predecessor. 
 
 Here are the most important new parts - from our experience the swap of `filter` and `where` accounts for 90% of user-facing changes:
@@ -20,7 +20,7 @@ Here are the most important new parts - from our experience the swap of `filter`
 
 3. RIP `filterOnEnd` - this is now simply `filter`
 
-4. `repeat` now has a builder DSL to configure it's behaviour, which is more specific and easier to understand than tinkerpop's api, which relied on the order of modulators in the traversal. 
+4. `repeat` now has a builder DSL to configure it's behaviour, which is more specific and easier to understand than Tinkerpop's API, which relied on the order of modulators in the traversal. 
 For example, in tinkerpop `.emit.repeat(Traversal)` means "emit everything", while `.repeat(Traversal).emit` means "emit all but the first element". 
 In OverflowDb Traversal this behaviour is more explicit: `.repeat(Traversal)(_.emit)` and `.repeat(Traversal)(_.emitAllButFirst)`.
 
@@ -33,14 +33,14 @@ Some more examples for the migration:
 5. `repeat` uses depth first search (DFS) by default and can be configured to use breadth first search (BFS) instead. 
 Tinkerpop has a long standing [issue](https://github.com/apache/tinkerpop/pull/838) that it claims to use DFS but actually uses BFS, and also cannot be configured to use one or the other. 
 
-6. `.start` step only exists for `Node` and `NewNode`, not for other collections any more. Instead, use the standard scala collection mechanism `.to(Traversal)`:
+6. `.start` step only exists for `Node` and `NewNode`, not for other collections any more. Instead, use the standard Scala collection mechanism `.to(Traversal)`:
 
 ```java
 // still works - nothing changed:
 val someMethod = cpg.method.head
 someMethod.start.parameter //Traversal[MethodParameterIn]
 
-// using `.to(Traversal)` - standard scala collection mechanism
+// using `.to(Traversal)` - standard Scala collection mechanism
 val methodList: cpg.method.l
 methodList.to(Traversal) //Traversal[Method]
 ```
@@ -67,7 +67,7 @@ Please let us know if you need help with your migration, either by opening an is
 
 ### Bleeding edge / power users only:
 
-8) If you used the underlying tinkerpop api and OverflowDb types (e.g. via `.raw`), your scripts may be subject to additional changes, due to the removal of the Tinkerpop dependency and renames in OverflowDb types:
+8) If you used the underlying Tinkerpop API and OverflowDb types (e.g. via `.raw`), your scripts may be subject to additional changes, due to the removal of the Tinkerpop dependency and renames in OverflowDb types:
 * `Steps` -> `Traversal`
 * `NodeSteps` -> `Traversal`
 * `NewNodeSteps` -> `Traversal`

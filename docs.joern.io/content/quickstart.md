@@ -274,7 +274,7 @@ As a final step, exit Joern:
 joern> :exit
 ```
 
-Congratulations, you have succesfully queried your first  Code
+Congratulations, you have successfully queried your first  Code
 Property Graph using Joern and its query language. More examples can be found on the
 [query-database website](http://queries.joern.io) (also see [Joern Scan](scan.md)).
 

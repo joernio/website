@@ -135,5 +135,5 @@ res7: List[MetaData] = List(
 Other top-level commands that refer to the currently active project are `run`, `open`, close, `delete` and `undo`.
 
 
-That concludes this gentle introducton into the commands the Joern Shell provides you with for organizing your Joern Projects. Have fun with your analysis!
+That concludes this gentle introduction into the commands the Joern Shell provides you with for organizing your Joern Projects. Have fun with your analysis!
 

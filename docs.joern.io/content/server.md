@@ -67,12 +67,12 @@ to ask for the response at a later point in time. For interactive use
 cases, this polling approach may be problematic. In this case, the
 client can subscribe to a Websocket offered via
 
-```shell
+```
 ws://$hostname:8080/connect
 ```
 
 where `$hostname` is the name of the host on which the server is
-running. Once subscribed, uuids of completed queries are reported on
+running. Once subscribed, UUIDs of completed queries are reported on
 the web socket.
 
 {{< hint info >}}
