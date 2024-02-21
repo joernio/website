@@ -4,22 +4,13 @@ title: Quickstart
 weight: 25
 ---
 
-Joern is a command-line tool for static code analysis. Joern can
-help you find and correct security vulnerabilities in programs with
-hundreds of thousands of lines of code, including flaws that are
-difficult to detect with fuzzing. It includes an interactive shell and
-automation capabilities centered around Code Property Graphs.
+Joern is a powerful command-line tool designed for static code analysis. It can assist you in detecting and fixing security vulnerabilities in programs with large amounts of code, even those that are difficult to identify with fuzzing. Joern also comes with an interactive shell and automation features based on Code Property Graphs.
 
-This article introduces you to the basics of working with Joern. You
-learn how to create and modify Code Property Graphs, how to query them
-and about organisational commands. If you have not yet installed
-Joern, you can do so by following [these instructions](/installation).
+This article provides an introduction to the fundamentals of using Joern. You will learn how to create and modify Code Property Graphs, query them, and use organizational commands. In case you haven't installed Joern yet, you can refer to [these instructions](/installation).
 
 ## Obtaining the Sample Program
 
-Before you start Joern, you should have a program ready to
-analyze. Clone the following git repository which contains a simple
-program named `X42`:
+Before you begin analyzing with Joern, ensure you have a program ready for analysis. To do this, clone the following git repository which contains a simple program named `X42`:
 
 ```bash
 git clone https://github.com/ShiftLeftSecurity/x42.git
