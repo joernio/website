@@ -1,6 +1,6 @@
 ---
 id: upgrade-guides
-title: Upgrade guides
+title: Upgrade Guide
 weight: 150
 ---
 
