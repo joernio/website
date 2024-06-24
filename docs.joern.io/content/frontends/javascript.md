@@ -1,7 +1,7 @@
 ---
 id: javascript
 title: JavaScript
-weight: 10
+weight: 20
 ---
 
 ### Frontend Args
