@@ -7,10 +7,10 @@ weight: 135
 
 ## Frontends
 
-Joern contains multiple frontends, each responsible for parsing the source code and generating the AST for their respective languages. `X2CPG` is the base on which all of the other frontends are built, and contains common structures by all of the languages. Each frontend contains the base arguments from `x2cpg`, as well as custom arguments that is frontend specific. See each respective languages' page for a detailed explanation on what arguments are available and what each of the arguments do.
+Joern contains multiple frontends, each responsible for parsing the source code and generating the AST for their respective language. `X2CPG` is the base on which all of the other frontends are built, and contains common structures by all of the languages. Each frontend contains the base arguments from `x2cpg`, as well as custom arguments that are frontend specific. See each respective languages' page for a detailed explanation on what arguments are available and what each of the arguments do.
 
 ## Invoking a specific frontend
-To generate the AST for source files with a specific frontend you will need to find the frontend in the `joern-cli/frontends/` folder. Once there, you will need to build the frontend using `sbt` afterwhich you can invoke it direclty with the script that is generated. As an example, to parse a given Python directory and generate an AST:
+To generate the AST for for some program with a specific frontend, invoke the desired frontend from the `joern-cli/frontends` directory using the generated script. If the script is not there, make sure that Joern has been staged with `sbt`. As an example, to parse a given Python directory and generate an AST:
 ```bash
 cd joern-cli/frontends/pysrc2cpg/
 sbt scala stage
@@ -20,9 +20,9 @@ The arguments given after the `pysrc2cpg` command can be a mixture of the args f
 
 If you would like to generate the full `CPG` for a given source directory, you can do so using the `joern-parse` command:
 ```bash
-./joern-parse /some/input/path --language JAVASRC
+./joern-parse /some/input/path --language PYTHONSRC --frontend-args --venvDir /some/venv/dir
 ```
-The language argument selects the frontend used to generate the AST. If this argument is omitted, `joern-parse` will select a frontend based on the supported file type with the largest number of files in the given input directory.
+The language argument selects the frontend used to generate the AST. If this argument is omitted, `joern-parse` will select a frontend based on the supported file type with the largest number of files in the given input directory. The arguments passed after `--frontend-args` will be passed to the frontend that is being invoked.
 
 Below is a list of each of the different frontends and the languages that they support:
 | **Frontend** | **Language** | **Language Arg** |
