@@ -22,3 +22,34 @@ The following arguments are specific to the `javasrc2cpg` frontend.
 | `keep-type-arguments` | Type full names of variables keep their type arguments | - | `--keep-type-arguments` | `true` |
 | `no-dummyTypes` | Disables the generation of dummy types during type propagation | - | `--no-dummyTypes` | `true` |
 | `type-prop-iterations` | Maximum iterations of type propagation | `Integer` | `--type-prop-iterations 2` | `true` |
+
+### Calls
+The follownig is a simple call in Java:
+```java
+class Foo {
+  public void bar(String s) {
+    s.length()
+  }
+
+  public void baz() {
+    bar("test")
+  }
+}
+```
+![Image of a simple call AST for a function in the same class in Java](/images/java_call.png)
+
+The following is a member call in Java:
+```java
+class Foo {
+  public void bar() {
+    Baz.bazFunc("1", 2, "3");
+  }
+}
+
+class Baz {
+  public static int bazFunc(String param1, Integer param2, String param3) {
+    return 1
+  }
+}
+```
+![Image of a simple call AST for a static function in a different class in Java](/images/java_static_call.png)
