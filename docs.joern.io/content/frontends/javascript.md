@@ -37,7 +37,7 @@ CallNode
     ├── Argument[0]: this 
     ├── Argument[1]: param1
     ├── Argument[2]: param2
-    └── Argument[3]: parma3
+    └── Argument[3]: param3
 ```
 Simple calls are modelled slightly different in dynamic languages (such as JavaScript) when compared to static languages. In dynamic languages `arg[0]` is no longer the receiver of the call, but instead is the object that holds the property which is the receiver of the call. There is also a 5th argument introduced, which is `arg[-1]`.
 

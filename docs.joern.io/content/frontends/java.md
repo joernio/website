@@ -48,7 +48,7 @@ CallNode
     ├── Argument[0]: this 
     ├── Argument[1]: param1
     ├── Argument[2]: param2
-    └── Argument[3]: parma3
+    └── Argument[3]: param3
 ```
 Note that the method signature in the Java code only has three arguments, but the call AST has four. There is an implicit argument that is added in the 0th position, which is the `receiver` of the call node. In this case since the call is invoking a method defined in the same class, so an implicit `this` argument is added at `arg[0]` as the `receiver` of the call. Note that dynamic methods (i.e methods without the `static` modifier) also have a `this` 0th parameter that lines up with the `this` 0th argument in the `CallNode`.
 
