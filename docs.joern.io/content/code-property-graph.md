@@ -23,7 +23,7 @@ replaced both the storage backend and query language with our own
 graph database
 [OverflowDB](https://github.com/ShiftLeftSecurity/overflowdb).
 
-ShiftLeft has open-sourced the [implementation of the code property
+Qwiet AI (formerly ShiftLeft) has open-sourced the [implementation of the code property
 graph](https://github.com/ShiftLeftSecurity/codepropertygraph) and its
 [specification](https://cpg.joern.io).
 

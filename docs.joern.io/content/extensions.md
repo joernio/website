@@ -177,6 +177,6 @@ val exampleNode = builder.addNodeType(
 cpgSchema.base.file.addProperties(exampleProperty)
 ```
 
-The schema is defined in overflowdb-schema, which is a Scala DSL. I.e. you can open `sample-plugin` in your favorite IDE (we recommend Intellij Idea) and get autocompletion, compiler feedback etc., which should help with creating your schema extension. For more inspiration you could explore the base cpg schema definition which is split across multiple files for modularity: https://github.com/ShiftLeftSecurity/codepropertygraph/tree/master/schema/src/main/scala/io/shiftleft/codepropertygraph/schema
+The schema is defined in overflowdb-schema, which is a Scala DSL. I.e. you can open `sample-plugin` in your favorite IDE (we recommend IntelliJ IDEA) and get autocompletion, compiler feedback etc., which should help with creating your schema extension. For more inspiration you could explore the base cpg schema definition which is split across multiple files for modularity: https://github.com/ShiftLeftSecurity/codepropertygraph/tree/master/schema/src/main/scala/io/shiftleft/codepropertygraph/schema
 
 To generate the domain classes and install the schema extension in your joern distribution (must be installed first), simply run `./install.sh` in the sample-plugin. 
