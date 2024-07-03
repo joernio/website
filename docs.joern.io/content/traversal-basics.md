@@ -6,7 +6,7 @@ weight: 40
 
 Joern helps you discover security vulnerabilities by executing graph
 traversals on the [Code Property
-Graph](code-property-graph). A traversal is formulated
+Graph](/code-property-graph). A traversal is formulated
 as an _Joern Query_, or _query_ for short. In this article, you will learn about the different components that make up queries.
 
 ## The Anatomy of a Joern Query

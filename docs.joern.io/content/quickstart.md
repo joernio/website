@@ -267,7 +267,7 @@ joern> :exit
 
 Congratulations, you have successfully queried your first  Code
 Property Graph using Joern and its query language. More examples can be found on the
-[query-database website](http://queries.joern.io) (also see [Joern Scan](scan.md)).
+[query-database website](http://queries.joern.io) (also see [Joern Scan](/scan.md)).
 
 In subsequent articles, you will learn the more advanced features of Joern and also
 how to use it to find your first real-world vulnerability.

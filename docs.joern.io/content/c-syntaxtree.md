@@ -87,7 +87,7 @@ pair `(name,attribute)`.
 
 ## Basic AST Traversals
 
-The most basic [traversal](traversal-basics) that you can
+The most basic [traversal](/traversal-basics) that you can
 execute on any AST node is `ast`, which traverses to all nodes of the
 AST rooted in the node. For example,
 

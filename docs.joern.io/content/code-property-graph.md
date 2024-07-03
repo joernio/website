@@ -9,7 +9,7 @@ codebases for instances of programming patterns. These patterns are
 formulated in a domain-specific language (DSL) based on
 [Scala](https://www.scala-lang.org/). It serves as a single
 intermediate program representation across all languages supported by
-Joern and its commercial brother [Ocular](https://www.shifleft.io/).
+Joern and its commercial brother [Ocular](https://qwiet.ai/).
 
 Property graphs are a generic abstraction supported by many
 contemporary graph databases such as [Neo4j](https://neo4j.com/),
@@ -23,7 +23,7 @@ replaced both the storage backend and query language with our own
 graph database
 [OverflowDB](https://github.com/ShiftLeftSecurity/overflowdb).
 
-ShiftLeft has open-sourced the [implementation of the code property
+Qwiet AI (formerly ShiftLeft) has open-sourced the [implementation of the code property
 graph](https://github.com/ShiftLeftSecurity/codepropertygraph) and its
 [specification](https://cpg.joern.io).
 
