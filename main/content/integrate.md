@@ -40,3 +40,4 @@ print(result)
 {{< /highlight >}}
 
 That's it! For additional information, check out the [Server documentation](https://docs.joern.io/server/) or get a closer look at the [Python client library](https://github.com/joernio/cpgqls-client-python) 👈
+
