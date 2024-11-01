@@ -8,7 +8,7 @@ url: "query"
 
 ## Get Joern
 {{< highlight html >}}
-$ curl -L https://github.com/ShiftLeftSecurity/joern/releases/latest/download/joern-install.sh | sudo bash
+$ curl -L https://github.com/joernio/joern/releases/latest/download/joern-install.sh | sudo bash
 {{< /highlight >}}
 
 ## Fire up Joern Shell 🔥
@@ -92,3 +92,4 @@ Nice! We found the call site. We can now try to find where its located in code
 {{< /highlight >}}
 
 For more queries, head over to https://queries.joern.io
+
