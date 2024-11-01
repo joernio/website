@@ -109,3 +109,4 @@ joern> importCpg("linux-full.odb")
 ...
 res1: Option[Cpg] = Some(value = Cpg (Graph [47542978 nodes]))
 ```
+

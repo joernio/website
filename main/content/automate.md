@@ -72,3 +72,4 @@ To bundle up this query and add it to our C Scanner, we add some bells and whist
 {{< /highlight >}}
 
 There are many such scanners for common as well as precise cases modelled as bundles of Joern queries. They all are part of the automated ```joern-scan```
+
