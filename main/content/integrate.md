@@ -3,22 +3,22 @@ title: "Integrate Joern in your project. REST APIs are there for you 🤝"
 layout: "blog"
 url: "integrate"
 ---
-So you have your own DIY code anlaysis tool with a swanky UI, but you also fell in love with Joern? We understand that!
+So, you have your own DIY code analysis tool with a swanky UI, but you also fell in love with Joern? We understand that!
 
 ## Get Joern
 {{< highlight html >}}
-$ curl -L https://github.com/ShiftLeftSecurity/joern/releases/latest/download/joern-install.sh | sudo bash
+$ curl -L https://github.com/joernio/joern/releases/latest/download/joern-install.sh | sudo bash
 {{< /highlight >}}
 
-## Start Joern Server
+## Start the Joern Server
 {{< highlight html >}}
 $ joern --server
 {{< /highlight >}}
-Yep, its that esay!
+Yep! It's that easy!
 
-## Integrate queries in your code
+## Integrate queries into your code
 
-Lets get the python CPG Query Language client library so we can test some integrations with Python. Don't worry, we jave a JS integration also for your glorious hipster JS UIs!
+Let's get the Python CPG Query Language client library so we can test some integrations with Python. Don't worry. We also have a JavaScript integration for your gloriously hipster JS UI!
 {{< highlight html >}}
 $ pip install cpgqls-client
 {{< /highlight >}}
@@ -33,10 +33,10 @@ query = import_code_query("/home/suchakra/Projects/test.jar", "test-app")
 result = client.execute(query)
 print(result['stdout'])
 
-# execute a simple CPGQuery to list all methods in the code
+# execute a simple CPG query to list all methods in the code
 query = "cpg.method.name.l"
 result = client.execute(query)
 print(result)
 {{< /highlight >}}
 
-Thats it! For additional info, go look at some [docs](https://docs.joern.io/server/) or get a closer look at the Python client library [here](https://github.com/joernio/cpgqls-client-python) 👈
+That's it! For additional information, check out the [Server documentation](https://docs.joern.io/server/) or get a closer look at the [Python client library](https://github.com/joernio/cpgqls-client-python) 👈
