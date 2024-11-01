@@ -12,7 +12,7 @@ weight: 20
 
 Pre-built binaries of the joern-cli are available at:
 
-https://github.com/ShiftLeftSecurity/joern/releases/
+https://github.com/joernio/joern/releases/
 
 To install the latest release, simply execute the following
 

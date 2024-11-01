@@ -8,7 +8,7 @@ url: "automate"
 ## Get Joern
 
 {{< highlight html >}}
-$ curl -L https://github.com/ShiftLeftSecurity/joern/releases/latest/download/joern-install.sh | sudo bash	
+$ curl -L https://github.com/joernio/joern/releases/latest/download/joern-install.sh | sudo bash	
 {{< /highlight >}}
 
 ## Run ```joern-scan```
