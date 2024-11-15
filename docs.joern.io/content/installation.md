@@ -6,7 +6,7 @@ weight: 20
 
 ## Prerequisites
 
-* JDK 19 (get here for example: https://openjdk.java.net/install/); newer JDK versions _might_ work, but have not been properly tested
+* JDK 19 (get here for example: https://openjdk.java.net/install/ ); newer JDK versions _might_ work, but have not been properly tested
 
 ## Installing Pre-Built Binaries
 
