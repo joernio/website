@@ -28,6 +28,24 @@ The hostname and port can also be specified:
 joern --server --server-host localhost --server-port 8081
 ```
 
+Run queries on the remote joern instance using `curl` and `jq`:
+```shell
+function joern-remote() {
+  QUERY="{\"query\": \"$@\"}"
+  curl --silent http://localhost:8080/query-sync -X POST -d $QUERY | jq --raw-output .stdout
+}
+
+$ joern-remote 'val foo = 42'
+> val foo: Int = 42
+
+$ joern-remote 'println(\"remote execution vector - this prints on the server\")'
+> 
+
+$ joern-remote 'importCode(\"/path/on/server\")'
+val res1: io.shiftleft.codepropertygraph.generated.Cpg = Cpg[Graph[45 nodes]]
+```
+
+
 A sample client is available for Python at:
 
 https://github.com/joernio/cpgqls-client-python#example-usage
