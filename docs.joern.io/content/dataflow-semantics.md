@@ -101,7 +101,7 @@ val extraFlows = List(
 )
 
 val context = new LayerCreatorContext(cpg)
-val options = new OssDataFlowOptions(extraFlows = extraFlows)
+val options = new OssDataFlowOptions(semantics = DefaultSemantics().plus(extraFlows))
 new OssDataFlow(options).run(context)
 ```
 
