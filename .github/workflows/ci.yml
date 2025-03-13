@@ -46,7 +46,7 @@ jobs:
             --minify \
             --baseURL "https://docs.joern.io/"
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./docs.joern.io/public
 
