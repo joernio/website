@@ -20,7 +20,7 @@ For example, let's say you have a file named `test.sc` with the following conten
 }
 ```
 
-The script may contain arbitrary Scala code as well as joern directives (e.g. `importCpg`). The `#>` operator can be used to pipe output into files, similar to `>` in a unix shell. 
+The script may contain arbitrary Scala code as well as Joern directives (e.g. `importCpg`). The `#>` operator can be used to pipe output into files, similar to `>` in a unix shell. 
 You can run the script as follows:
 ```bash
 ./joern --script test.sc --param cpgFile=src.path.zip --param outFile=output.log
