@@ -76,6 +76,8 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Alhuzali et al. – NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications (USENIX Security 2018)
 
+* Xiaomeng et al. – CPGVA: Code Property Graph based Vulnerability Analysis by Deep Learning (ICAIT 2018)
+
 * Backes et al. – Efficient and Flexible Discovery of PHP Application Vulnerabilities (EURO S&P 2017)
 
 * Yamaguchi et al. – Automatic Inference of Search Patterns for Taint-Style Vulnerabilities (S&P 2015)
