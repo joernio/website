@@ -46,6 +46,8 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Woo et al. – V1SCAN: Discovering 1-day Vulnerabilities in Reused C/C++ OSS Components (USENIX Security 2023)
 
+* Hu et al. – Interpreters for GNN-Based Vulnerability Detection: Are We There Yet? (ISSTA 2023)
+
 * Al Kassar – Testability Tarpits: the Impact of Code Patterns on the Security Testing of Web Applications (NDSS 2022)
 
 * Shi et al. – Backporting security patches of web applications: A prototype design and implementation on injection vulnerability patches (USENIX Security 2022)
