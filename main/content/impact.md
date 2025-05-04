@@ -6,7 +6,7 @@ url: "impact"
 
 The Joern project provides the original implementation of the [Code Property Graph](https://en.wikipedia.org/wiki/Code_property_graph), based on the 2014 IEEE Security & Privacy paper [Modeling and Discovering Vulnerabilities with Code Property Graphs](https://fabianyamaguchi.com/files/2014-ieeesp.pdf). Published as open-source under the Apache 2 License, it has made this representation accessible to the broader research community, accelerating innovation in automated vulnerability discovery and code analysis. In recognition of its long lasting impact, the paper received the IEEE Test-of-Time Award in 2024.
 
-This page provides an overview of research, articles, and videos based on Joern and code property graphs. If you would like your work to be included on this page, please feel free to [reach out](mailto:contact@whirlylabs.com).
+This page provides an overview of research, articles, and videos that make use of Joern and code property graphs. If you would like your work to be included on this page, please feel free to [reach out](mailto:contact@whirlylabs.com).
 
 ## Papers (Last Updated: May 2025)
 
