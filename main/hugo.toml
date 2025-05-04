@@ -15,10 +15,14 @@ theme = "blist"
   url  = "/blog"
   weight = 2
   
+  [[menu.main]]
+  name = "Impact"
+  url = "/impact"
+  weight = 3
 
   [[menu.main]]
   name = "Community"
   url = "https://discord.com/invite/vv4MH284Hc"
-  weight = 3
+  weight = 4
 
   
