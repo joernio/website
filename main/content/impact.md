@@ -113,6 +113,8 @@ This page provides an overview of research and applications that employ Joern. I
 
 * [Ganz - Graph-Based Vulnerability Discovery](https://www.youtube.com/watch?v=KWG5v1oHwMM)
 
+* [Ursache/Yamaguchi/Schmidt - Ghidra2cpg: From graph queries to vulnerabilities in Binary Code](https://www.youtube.com/watch?v=hfxCDx9BTLo)
+
 * [Li/Sharma - How to Analyze Code for Vulnerabilities using Joern](https://www.youtube.com/watch?v=qtGRNb_2Khs)
 
 * [Yamaguchi - Mining for Bugs with Graph Database Queries](https://www.youtube.com/watch?v=gJGX7y053E8)
