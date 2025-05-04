@@ -22,6 +22,8 @@ This page provides an overview of research, articles, and videos that make use o
 
 * Yang and Cai – Dissecting Real-World Cross-Language Bugs (FSE 2025)
 
+* Wu – Identifying software vulnerabilities via code representation learning (PhD Thesis 2025)
+
 * David et al. – QUACK: Hindering Deserialization Attacks via Static Duck Typing (NDSS 2024)
 
 * Amour and Tilevich – Toward Declarative Auditing of Java Software for Graceful Exception Handling (MPLR 2024)
