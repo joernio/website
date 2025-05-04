@@ -26,6 +26,8 @@ This page provides an overview of research, articles, and videos that make use o
 
 * Shao and Ding – FVD-DPM: Fine-Grained Vulnerability Detection via Conditional Diffusion Probabilistic Models (USENIX Security 2024)
 
+* Basque et al. – Ahoy SAILR! There is No Need to DREAM of C: A Compiler-Aware Structuring Algorithm for Binary Decompilation (USENIX Security 2024)
+
 * Wang et al. – Combining Structured Static Code Information and Dynamic Symbolic Traces for Software Vulnerability Prediction (ICSE 2024)
 
 * Hussain et al. – Vulnerability detection in Java source code using a quantum convolutional neural network with self-attentive pool ing, deep sequence, and graph-based hybrid feature extraction (Nature 2024)
@@ -50,7 +52,9 @@ This page provides an overview of research, articles, and videos that make use o
 
 * Woo et al. – V1SCAN: Discovering 1-day Vulnerabilities in Reused C/C++ OSS Components (USENIX Security 2023)
 
-* Shezan at al. – CHKPLUG: Checking GDPR Compliance of WordPress Plugins via Cross-language Code Property Graph (NDSS 2023)
+* Shezan et al. – CHKPLUG: Checking GDPR Compliance of WordPress Plugins via Cross-language Code Property Graph (NDSS 2023)
+
+* Han et al. – QueryX: symbolic query on decompiled code for finding bugs in COTS binaries (S&P 2023)
 
 * Hu et al. – Interpreters for GNN-Based Vulnerability Detection: Are We There Yet? (ISSTA 2023)
 
@@ -67,6 +71,8 @@ This page provides an overview of research, articles, and videos that make use o
 * Cheng et al. – Path-Sensitive Code Embedding via Contrastive Learning for Software Vulnerability Detection (ISSTA 2022)
 
 * Nong et al. – Generating Realistic Vulnerabilities via Neural Code Editing: An Empirical Study (FSE 2022)
+
+* Mantovani et al. – The Convergence of Source Code and Binary Vulnerability Discovery – A Case Study (ASIACCS 2022)
 
 * Wi et al. - HiddenCPG: Large-Scale Vulnerable Clone Detection Using Subgraph Isomorphism of Code Property Graphs (WWW 2022)
 
@@ -85,6 +91,8 @@ This page provides an overview of research, articles, and videos that make use o
 * Xiaomeng et al. – CPGVA: Code Property Graph based Vulnerability Analysis by Deep Learning (ICAIT 2018)
 
 * Backes et al. – Efficient and Flexible Discovery of PHP Application Vulnerabilities (EURO S&P 2017)
+
+* Yakdan et al. – No More Gotos: Decompilation Using Pattern-Independent Control-Flow Structuring and Semantic-Preserving Transformations (NDSS 2015)
 
 * Yamaguchi et al. – Automatic Inference of Search Patterns for Taint-Style Vulnerabilities (S&P 2015)
 
