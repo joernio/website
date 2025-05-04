@@ -26,6 +26,8 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Shao and Ding – FVD-DPM: Fine-Grained Vulnerability Detection via Conditional Diffusion Probabilistic Models (USENIX Security 2024)
 
+* Wang et al. – Combining Structured Static Code Information and Dynamic Symbolic Traces for Software Vulnerability Prediction (ICSE 2024)
+
 * Liang et al. – A Source Code Vulnerability Detection Method Based on Adaptive Graph Neural Networks (ASEW 2024)
 
 * Rozi et al. – Securing Code With Context: Enhancing Vulnerability Detection Through Contextualized Graph Representations (IEEE Access Vol.2 2024)
@@ -33,6 +35,8 @@ This page provides an overview of research and applications that employ Joern. I
 * Nguyen et al. – Code-centric learning-based just-in-time vulnerability detection (Systems & Software 2024)
 
 * Lee and Son – AdCPG: Classifying JavaScript Code Property Graphs with Explanations for Ad and Tracker Blocking (ACM CCS 2023).
+
+* Chen et al. – DiverseVul: A New Vulnerable Source Code Dataset for Deep Learning Based Vulnerability Detection (RAID 2023)
 
 * Seidel et al. – Learning Type Inference for Enhanced Dataflow Analysis (ESORICS 2023)
 
@@ -46,7 +50,13 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Shi et al. – Backporting security patches of web applications: A prototype design and implementation on injection vulnerability patches (USENIX Security 2022)
 
-* Hin Et al. – LineVD: Statement-level vulnerability detection using graph neural networks (MSR 2022)
+* Ding et al. – VELVET: a noVel Ensemble Learning approach to automatically locate VulnErable sTatements (SANER 2022)
+
+* Hin et al. – LineVD: Statement-level vulnerability detection using graph neural networks (MSR 2022)
+
+* Cheng et al. – Path-Sensitive Code Embedding via Contrastive Learning for Software Vulnerability Detection (ISSTA 2022)
+
+* Xu – Semantic Driven Vulnerability Detection and Patch Analysis (PhD Thesis 2020)
 
 * Du et al. – LEOPARD: Identifying Vulnerable Code for Vulnerability Assessment Through Program Metrics (ICSE 2019)
 
