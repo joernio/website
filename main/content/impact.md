@@ -79,3 +79,26 @@ This page provides an overview of research and applications that employ Joern. I
 
 
 
+# Articles
+
+* [Bastide - An Intro to the Code Property Graph](https://coderpad.io/blog/development/code-property-graph-oriented-databases-source-code-analysis/)
+
+* [Denissov - LLVM meets Code Property Graph](https://lowlevelbits.org/llvm-meets-code-property-graphs/)
+
+* [Shukla – Code Representation for Machine Learning: Code as Graph](https://blog.embold.io/code-representation-for-machine-learning-code-as-graph/)
+
+* [Verma - https://jaiverma.github.io/blog/joern-intro](https://jaiverma.github.io/blog/joern-intro)
+
+* [Mahendra - SAST: Joern 101](https://akhilmahendra.com/blog/program-analysis-with-joern/)
+
+# Videos
+
+* [LiveOverflow - Using joern to Find GraphQL Authorization Issue](https://www.youtube.com/watch?v=tBon33o2aS4&t=111s)
+
+* [Sharma - Discovering Privacy Violations at Scale](https://www.youtube.com/watch?v=GI5QK4bfvF8)
+
+* [Ganz - Graph-Based Vulnerability Discovery](https://www.youtube.com/watch?v=KWG5v1oHwMM)
+
+* [Li/Sharma - How to Analyze Code for Vulnerabilities using Joern](https://www.youtube.com/watch?v=qtGRNb_2Khs)
+
+* [Yamaguchi - Mining for Bugs with Graph Database Queries](https://www.youtube.com/watch?v=gJGX7y053E8)
