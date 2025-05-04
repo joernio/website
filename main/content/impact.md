@@ -24,6 +24,8 @@ This page provides an overview of research, articles, and videos that make use o
 
 * David et al. – QUACK: Hindering Deserialization Attacks via Static Duck Typing (NDSS 2024)
 
+* Amour and Tilevich – Toward Declarative Auditing of Java Software for Graceful Exception Handling (MPLR 2024)
+
 * Shao and Ding – FVD-DPM: Fine-Grained Vulnerability Detection via Conditional Diffusion Probabilistic Models (USENIX Security 2024)
 
 * Basque et al. – Ahoy SAILR! There is No Need to DREAM of C: A Compiler-Aware Structuring Algorithm for Binary Decompilation (USENIX Security 2024)
