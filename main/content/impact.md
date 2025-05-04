@@ -46,6 +46,8 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Woo et al. – V1SCAN: Discovering 1-day Vulnerabilities in Reused C/C++ OSS Components (USENIX Security 2023)
 
+* Shezan at al. – CHKPLUG: Checking GDPR Compliance of WordPress Plugins via Cross-language Code Property Graph (NDSS 2023)
+
 * Hu et al. – Interpreters for GNN-Based Vulnerability Detection: Are We There Yet? (ISSTA 2023)
 
 * Al Kassar – Testability Tarpits: the Impact of Code Patterns on the Security Testing of Web Applications (NDSS 2022)
@@ -90,6 +92,8 @@ This page provides an overview of research and applications that employ Joern. I
 * [CyberJutsu - The Joern-ey of Static Code Analysis](https://www.slideshare.net/slideshow/cyberjutsu-the-joern-ey-of-static-code-analysis-pdf/272177431)
 
 * [Verma - https://jaiverma.github.io/blog/joern-intro](https://jaiverma.github.io/blog/joern-intro)
+
+* [TutorialBoy - Joern for Beginners: A How-To Guide for Source Code Analysis](https://tutorialboy.medium.com/joern-for-beginners-a-how-to-guide-for-source-code-analysis-7d03e1d82f82)
 
 * [Mahendra - SAST: Joern 101](https://akhilmahendra.com/blog/program-analysis-with-joern/)
 
