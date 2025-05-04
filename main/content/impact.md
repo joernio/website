@@ -32,13 +32,15 @@ This page provides an overview of research, articles, and videos that make use o
 
 * Hussain et al. – Vulnerability detection in Java source code using a quantum convolutional neural network with self-attentive pool ing, deep sequence, and graph-based hybrid feature extraction (Nature 2024)
 
+* Wang et al. – OSmart: Whitebox Program Option Fuzzing (CCS 2024)
+
 * Liang et al. – A Source Code Vulnerability Detection Method Based on Adaptive Graph Neural Networks (ASEW 2024)
 
 * Rozi et al. – Securing Code With Context: Enhancing Vulnerability Detection Through Contextualized Graph Representations (IEEE Access Vol.2 2024)
 
 * Nguyen et al. – Code-centric learning-based just-in-time vulnerability detection (Systems & Software 2024)
 
-* Lee and Son – AdCPG: Classifying JavaScript Code Property Graphs with Explanations for Ad and Tracker Blocking (ACM CCS 2023).
+* Lee and Son – AdCPG: Classifying JavaScript Code Property Graphs with Explanations for Ad and Tracker Blocking (CCS 2023).
 
 * Chen et al. – DiverseVul: A New Vulnerable Source Code Dataset for Deep Learning Based Vulnerability Detection (RAID 2023)
 
