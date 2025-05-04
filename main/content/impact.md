@@ -64,6 +64,8 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Nong et al. – Generating Realistic Vulnerabilities via Neural Code Editing: An Empirical Study (FSE 2022)
 
+* Wi et al. - HiddenCPG: Large-Scale Vulnerable Clone Detection Using Subgraph Isomorphism of Code Property Graphs (WWW 2022)
+
 * Xu – Semantic Driven Vulnerability Detection and Patch Analysis (PhD Thesis 2020)
 
 * Du et al. – LEOPARD: Identifying Vulnerable Code for Vulnerability Assessment Through Program Metrics (ICSE 2019)
