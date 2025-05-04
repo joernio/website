@@ -6,7 +6,7 @@ url: "impact"
 
 The Joern project is the original implementation of [Code Property Graphs](https://en.wikipedia.org/wiki/Code_property_graph), based on the 2014 IEEE Security & Privacy paper [Modeling and Discovering Vulnerabilities with Code Property Graphs](https://fabianyamaguchi.com/files/2014-ieeesp.pdf), making the representation accessible to the broader research community and accelerating innovation in automated vulnerability discovery. Honoring its long lasting impact, the paper received the IEEE Test-of-Time Award in 2024.
 
-This page provides an overview of research and applications that employ Joern. If you would like your work to be featured on this page, please feel free to [reach out](mailto:contact@whirlylabs.com).
+This page provides an overview of research, articles, and videos that are based on Joern and code property graphs. If you would like your work to be featured on this page, please feel free to [reach out](mailto:contact@whirlylabs.com).
 
 ## Papers (Last Updated: May 2025)
 
@@ -27,6 +27,8 @@ This page provides an overview of research and applications that employ Joern. I
 * Shao and Ding – FVD-DPM: Fine-Grained Vulnerability Detection via Conditional Diffusion Probabilistic Models (USENIX Security 2024)
 
 * Wang et al. – Combining Structured Static Code Information and Dynamic Symbolic Traces for Software Vulnerability Prediction (ICSE 2024)
+
+* Hussain et al. – Vulnerability detection in Java source code using a quantum convolutional neural network with self-attentive pool ing, deep sequence, and graph-based hybrid feature extraction (Nature 2024)
 
 * Liang et al. – A Source Code Vulnerability Detection Method Based on Adaptive Graph Neural Networks (ASEW 2024)
 
@@ -66,6 +68,8 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Wi et al. - HiddenCPG: Large-Scale Vulnerable Clone Detection Using Subgraph Isomorphism of Code Property Graphs (WWW 2022)
 
+* Deep Learning Based Vulnerability Detection: Are We There Yet? (TSE Vol. 48, 2022)
+
 * Xu – Semantic Driven Vulnerability Detection and Patch Analysis (PhD Thesis 2020)
 
 * Du et al. – LEOPARD: Identifying Vulnerable Code for Vulnerability Assessment Through Program Metrics (ICSE 2019)
@@ -83,7 +87,6 @@ This page provides an overview of research and applications that employ Joern. I
 * Yamaguchi et al. – Automatic Inference of Search Patterns for Taint-Style Vulnerabilities (S&P 2015)
 
 * Perl et al. – VCCFinder: Finding Potential Vulnerabilities in Open-Source Projects to Assist Code Audits (CCS 2015)
-
 
 
 
@@ -112,6 +115,8 @@ This page provides an overview of research and applications that employ Joern. I
 * [Sharma - Discovering Privacy Violations at Scale](https://www.youtube.com/watch?v=GI5QK4bfvF8)
 
 * [Ganz - Graph-Based Vulnerability Discovery](https://www.youtube.com/watch?v=KWG5v1oHwMM)
+
+* [Ursache/Yamaguchi/Schmidt - Ghidra2cpg: From graph queries to vulnerabilities in Binary Code](https://www.youtube.com/watch?v=hfxCDx9BTLo)
 
 * [Li/Sharma - How to Analyze Code for Vulnerabilities using Joern](https://www.youtube.com/watch?v=qtGRNb_2Khs)
 
