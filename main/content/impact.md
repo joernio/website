@@ -44,6 +44,8 @@ This page provides an overview of research, articles, and videos that make use o
 
 * Nguyen et al. – Code-centric learning-based just-in-time vulnerability detection (Systems & Software 2024)
 
+* de Oliveira Brito – Applying Code Property Graphs On Modern Web Languages For Security and Privacy Analysis (PhD Thesis 2024)
+
 * Lee and Son – AdCPG: Classifying JavaScript Code Property Graphs with Explanations for Ad and Tracker Blocking (CCS 2023).
 
 * Chen et al. – DiverseVul: A New Vulnerable Source Code Dataset for Deep Learning Based Vulnerability Detection (RAID 2023)
