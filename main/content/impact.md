@@ -42,9 +42,13 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Sun et al. – Exploring Security Commits in Python (ICSME 2023)
 
+* Wang et al. – GraphSPD: Graph-Based Security Patch Detection with Enriched Code Semantics (S&P 2023)
+
 * Staicu et al. – Bilingual Problems: Studying the Security Risks Incurred by Native Extensions in Scripting Languages (USENIX Security 2023).
 
 * Woo et al. – V1SCAN: Discovering 1-day Vulnerabilities in Reused C/C++ OSS Components (USENIX Security 2023)
+
+* Shezan at al. – CHKPLUG: Checking GDPR Compliance of WordPress Plugins via Cross-language Code Property Graph (NDSS 2023)
 
 * Hu et al. – Interpreters for GNN-Based Vulnerability Detection: Are We There Yet? (ISSTA 2023)
 
@@ -60,6 +64,8 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Nong et al. – Generating Realistic Vulnerabilities via Neural Code Editing: An Empirical Study (FSE 2022)
 
+* Wi et al. - HiddenCPG: Large-Scale Vulnerable Clone Detection Using Subgraph Isomorphism of Code Property Graphs (WWW 2022)
+
 * Xu – Semantic Driven Vulnerability Detection and Patch Analysis (PhD Thesis 2020)
 
 * Du et al. – LEOPARD: Identifying Vulnerable Code for Vulnerability Assessment Through Program Metrics (ICSE 2019)
@@ -69,6 +75,8 @@ This page provides an overview of research and applications that employ Joern. I
 * Caliskan et al. – When Coding Style Survices Compilation: De-anonymizing Programmers from Executable Binaries (NDSS 2018)
 
 * Alhuzali et al. – NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications (USENIX Security 2018)
+
+* Xiaomeng et al. – CPGVA: Code Property Graph based Vulnerability Analysis by Deep Learning (ICAIT 2018)
 
 * Backes et al. – Efficient and Flexible Discovery of PHP Application Vulnerabilities (EURO S&P 2017)
 
@@ -90,6 +98,8 @@ This page provides an overview of research and applications that employ Joern. I
 * [CyberJutsu - The Joern-ey of Static Code Analysis](https://www.slideshare.net/slideshow/cyberjutsu-the-joern-ey-of-static-code-analysis-pdf/272177431)
 
 * [Verma - https://jaiverma.github.io/blog/joern-intro](https://jaiverma.github.io/blog/joern-intro)
+
+* [TutorialBoy - Joern for Beginners: A How-To Guide for Source Code Analysis](https://tutorialboy.medium.com/joern-for-beginners-a-how-to-guide-for-source-code-analysis-7d03e1d82f82)
 
 * [Mahendra - SAST: Joern 101](https://akhilmahendra.com/blog/program-analysis-with-joern/)
 
