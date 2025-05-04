@@ -56,6 +56,8 @@ This page provides an overview of research, articles, and videos that are based 
 
 * Al Kassar – Testability Tarpits: the Impact of Code Patterns on the Security Testing of Web Applications (NDSS 2022)
 
+* Deng et al. – On the (In) Security of Secure ROS2 (CCS 2022)
+
 * Shi et al. – Backporting security patches of web applications: A prototype design and implementation on injection vulnerability patches (USENIX Security 2022)
 
 * Ding et al. – VELVET: a noVel Ensemble Learning approach to automatically locate VulnErable sTatements (SANER 2022)
