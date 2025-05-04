@@ -42,6 +42,8 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Sun et al. – Exploring Security Commits in Python (ICSME 2023)
 
+* Wang et al. – GraphSPD: Graph-Based Security Patch Detection with Enriched Code Semantics (S&P 2023)
+
 * Staicu et al. – Bilingual Problems: Studying the Security Risks Incurred by Native Extensions in Scripting Languages (USENIX Security 2023).
 
 * Woo et al. – V1SCAN: Discovering 1-day Vulnerabilities in Reused C/C++ OSS Components (USENIX Security 2023)
