@@ -79,7 +79,7 @@ This page provides an overview of research and applications that employ Joern. I
 
 
 
-# Articles
+# Articles and Presentations
 
 * [Bastide - An Intro to the Code Property Graph](https://coderpad.io/blog/development/code-property-graph-oriented-databases-source-code-analysis/)
 
@@ -87,9 +87,13 @@ This page provides an overview of research and applications that employ Joern. I
 
 * [Shukla – Code Representation for Machine Learning: Code as Graph](https://blog.embold.io/code-representation-for-machine-learning-code-as-graph/)
 
+* [CyberJutsu - The Joern-ey of Static Code Analysis](https://www.slideshare.net/slideshow/cyberjutsu-the-joern-ey-of-static-code-analysis-pdf/272177431)
+
 * [Verma - https://jaiverma.github.io/blog/joern-intro](https://jaiverma.github.io/blog/joern-intro)
 
 * [Mahendra - SAST: Joern 101](https://akhilmahendra.com/blog/program-analysis-with-joern/)
+
+* [Ursache - Code Property Graphs and Joern – simple, precise static code analysis](https://infocondb.org/con/summercon/summercon-2023/code-property-graphs-joern-simple-precise-static-code-analysis)
 
 # Videos
 
