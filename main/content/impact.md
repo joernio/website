@@ -28,6 +28,8 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Wang et al. – Combining Structured Static Code Information and Dynamic Symbolic Traces for Software Vulnerability Prediction (ICSE 2024)
 
+* Hussain et al. – Vulnerability detection in Java source code using a quantum convolutional neural network with self-attentive pool ing, deep sequence, and graph-based hybrid feature extraction (Nature 2024)
+
 * Liang et al. – A Source Code Vulnerability Detection Method Based on Adaptive Graph Neural Networks (ASEW 2024)
 
 * Rozi et al. – Securing Code With Context: Enhancing Vulnerability Detection Through Contextualized Graph Representations (IEEE Access Vol.2 2024)
