@@ -20,7 +20,7 @@ This page provides an overview of research and applications that employ Joern. I
 
 * Khodayari et al. – Do (Not) Follow the White Rabbit: Challenging the Myth of Harmless Open Redirection (NDSS 2025)
 
-* Yang and Cai – Dissecting Real-World Cross-Language Bugs (ACM FSE 2025)
+* Yang and Cai – Dissecting Real-World Cross-Language Bugs (FSE 2025)
 
 * David et al. – QUACK: Hindering Deserialization Attacks via Static Duck Typing (NDSS 2024)
 
@@ -55,6 +55,8 @@ This page provides an overview of research and applications that employ Joern. I
 * Hin et al. – LineVD: Statement-level vulnerability detection using graph neural networks (MSR 2022)
 
 * Cheng et al. – Path-Sensitive Code Embedding via Contrastive Learning for Software Vulnerability Detection (ISSTA 2022)
+
+* Nong et al. – Generating Realistic Vulnerabilities via Neural Code Editing: An Empirical Study (FSE 2022)
 
 * Xu – Semantic Driven Vulnerability Detection and Patch Analysis (PhD Thesis 2020)
 
