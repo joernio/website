@@ -6,7 +6,13 @@ url: "impact"
 
 The Joern project provides the original implementation of the [Code Property Graph](https://en.wikipedia.org/wiki/Code_property_graph), based on the 2014 IEEE Security & Privacy paper [Modeling and Discovering Vulnerabilities with Code Property Graphs](https://fabianyamaguchi.com/files/2014-ieeesp.pdf). Published as open-source under the Apache 2 License, it has made this representation accessible to the broader research community, accelerating innovation in automated vulnerability discovery and code analysis. In recognition of its long lasting impact, the paper received the IEEE Test-of-Time Award in 2024.
 
-This page provides an overview of research, articles, and videos that make use of Joern and code property graphs. If you would like your work to be included on this page, please feel free to [reach out](mailto:contact@whirlylabs.com).
+A 2024 [literature review](https://dl.acm.org/doi/10.1145/3699711) conducted by Harzevili et al. found that Joern is by far the most popular tool for code analysis/compilation in the context of automated software vulnerability detection using machine learning - as shown in the following table.
+
+
+![test](/img/table.png)
+
+
+The following is an overview of research, articles, and videos that make use of Joern and code property graphs. If you would like your work to be included on this page, please feel free to [reach out](mailto:contact@whirlylabs.com).
 
 ## Papers (Last Updated: May 2025)
 
@@ -23,6 +29,9 @@ This page provides an overview of research, articles, and videos that make use o
 * Yang and Cai – Dissecting Real-World Cross-Language Bugs (FSE 2025)
 
 * Wu – Identifying software vulnerabilities via code representation learning (PhD Thesis 2025)
+
+
+
 
 * David et al. – QUACK: Hindering Deserialization Attacks via Static Duck Typing (NDSS 2024)
 
@@ -46,6 +55,9 @@ This page provides an overview of research, articles, and videos that make use o
 
 * de Oliveira Brito – Applying Code Property Graphs On Modern Web Languages For Security and Privacy Analysis (PhD Thesis 2024)
 
+
+
+
 * Lee and Son – AdCPG: Classifying JavaScript Code Property Graphs with Explanations for Ad and Tracker Blocking (CCS 2023).
 
 * Chen et al. – DiverseVul: A New Vulnerable Source Code Dataset for Deep Learning Based Vulnerability Detection (RAID 2023)
@@ -65,6 +77,10 @@ This page provides an overview of research, articles, and videos that make use o
 * Han et al. – QueryX: symbolic query on decompiled code for finding bugs in COTS binaries (S&P 2023)
 
 * Hu et al. – Interpreters for GNN-Based Vulnerability Detection: Are We There Yet? (ISSTA 2023)
+
+
+
+
 
 * Al Kassar – Testability Tarpits: the Impact of Code Patterns on the Security Testing of Web Applications (NDSS 2022)
 
@@ -86,11 +102,14 @@ This page provides an overview of research, articles, and videos that make use o
 
 * Deep Learning Based Vulnerability Detection: Are We There Yet? (TSE Vol. 48, 2022)
 
+
 * Xu – Semantic Driven Vulnerability Detection and Patch Analysis (PhD Thesis 2020)
+
 
 * Du et al. – LEOPARD: Identifying Vulnerable Code for Vulnerability Assessment Through Program Metrics (ICSE 2019)
 
 * Zhou et al. – Devign: Effective Vulnerability Identification by Learning Comprehensive Program Semantics via Graph Neural Networks (NeurIPS 2019)
+
 
 * Caliskan et al. – When Coding Style Survices Compilation: De-anonymizing Programmers from Executable Binaries (NDSS 2018)
 
@@ -98,7 +117,12 @@ This page provides an overview of research, articles, and videos that make use o
 
 * Xiaomeng et al. – CPGVA: Code Property Graph based Vulnerability Analysis by Deep Learning (ICAIT 2018)
 
+
+
+
 * Backes et al. – Efficient and Flexible Discovery of PHP Application Vulnerabilities (EURO S&P 2017)
+
+
 
 * Yakdan et al. – No More Gotos: Decompilation Using Pattern-Independent Control-Flow Structuring and Semantic-Preserving Transformations (NDSS 2015)
 
