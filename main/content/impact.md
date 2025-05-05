@@ -9,7 +9,7 @@ The Joern project provides the original implementation of the [Code Property Gra
 A 2024 [literature review](https://dl.acm.org/doi/10.1145/3699711) conducted by Harzevili et al. found that Joern is by far the most popular tool for code analysis/compilation in the context of automated software vulnerability detection using machine learning - as shown in the following table.
 
 
-![test](/img/table.png)
+![Most popular tools for vulnerability detection](/img/table.png)
 
 
 The following is an overview of research, articles, and videos that make use of Joern and code property graphs. If you would like your work to be included on this page, please feel free to [reach out](mailto:contact@whirlylabs.com).
