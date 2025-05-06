@@ -18,6 +18,10 @@ The following is an overview of research, articles, and videos that make use of 
 
 * Nong et al. – APPATCH: Automated Adaptive Prompting Large Language Models for Real-World Software Vulnerability Patching (USENIX Security 2025)
 
+* Thimmaiah – FIXX: FInding eXploits from eXamples (USENIX Security 2025)
+
+* Yang and Cai – Dissecting Real-World Cross-Language Bugs (FSE 2025)
+
 * Scholtes et al. – CHARON: Polyglot Code Analysis for Detecting Vulnerabilities in Scripting Languages Native Extensions (EURO S&P 2025)
 
 * Zhou et al. – ReGraph: A Tool for Binary Similarity Identification (ISSTA 2025)
