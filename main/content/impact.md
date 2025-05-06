@@ -31,13 +31,13 @@ The following is an overview of research, articles, and videos that make use of 
 * Wu – Identifying software vulnerabilities via code representation learning (PhD Thesis 2025)
 
 
-
-
 * David et al. – QUACK: Hindering Deserialization Attacks via Static Duck Typing (NDSS 2024)
 
 * Amour and Tilevich – Toward Declarative Auditing of Java Software for Graceful Exception Handling (MPLR 2024)
 
 * Shao and Ding – FVD-DPM: Fine-Grained Vulnerability Detection via Conditional Diffusion Probabilistic Models (USENIX Security 2024)
+
+* Ferreira et al. – Efficient Static Vulnerability Analysis for JavaScript with Multiversion Dependency Graphs (PLDI 2024)
 
 * Basque et al. – Ahoy SAILR! There is No Need to DREAM of C: A Compiler-Aware Structuring Algorithm for Binary Decompilation (USENIX Security 2024)
 
@@ -56,9 +56,9 @@ The following is an overview of research, articles, and videos that make use of 
 * de Oliveira Brito – Applying Code Property Graphs On Modern Web Languages For Security and Privacy Analysis (PhD Thesis 2024)
 
 
-
-
 * Lee and Son – AdCPG: Classifying JavaScript Code Property Graphs with Explanations for Ad and Tracker Blocking (CCS 2023).
+
+* Lin et al. – Detecting API Post-Handling Bugs Using Code and Description in Patches (USENIX Security 2023)
 
 * Chen et al. – DiverseVul: A New Vulnerable Source Code Dataset for Deep Learning Based Vulnerability Detection (RAID 2023)
 
@@ -149,6 +149,10 @@ The following is an overview of research, articles, and videos that make use of 
 * [Mahendra - SAST: Joern 101](https://akhilmahendra.com/blog/program-analysis-with-joern/)
 
 * [Ursache - Code Property Graphs and Joern – simple, precise static code analysis](https://infocondb.org/con/summercon/summercon-2023/code-property-graphs-joern-simple-precise-static-code-analysis)
+
+* [Convisio - Finding classes for exploiting Unsafe Reflection / Unchecked Class Instantiation vulnerabilities in Java with Joern](https://blog.convisoappsec.com/en/finding-classes-to-exploit-insecure-unchecked-vulnerabilities-in-java-with-joern/)
+
+* [dos Santos and Oberman - The Cost of Complexity: Different Vulnerabilities While Implementing the Same RFC](https://i.blackhat.com/asia-21/Thursday-Handouts/as-21-dosSantos-The-Cost-of-Complexity-Different-Vulnerabilities-While-Implementing-the-Same-RFC.pdf)
 
 # Videos
 
