@@ -18,7 +18,7 @@ The following is an overview of research, articles, and videos that make use of 
 
 * Nong et al. – APPATCH: Automated Adaptive Prompting Large Language Models for Real-World Software Vulnerability Patching (USENIX Security 2025)
 
-* Thimmaiah – FIXX: FInding eXploits from eXamples (USENIX Security 2025)
+* Thimmaiah et al. – FIXX: FInding eXploits from eXamples (USENIX Security 2025)
 
 * Yang and Cai – Dissecting Real-World Cross-Language Bugs (FSE 2025)
 
