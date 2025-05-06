@@ -150,6 +150,10 @@ The following is an overview of research, articles, and videos that make use of 
 
 * [Ursache - Code Property Graphs and Joern – simple, precise static code analysis](https://infocondb.org/con/summercon/summercon-2023/code-property-graphs-joern-simple-precise-static-code-analysis)
 
+* [Convisio - Finding classes for exploiting Unsafe Reflection / Unchecked Class Instantiation vulnerabilities in Java with Joern](https://blog.convisoappsec.com/en/finding-classes-to-exploit-insecure-unchecked-vulnerabilities-in-java-with-joern/)
+
+* [dos Santos and Oberman - The Cost of Complexity: Different Vulnerabilities While Implementing the Same RFC](https://i.blackhat.com/asia-21/Thursday-Handouts/as-21-dosSantos-The-Cost-of-Complexity-Different-Vulnerabilities-While-Implementing-the-Same-RFC.pdf)
+
 # Videos
 
 * [LiveOverflow - Using joern to Find GraphQL Authorization Issue](https://www.youtube.com/watch?v=tBon33o2aS4&t=111s)
