@@ -154,6 +154,8 @@ The following is an overview of research, articles, and videos that make use of 
 
 * [dos Santos and Oberman - The Cost of Complexity: Different Vulnerabilities While Implementing the Same RFC](https://i.blackhat.com/asia-21/Thursday-Handouts/as-21-dosSantos-The-Cost-of-Complexity-Different-Vulnerabilities-While-Implementing-the-Same-RFC.pdf)
 
+* [Fluid Attacks - Exploiting Code Graphs](https://fluidattacks.com/blog/exploit-code-graph/)
+
 # Videos
 
 * [LiveOverflow - Using joern to Find GraphQL Authorization Issue](https://www.youtube.com/watch?v=tBon33o2aS4&t=111s)
