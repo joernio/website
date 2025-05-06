@@ -18,6 +18,10 @@ The following is an overview of research, articles, and videos that make use of 
 
 * Nong et al. – APPATCH: Automated Adaptive Prompting Large Language Models for Real-World Software Vulnerability Patching (USENIX Security 2025)
 
+* Thimmaiah et al. – FIXX: FInding eXploits from eXamples (USENIX Security 2025)
+
+* Yang and Cai – Dissecting Real-World Cross-Language Bugs (FSE 2025)
+
 * Scholtes et al. – CHARON: Polyglot Code Analysis for Detecting Vulnerabilities in Scripting Languages Native Extensions (EURO S&P 2025)
 
 * Zhou et al. – ReGraph: A Tool for Binary Similarity Identification (ISSTA 2025)
@@ -153,6 +157,8 @@ The following is an overview of research, articles, and videos that make use of 
 * [Convisio - Finding classes for exploiting Unsafe Reflection / Unchecked Class Instantiation vulnerabilities in Java with Joern](https://blog.convisoappsec.com/en/finding-classes-to-exploit-insecure-unchecked-vulnerabilities-in-java-with-joern/)
 
 * [dos Santos and Oberman - The Cost of Complexity: Different Vulnerabilities While Implementing the Same RFC](https://i.blackhat.com/asia-21/Thursday-Handouts/as-21-dosSantos-The-Cost-of-Complexity-Different-Vulnerabilities-While-Implementing-the-Same-RFC.pdf)
+
+* [Fluid Attacks - Exploiting Code Graphs](https://fluidattacks.com/blog/exploit-code-graph/)
 
 # Videos
 
