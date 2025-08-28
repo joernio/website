@@ -5,10 +5,10 @@ title: Repeat Steps
 
 Repeat Steps are CPGQL Steps which repeat another traversal multiple times.
 
-### repeat..times
+### repeat..maxDepth
 
 ```java
-joern> cpg.method.name("main").repeat(_.astChildren)(_.times(4)).l
+joern> cpg.method.name("main").repeat(_.astChildren)(_.maxDepth(4)).l
 res0: List[AstNode] = List(
   Call(
     id -> 13L,
@@ -93,11 +93,11 @@ res0: List[AstNode] = List(
 )
 ```
 
-### repeat..emit..times
+### repeat..emit..maxDepth
 
 
 ```java
-joern> cpg.method.name("main").repeat(_.astChildren)(_.emit(_.isControlStructure).times(4)).l
+joern> cpg.method.name("main").repeat(_.astChildren)(_.emit(_.isControlStructure).maxDepth(4)).l
 res0: List[AstNode] = List(
   ControlStructure(
     id -> 11L,
