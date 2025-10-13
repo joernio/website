@@ -45,6 +45,24 @@ $ joern-remote 'importCode(\"/path/on/server\")'
 val res1: io.shiftleft.codepropertygraph.generated.Cpg = Cpg[Graph[45 nodes]]
 ```
 
+The windows powershell equivalent of the above is this:
+```shell
+function Invoke-JoernRemote {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Query
+    )
+
+    $Body = @{ query = $Query } | ConvertTo-Json
+    $Response = Invoke-RestMethod -Uri "http://localhost:8080/query-sync" -Method Post -Body $Body -ContentType "application/json"
+    $Response.stdout
+}
+
+Invoke-JoernRemote 'val foo = 42'
+Invoke-JoernRemote 'println("remote execution vector - this prints on the server")'
+Invoke-JoernRemote 'importCode("c:/path/on/server")'
+```
+
 
 A sample client is available for Python at:
 
