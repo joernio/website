@@ -14,11 +14,23 @@ A 2024 [literature review](https://dl.acm.org/doi/10.1145/3699711) conducted by 
 
 The following is an overview of research, articles, and videos that make use of Joern and code property graphs. If you would like your work to be included on this page, please feel free to [reach out](mailto:contact@whirlylabs.com).
 
-## Papers (Last Updated: May 2025)
+## Papers (Last Updated: July 2026)
+
+* Chen et al. – CGBridge: Bridging Code Graphs and aLrge Language Models for Better Structure-Aware Code Understanding (ACL 2026)
+
+* Shi & Wang – High-Precision Vulnerability Mining Method for Large-Scale Software Based on Hierarchical CodeP roperty Graph and Multi-Agent Collaboration (IEEE AETCSE 2026)
+
+* Lekssays – Bridging Code Property Graphs and Language Models for Program Analysis (SVM @ ICSE 2026)
+
+* Saimbhi – Enhancing Software Vulnerability Detection Using Code Property Graphs and Convolutional Neural Networks (IEEE ICCCIT 2025)
+
+* Lekssays et al. – LLMxCPG: Context-Aware Vulnerability Detection Through Code Property Graph-Guided Large Language Models (USENIX Security 2025)
 
 * Nong et al. – APPATCH: Automated Adaptive Prompting Large Language Models for Real-World Software Vulnerability Patching (USENIX Security 2025)
 
 * Thimmaiah et al. – FIXX: FInding eXploits from eXamples (USENIX Security 2025)
+
+* Dou et al. – A Scalable Vulnerability Detection System with Multi-View Graph Representations (ACM Transactions on Software Engineering and Methodology 2025)
 
 * Scholtes et al. – CHARON: Polyglot Code Analysis for Detecting Vulnerabilities in Scripting Languages Native Extensions (EURO S&P 2025)
 
@@ -31,7 +43,6 @@ The following is an overview of research, articles, and videos that make use of 
 * Yang and Cai – Dissecting Real-World Cross-Language Bugs (FSE 2025)
 
 * Wu – Identifying software vulnerabilities via code representation learning (PhD Thesis 2025)
-
 
 * David et al. – QUACK: Hindering Deserialization Attacks via Static Duck Typing (NDSS 2024)
 
@@ -137,6 +148,10 @@ The following is an overview of research, articles, and videos that make use of 
 
 
 # Articles and Presentations
+
+* [Atlas: Wiz's AI vulnerability researcher](https://www.wiz.io/blog/atlas-ai-vulnerability-researcher)
+
+* [A 0-day vending machine: No Mythos necessary](https://www.intruder.io/research/a-0-day-vending-machine-no-mythos-necessary)
 
 * [Bastide - An Intro to the Code Property Graph](https://coderpad.io/blog/development/code-property-graph-oriented-databases-source-code-analysis/)
 
