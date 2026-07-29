@@ -149,7 +149,7 @@ The following is an overview of research, articles, and videos that make use of 
 
 # Articles and Presentations
 
-* [Atlas: Wiz's AI vulnerability researcher](https://www.wiz.io/blog/atlas-ai-vulnerability-researcher)
+* [Atlas: Wiz\'s AI vulnerability researcher](https://www.wiz.io/blog/atlas-ai-vulnerability-researcher)
 
 * [A 0-day vending machine: No Mythos necessary](https://www.intruder.io/research/a-0-day-vending-machine-no-mythos-necessary)
 
