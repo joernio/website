@@ -153,6 +153,8 @@ The following is an overview of research, articles, and videos that make use of 
 
 * [A 0-day vending machine: No Mythos necessary](https://www.intruder.io/research/a-0-day-vending-machine-no-mythos-necessary)
 
+* [Why I built attack-chain correlation on top of Semgrep and Joern](https://dev.to/hamza_miladin/why-i-built-attack-chain-correlation-on-top-of-semgrep-and-joern-1gcd)
+
 * [Stop Letting LLMs Hallucinate Your Codebase: A Graph-First Way to Summarize Repos](https://pub.towardsai.net/stop-letting-llms-hallucinate-your-codebase-a-graph-first-way-to-summarize-repos-8a803db9c931)
 
 * [Bastide - An Intro to the Code Property Graph](https://coderpad.io/blog/development/code-property-graph-oriented-databases-source-code-analysis/)
