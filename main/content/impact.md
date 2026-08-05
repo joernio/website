@@ -157,6 +157,8 @@ The following is an overview of research, articles, and videos that make use of 
 
 * [Stop Letting LLMs Hallucinate Your Codebase: A Graph-First Way to Summarize Repos](https://pub.towardsai.net/stop-letting-llms-hallucinate-your-codebase-a-graph-first-way-to-summarize-repos-8a803db9c931)
 
+* [Auditing binaries like source code: static analysis with Ghidra + Joern](https://zetier.com/codeql-for-binaries/)
+
 * [Bastide - An Intro to the Code Property Graph](https://coderpad.io/blog/development/code-property-graph-oriented-databases-source-code-analysis/)
 
 * [Denissov - LLVM meets Code Property Graph](https://lowlevelbits.org/llvm-meets-code-property-graphs/)
