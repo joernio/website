@@ -16,7 +16,7 @@ The following is an overview of research, articles, and videos that make use of 
 
 ## Papers (Last Updated: July 2026)
 
-* Chen et al. – CGBridge: Bridging Code Graphs and aLrge Language Models for Better Structure-Aware Code Understanding (ACL 2026)
+* Chen et al. – CGBridge: Bridging Code Graphs and Large Language Models for Better Structure-Aware Code Understanding (ACL 2026)
 
 * Shi & Wang – High-Precision Vulnerability Mining Method for Large-Scale Software Based on Hierarchical CodeP roperty Graph and Multi-Agent Collaboration (IEEE AETCSE 2026)
 
