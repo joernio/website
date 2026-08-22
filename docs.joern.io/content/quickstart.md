@@ -164,7 +164,7 @@ those nodes that have the string `stderr` as the value of their `CODE`
 property. We find exactly one:
 
 ```java
-joern> cpg.call.argument.code("stderr").toList
+joern> cpg.call.argument.code(".*stderr.*").toList
 res3: List[Expression] = List(
   Identifier(
     id -> 1000118L,
@@ -182,7 +182,7 @@ res3: List[Expression] = List(
 This query shows that `stderr` is used somewhere in the program, but doesn't give us any more information. Using the query from the previous step, we can use the `astParent` construct to find out more about the surroundings of the `stderr` usage by moving up the hierarchy of the abstract syntax tree that is part of the Code Property Graph. Moving up one level in the AST hierarchy gives us an `fprintf` call:
 
 ```java
-joern> cpg.call.argument.code("stderr").astParent.toList
+joern> cpg.call.argument.code(".*stderr.*").astParent.toList
 res4: List[AstNode] = List(
   Call(
     id -> 1000117L,
@@ -206,7 +206,7 @@ With this query we have proven the first part of our problem statement correct, 
 As before, we can use the `astParent` to move up the AST. Moving up another level in the AST hierarchy gives us a block; not very helpful:
 
 ```java
-joern> cpg.call.argument.code("stderr").astParent.astParent.toList
+joern> cpg.call.argument.code(".*stderr.*").astParent.astParent.toList
 res5: List[AstNode] = List(
   Block(
     id -> 1000116L,
@@ -224,7 +224,7 @@ res5: List[AstNode] = List(
 Another layer up gives us an if statement, much better:
 
 ```java
-joern> cpg.call.argument.code("stderr").astParent.astParent.astParent.toList
+joern> cpg.call.argument.code(".*stderr.*").astParent.astParent.astParent.toList
 res6: List[AstNode] = List(
   ControlStructure(
     id -> 1000104L,
