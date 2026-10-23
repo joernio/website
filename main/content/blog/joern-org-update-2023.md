@@ -96,4 +96,4 @@ Email: dave@whirlylabs.com
 Twitter: [@SDBakerEffendi](https://twitter.com/SDBakerEffendi)  
 GitHub: [@DavidBakerEffendi](https://github.com/DavidBakerEffendi) 
 
-Also, check out [careers @ WhirlyLabs](https://whirlylabs.com/careers/) for open roles.
+Also, feel free to [contact Whirly Labs](https://whirlylabs.com/contact/) about open roles.

@@ -71,5 +71,7 @@ To bundle up this query and add it to our C Scanner, we add some bells and whist
   )
 {{< /highlight >}}
 
-There are many such scanners for common as well as precise cases modelled as bundles of Joern queries. They all are part of the automated ```joern-scan```
+There are many such scanners for common as well as precise cases modelled as bundles of Joern queries. They all are part of the automated ```joern-scan```.
+
+Scanners do not have to be generic. Queries can encode the frameworks, APIs, and conventions of a specific code base, and catch every variant of a vulnerability pattern found there. [Whirly Labs](https://whirlylabs.com/services/custom-static-analysis/), the primary maintainer of Joern, builds such custom scanners for companies.
 

@@ -15,6 +15,7 @@ in a custom graph database. This allows code to be mined using search
 queries formulated in a Scala-based domain-specific query
 language. Joern is developed with the goal of providing a useful tool
 for vulnerability discovery and research in static program analysis.
+Its primary maintainer is [Whirly Labs](https://whirlylabs.com).
 
 ## Supported languages
 
