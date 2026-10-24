@@ -25,4 +25,9 @@ theme = "blist"
   url = "https://discord.com/invite/vv4MH284Hc"
   weight = 4
 
+  [[menu.main]]
+  name = "Commercial Support"
+  url = "https://whirlylabs.com/services/custom-static-analysis/#joern"
+  weight = 5
+
   
