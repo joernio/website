@@ -69,3 +69,32 @@ val res0: List[String] = List(
   """)
 ```
 
+
+### Interprocedural depth
+
+The data-flow engine follows calls only up to a fixed depth. With the
+default `EngineContext()`, it enters at most 4 calls along a flow
+(`EngineConfig.maxCallDepth`, "the k-limit for calls and field accesses").
+A flow that needs more is not reported, and no message says it was cut off.
+For example, the flow from `source` to `sink` below is found with up to four
+nested helpers like `p1` and is missed with five:
+
+```java
+static String p1(String s) { return p2(s); }
+static String p2(String s) { return p3(s); }
+// ... p3 to p5 continue the same way, and p5 returns s
+sink(p1(source));
+```
+
+You can raise the depth by passing your own configuration. A value of `-1`
+removes the limit.
+
+```java
+joern> import io.joern.dataflowengineoss.queryengine.{EngineConfig, EngineContext}
+joern> implicit val context: EngineContext = EngineContext(config = EngineConfig(maxCallDepth = 10))
+joern> sink.reachableByFlows(source).p
+```
+
+A higher depth finds longer flows but makes queries slower. The command-line
+tools have their own defaults: `joern-flow --depth` defaults to 1, and
+`joern-scan --depth` defaults to 2.
